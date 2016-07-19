@@ -1,0 +1,64 @@
+@mainFontColor: red;
+
+@buttonBackground: blue;
+@buttonColor: fff;
+@buttonPadding: 1px;
+
+.button{
+	background: @buttonBackground;
+	color: @buttonColor;
+	padding: @buttonPadding;
+	
+}
+
+.jumbo-button{
+	.button;
+	padding: @buttonPadding + 30;
+
+}
+
+.mini-button{
+	.button;
+	padding: @buttonPadding + 10;
+	background: @buttonBackground * 1.6;
+	
+}
+
+#side-nav{
+	background: #333;
+
+	a:link, a:visited{
+
+		color:white;
+		display: block;
+		padding: 10px;
+	}a:hover{
+		background: #777;
+	}
+}
+
+.panel{
+	border: 3px solid;
+	background: green;
+	margin: 10px;
+}
+/* include all the rules from panel */
+.little-panel{
+	.panel;
+	font-size: 12px;
+	padding: 5px
+}
+
+.big-panel{
+	.panel;
+	font-size: 17px;
+	padding: 15px;
+}
+
+h1 {
+  color: @mainFontColor;
+}
+
+p{
+	color:  @mainFontColor;
+}
