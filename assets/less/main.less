@@ -1,64 +1,64 @@
-@mainFontColor: red;
+@bgColor: #F4EADE;
+@textColor: #2F496E;
+@mainColor: #ED8C72;
+@secondColor: #2988BC;
 
-@buttonBackground: blue;
-@buttonColor: fff;
-@buttonPadding: 1px;
-
-.button{
-	background: @buttonBackground;
-	color: @buttonColor;
-	padding: @buttonPadding;
-	
+.navbar-default a{
+	color: @bgColor !important;
 }
 
-.jumbo-button{
-	.button;
-	padding: @buttonPadding + 30;
-
+.navbar-default a:hover{
+	background: @mainColor !important;
 }
 
-.mini-button{
-	.button;
-	padding: @buttonPadding + 10;
-	background: @buttonBackground * 1.6;
-	
+.navbar-default{
+	background: @secondColor !important;
+}
+.nav > a, .nav > a:focus, .nav > a:hover{
+	background: @mainColor !important;
 }
 
-#side-nav{
-	background: #333;
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover{
+	background: @mainColor !important;
+}
 
-	a:link, a:visited{
+.active > a{
+	background:  @mainColor !important;
+}
 
-		color:white;
-		display: block;
-		padding: 10px;
-	}a:hover{
-		background: #777;
+body{
+	background: @bgColor;
+}
+p, h1, h2, h3, h4, label{
+	color:  @textColor;
+}
+.footer{
+	background:@mainColor;
+}
+.footer-bottom{
+	background:@secondColor;
+}
+.burger-btn{
+	background:@secondColor;
+	color: @mainColor;
+	:hover{
+		background:@secondColor + 00011;
+		color: @mainColor - 00021;
 	}
 }
 
-.panel{
-	border: 3px solid;
-	background: green;
-	margin: 10px;
+.img-border{
+  	border:5px solid @mainColor;
+  	cursor: pointer;
+  
 }
-/* include all the rules from panel */
-.little-panel{
-	.panel;
-	font-size: 12px;
-	padding: 5px
-}
+.img-hover:hover{
+	padding: 6px;
+  	border:5px solid @secondColor;
+  	cursor: pointer;
+  	opacity: 0.7;
 
-.big-panel{
-	.panel;
-	font-size: 17px;
-	padding: 15px;
 }
-
-h1 {
-  color: @mainFontColor;
-}
-
-p{
-	color:  @mainFontColor;
+.jumbotron{
+	background: @mainColor;
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+</head>
+<body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index">Home</a></li>
+            <li><a href="comments">Comments</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+</div>
+</div>
+</nav>
+
+</div>
+</div>
+{% block body %} 
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/validation.js"></script>
+<script type="text/javascript" src="js/modals.js"></script>
+
+{% endblock %}
+
+</body>
+</html>

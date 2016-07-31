@@ -48,16 +48,24 @@ gulp.task('compoments', function() {
   	var animate = gulp.src('assets/bower_components/animate.css/animate.min.css')
 	    .pipe(gulp.dest('web/css'));
 
+	var awesome = gulp.src('assets/bower_components/font-awesome/css/font-awesome.min.css')
+	    .pipe(gulp.dest('web/css'));
+
    	var jquery = gulp.src('assets/bower_components/jquery/dist/jquery.min.js')
 		.pipe(gulp.dest('web/js'));
 
-    return merge(bootstrap,animate);
+	var bootstrapjs = gulp.src('assets/bower_components/bootstrap/dist/js/bootstrap.min.js')
+		.pipe(gulp.dest('web/js'));
+
+  
 });
 
 /*watch project*/
-/*gulp.task('watch',function(){
-	gulp.watch('*.js', ['scripts']);
-});*/
+	gulp.task('watch',function(){
+		gulp.watch('assets/js/*.js', ['scripts']);
+		gulp.watch('assets/css/*.css', ['styles']);
+		gulp.watch('assets/less/*.less', ['less']);
+	});
 
 gulp.task('default',['scripts','styles','images','less','compoments']
 	
