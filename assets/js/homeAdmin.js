@@ -1,0 +1,35 @@
+(function  ($) {
+
+	$(document).ready(function(){
+
+		$("#menu-btn").mouseenter(function(){
+			$(".nav-left").css({"left": "0%"});
+			$("#menu-btn").css({"visibility": "hidden"});
+			$("body").addClass("margin-left");
+		});
+		$(".nav-left").mouseleave(function(){
+			$(".nav-left").css({"left": "-210px"});
+			$("body").removeClass("margin-left");
+			$("#menu-btn").css({"visibility": "visible"});
+			
+
+		});
+		$(".add-item").click(function(){
+			document.getElementById("addProductli").click();
+
+		});
+		$(".edit-list").click(function(){
+			document.getElementById("editli").click();
+
+		});
+		
+
+	});
+
+
+	function login() {
+
+
+	}
+
+})(jQuery);

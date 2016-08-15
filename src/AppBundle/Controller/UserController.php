@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Newsletter;
 use AppBundle\Entity\Comments;
+use AppBundle\Entity\Products;
+use AppBundle\Entity\Login;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 class UserController extends Controller
@@ -16,16 +18,9 @@ class UserController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-/*        $conn = $this->get('database_connection');
-        $users = $conn->fetchAll('SELECT * FROM comments');
-        foreach ($conn->query($users) as $rows) {
-                    $productID = $rows ['name'];
-                    $productName = $rows['comment'];
-           
-                
-            }*/
+
         return $this->render('default/index.html.twig');
+       
     }
 
      /**
@@ -67,6 +62,20 @@ class UserController extends Controller
                 'comments'=>$comments
             ));        
 
+    } 
+
+    /**
+     * @Route("/commentsRefresh", name="commentsRefresh")
+     */
+    public function commentsRefreshAction()
+    {
+        $comments = $this->getDoctrine()
+                    ->getRepository('AppBundle:Comments')
+                    ->findAll();
+        return $this->render('default/commentsRefresh.html.twig',array(
+                'comments'=>$comments
+            ));        
+
     }  
 
 
@@ -90,11 +99,97 @@ class UserController extends Controller
 
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
-
-
         return $this->render('default/index.html.twig');        
-              
+
+    } 
+
+    /**
+    * @Route("/contact", name="contact")
+    */
+    public function contactAction()
+    {
+        if (isset($_POST['submit'])){
+            $mailacc = $_POST['usermail'];
+            $message = $_POST['message'];
+
+            $to      = 'prettyfilemanager@gmail.com';
+            $subject = 'the subject';
+            $message = $message;
+            $headers = 'From:'.$mailacc . "\r\n" .
+                'Reply-To:'.$mailacc. "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+
+            mail($to, $subject, $message, $headers);
+            $this->addFlash(
+                'notice',
+                'Mail send'
+                );
+
+            return $this->redirectToRoute('contact');        
+
+        }else{
+            return $this->render('default/contact.html.twig');        
+        }
+
+    }
+
+    /**
+    * @Route("/login", name="login")
+    */
+    public function loginAction()
+    {
+        if (isset($_POST['loginBtn'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+
+                $userFound = $this->getDoctrine()
+                    ->getRepository('AppBundle:Login')
+                    ->findOneBy(
+                    array('username' => $username, 'password' => $password));
+
+                    if ($userFound!="") {
+                         return $this->render('default/admin.html.twig');                        
+                    }
+                    else{
+                        $this->addFlash(
+                            'notice',
+                            'Incorect username or password'
+                        );
+                        return $this->redirectToRoute('login');                        
+                    }
+        }else{
+            return $this->render('default/login.html.twig');
+        }
+    }
 
 
-    }  
+    /**
+     * @Route("/list", name="list")
+     */
+    public function listAction()
+    {
+        $listItems = $this->getDoctrine()
+                    ->getRepository('AppBundle:Products')
+                    ->findAll();
+        return $this->render('default/list.html.twig',array(
+                'list'=>$listItems
+            ));        
+
+    } 
+
+
+    /**
+     * @Route("/details/{id}", name="details")
+     */
+    public function detailsAction($id=0, Request $request)
+    {
+        $listItem = $this->getDoctrine()
+                    ->getRepository('AppBundle:Products')
+                    ->find($id);
+        return $this->render('default/details.html.twig',array(
+                'item'=>$listItem
+            ));        
+
+    } 
+
 }

@@ -1,7 +1,7 @@
-@bgColor: #F4EADE;
-@textColor: #2F496E;
-@mainColor: #ED8C72;
-@secondColor: #2988BC;
+@bgColor: #F8F5F2;
+@textColor: #000B29;
+@mainColor: #EDB83D;
+@secondColor: #D70026;
 
 .navbar-default a{
 	color: @bgColor !important;
@@ -32,6 +32,12 @@ body{
 p, h1, h2, h3, h4, label{
 	color:  @textColor;
 }
+i{
+	color:  @mainColor !important;
+}
+small{
+	color:  @secondColor !important;
+}
 .footer{
 	background:@mainColor;
 }
@@ -47,18 +53,35 @@ p, h1, h2, h3, h4, label{
 	}
 }
 
+.burger-btn:hover{
+	background:@secondColor + 00011;
+	color: @mainColor - 00021;
+}
+.burger-btn:active{
+	background:@secondColor + 00031 !important;
+	color: @mainColor - 00051 !important;
+}
+
+ 
 .img-border{
   	border:5px solid @mainColor;
   	cursor: pointer;
   
 }
 .img-hover:hover{
-	padding: 6px;
-  	border:5px solid @secondColor;
+  	border:1px solid @secondColor;
   	cursor: pointer;
   	opacity: 0.7;
 
 }
 .jumbotron{
 	background: @mainColor;
+}
+
+#login-panel{
+	background: @mainColor;
+}
+
+#go-top{
+	color: @secondColor;
 }

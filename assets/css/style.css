@@ -176,8 +176,7 @@
 }
 
 .social li {
-  background: none repeat scroll 0 0 #B5B5B5;
-  border: 2px solid #B5B5B5;
+
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
@@ -203,16 +202,10 @@
   -ms-transform: scale(1.1) rotate(360deg);
   -o-transform: scale(1.1) rotate(360deg);
 }
-.social li a {
-  color: #EDEFF1;
-}
-.social li:hover {
-  border: 2px solid #2c3e50;
-  background: #2c3e50;
-}
+
+
 .social li a i {
-  font-size: 16px;
-  margin: 0 0 0 5px;
+  font-size: 18px;
   color: #EDEFF1 !important;
 }
 .footer-bottom {
@@ -223,6 +216,9 @@
 .margin-top-10{
   margin-top: 10px;
 }
+.margin-top-50{
+  margin-top: 50px;
+}
 
 .margin-top-100{
   margin-top: 100px;
@@ -230,20 +226,30 @@
 textarea{
   resize:none;
 }
-#usernameComment{
-  width: 50%;
+
+
+.half-input{
+  width: 50% !important;
 }
 /* gets biger than 600px */
 @media (max-width: 600px) {
-  #usernameComment{
-    width: 100%;
+  .half-input{
+    width: 100% !important;
   }
 }
 
 #go-top{
   float: right;
-  margin-top: 150px;
+  margin-top: 70px;
 }
+
+#go-top:hover{
+  cursor: pointer;
+}
+#go-top span{
+  font-size: 100px;
+}
+
 #username-comment{
   font-size: 22px;
   font-weight: bolder;
@@ -258,4 +264,68 @@ textarea{
   top: 50%;
   left: 50%;
   display: none;
+}
+.drop-cap { 
+  float: left; 
+  color: #903; 
+  font-size: 45px; 
+  line-height: 30px; 
+  padding-top: 4px; 
+  padding-right: 8px; 
+  padding-left: 3px; 
+  font-family: Georgia;
+}
+#cart{
+  border:2px dotted #333;
+  padding: 5px;
+}
+
+.curve-1,
+.curve-2
+{
+    border: solid 1px #f00;
+    border-radius: 50px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+
+.curve-1
+{
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+.curve-2
+{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+#line{
+  
+  text-align: center;
+  margin: 3px;
+}
+/* login css */
+#login-icon {
+    border: 2px solid;
+    border-radius: 50%;
+    color: #F4EADE;
+    font-size: 100px;
+    padding: 20px;
+}
+
+
+/* social icons  */
+#facebook{
+  background: #3B5998;
+}
+
+#twitter{
+  background: #00ACED;
+}
+
+#pinterest{
+  background: #BD081C;
 }

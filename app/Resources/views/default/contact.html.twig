@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class = "container margin-top-100">
+	<div class = "row">
+		<div class = "page-header headers">
+			<h3>Send us an email <small>we will be happy to hear from you</small></h3>
+			
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-xs-12 col-ms-12">
+			{% for flash in app.session.flashbag.get('notice') %}
+    				<div class="text-center alert alert-success" id="fadeMsg">
+    					{{flash}}
+    				</div>
+			{% endfor %}
+			<form method="post"  action="contact">
+				<div class="jumbotron">
+					<div class="form-group">
+						<label for="contactEmail">
+							<span class="fa fa-asterisk"></span> Email Address 
+						</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-envelope "></span>
+							</span>
+							<input type="email" class="half-input form-control" id="contactEmail" name="usermail" placeholder="Enter email" />
+						</div>
+
+						<label for="subject" class="margin-top-10">
+							<span class="fa fa-asterisk"></span> Subject 
+						</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-tag	"></span>
+							</span>
+							<input type="text" class="half-input form-control" name="subject" placeholder="Enter subject" />
+						</div>
+					</div>
+
+					<div class="form-group">
+					    <label for="mailText">
+					    	<span class="fa fa-asterisk"></span> Message
+					    </label>
+					    <textarea type="text" class="form-control" id="mailText" rows="5" name="message"></textarea>
+					</div>
+
+					<button type="submit"  name="submit" class="burger-btn btn btn-default fa fa-paper-plane-o fa-2x">
+						Send
+					</button>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-3 col-md-push-1 col-xs-12 col-ms-12">
+			<div id="cart">
+				<div class="text-center">
+					<img class="img-rounded " src="images/logo.png">
+				</div>
+				<div id="line"></div> 
+				<p>Burger House</p>
+				<p>2310314912</p>
+				<p>s.stevenidis@gmail.com</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+

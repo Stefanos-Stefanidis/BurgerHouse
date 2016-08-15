@@ -1,0 +1,31 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div>
+	<button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
+</div>
+
+
+<div class="panel panel-default margin-top-100 container">
+	{% for flash in app.session.flashbag.get('notice') %}
+		<div class="text-center alert alert-danger" id="fadeMsg">
+			{{flash}}
+		</div>
+	{% endfor %}
+	<div class="container">
+		{% for listItem in list%}
+		 <div class="col-md-8 col-sm-8 col-xs-10"> 
+			<p>{{listItem.name}}</p>
+			<p class="text-muted">{{listItem.description}}</p>
+		</div>
+		<div class="col-md-1 col-sm-1 col-md-pull-3 col-xs-2"> 
+			<p>{{listItem.price}}&euro;</p>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-12"> 
+			<button class="btn btn-primary btn-sm">Edit</button>
+			<a class="btn btn-danger btn-sm" href="delete/{{listItem.id}}">Delete</a>
+		</div>
+		{% endfor%}
+	</div>
+</div>
+{% endblock %}

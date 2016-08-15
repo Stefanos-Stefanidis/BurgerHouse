@@ -4,12 +4,13 @@
 	var comment;
 	$(document).ready(function(){
 
-		    $(document).ajaxStart(function(){
-        $("#wait").css("display", "block");
-    });
-    $(document).ajaxComplete(function(){
-        $("#wait").css("display", "none");
-    });
+
+		$(document).ajaxStart(function(){
+       		$("#wait").css("display", "block");
+   		 });
+	    $(document).ajaxComplete(function(){
+	        $("#wait").css("display", "none");
+	    });
 		
 		$("#addComment").click(function(){
 			addComment();
@@ -17,8 +18,8 @@
 			$("#commentBox").text("");
 			setTimeout(
 				function() {
-					$("#loadAjax").load("comments") ;
-				}, 2000);
+					auto_load();
+				}, 500);
 		});
 	});
 
@@ -40,7 +41,7 @@
 	}
 	function auto_load(){
 		$.ajax({
-			url: "comments",
+			url: "commentsRefresh",
 			cache: false,
 			success: function(data){
 				$("#loadAjax").html(data);

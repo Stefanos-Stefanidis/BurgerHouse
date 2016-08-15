@@ -1,0 +1,25 @@
+@bgColor: #DDDEDE;
+@textColor: #2312122;
+@mainColor: #7BA4A8;
+@secondColor: #A5C05B;
+
+body{
+	background: @bgColor;
+}
+p, h1, h2, h3, h4, label a{
+	color:  @textColor;
+}
+
+.nav-left{
+	background: @mainColor;
+}
+.add-item:hover,.manage-comment:hover,.edit-list:hover,.view-orders:hover,.view-offers:hover{
+	background: @secondColor;
+	cursor: pointer;
+}
+.nav-left li a:hover{
+	background: @secondColor;
+}
+.jumbotron{
+	background: @mainColor !important;
+}

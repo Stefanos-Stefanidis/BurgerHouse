@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="panel panel-default margin-top-100 container">
+	<div class="container">
+		{% for listItem in list%}
+		 <div class="col-md-8 col-sm-8 col-xs-10"> 
+			<p>{{listItem.name}}</p>
+			<p class="text-muted">{{listItem.description}}</p>
+		</div>
+		<div class="col-md-1 col-sm-1 col-md-pull-3 col-xs-2"> 
+			<p>{{listItem.price}}&euro;</p>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-12"> 
+			<button class="btn btn-success btn-sm">Grap it</button>
+			<a class="btn btn-info btn-sm" href="details/{{listItem.id}}">Details</a>
+		</div>
+		{% endfor%}
+	</div>
+</div>
+{% endblock %}
+
