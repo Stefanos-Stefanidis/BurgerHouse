@@ -4,7 +4,7 @@ var imgmin = require('gulp-imagemin');
 var cleanCSS = require('gulp-clean-css');
 var less = require('gulp-less');
 
-/*scripts task*/
+/*image task*/
 
 gulp.task('images',function(){
 	gulp.src('assets/img/*')
@@ -13,7 +13,7 @@ gulp.task('images',function(){
 });
 
 
-/*image task*/
+/*scripts task*/
 
 gulp.task('scripts',function(){
 	gulp.src('assets/js/*.js')
