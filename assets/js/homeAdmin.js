@@ -12,14 +12,20 @@
 			$("body").removeClass("margin-left");
 			$("#menu-btn").css({"visibility": "visible"});
 			
-
 		});
+
+	
+
 		$(".add-item").click(function(){
 			document.getElementById("addProductli").click();
 
 		});
 		$(".edit-list").click(function(){
 			document.getElementById("editli").click();
+
+		});
+		$(".manage-comment").click(function(){
+			document.getElementById("mngCommentli").click();
 
 		});
 		

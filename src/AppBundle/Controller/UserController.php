@@ -11,6 +11,8 @@ use AppBundle\Entity\Products;
 use AppBundle\Entity\Login;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 class UserController extends Controller
 {
     /**
@@ -57,7 +59,7 @@ class UserController extends Controller
     {
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
-                    ->findAll();
+                    ->findAllLimit();
         return $this->render('default/comments.html.twig',array(
                 'comments'=>$comments
             ));        
@@ -71,7 +73,7 @@ class UserController extends Controller
     {
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
-                    ->findAll();
+                    ->findAllLimit();
         return $this->render('default/commentsRefresh.html.twig',array(
                 'comments'=>$comments
             ));        
@@ -134,9 +136,9 @@ class UserController extends Controller
     }
 
     /**
-    * @Route("/login", name="login")
+    * @Route("/admin", name="admin")
     */
-    public function loginAction()
+    public function adminAction(Request $request)
     {
         if (isset($_POST['loginBtn'])) {
                 $username = $_POST['username'];
@@ -147,15 +149,18 @@ class UserController extends Controller
                     ->findOneBy(
                     array('username' => $username, 'password' => $password));
 
-                    if ($userFound!="") {
-                         return $this->render('default/admin.html.twig');                        
+                    if ($userFound) {
+                       
+                        $session = $request->getSession();
+                        $session->set('admin', 'TRUE');
+                        return $this->redirectToRoute('homeAdmin'); 
                     }
                     else{
                         $this->addFlash(
                             'notice',
                             'Incorect username or password'
                         );
-                        return $this->redirectToRoute('login');                        
+                        return $this->redirectToRoute('admin');                        
                     }
         }else{
             return $this->render('default/login.html.twig');
@@ -183,9 +188,15 @@ class UserController extends Controller
      */
     public function detailsAction($id=0, Request $request)
     {
+
         $listItem = $this->getDoctrine()
                     ->getRepository('AppBundle:Products')
                     ->find($id);
+        if (!$listItem) {
+            throw $this->createNotFoundException(
+                'No product found for id '. $id
+            );
+        }
         return $this->render('default/details.html.twig',array(
                 'item'=>$listItem
             ));        

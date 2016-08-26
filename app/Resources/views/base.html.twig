@@ -12,6 +12,23 @@
 </head>
 
 <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '978643772155268',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div id="sreen-wrapper"></div>
         <div class="navbar-wrapper">
           <div class="container">
@@ -86,6 +103,7 @@
                         <li id="twitter"> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
                         <li id="pinterest"> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
                     </ul>
+                    
                 </div>
                 <div class="col-md-2 col-sm-6 col-xs-4 ">
                     <p id="go-top">

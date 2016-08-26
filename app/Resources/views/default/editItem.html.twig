@@ -1,0 +1,75 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div>
+	<button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
+</div>
+
+<div class="container">
+	<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<form method="post" action="item-update" >
+					<div class="col-md-6 col-xs-12">
+						<label for="productName">
+							Enter food name
+						</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-cutlery"></span>
+							</span>
+							<input type="text" class="form-control" name="productName" value="{{item.name}}" />
+						</div>
+						<label for="price">
+							Enter price
+						</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-eur"></span>
+							</span>
+							<input type="text" class="form-control" name="price"  value="{{item.price}}" />
+						</div>
+						<div class="form-group">
+							<label for="select">Select category</label>
+							<select class="form-control" id="select" name="category">
+								{% for category in categories %}
+									<option>{{category.name}}</option>
+								{% endfor%}
+							</select>
+						</div>
+			
+					</div>
+
+					<div class="col-md-4 col-md-push-2 col-xs-12" >
+						<label for="description">
+							Enter description
+						</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-pencil"></span>
+							</span>
+							<input type="text" class="form-control" name="description" value="{{item.description}}" />
+						</div>
+						<label for="tags">
+							Enter tags
+						</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-tags"></span>
+							</span>
+							<input type="text" class="form-control" name="tags" value="{{item.tags}}" />
+						</div>
+						<small class="bg-danger"> use coma for each tag </small>
+						<div class="form-group margin-top-10">
+							<button class="btn btn-primary btn-block" name="update-btn">Update</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div>
+	<button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
+</div>
+<div class="container">
+	{% for flash in app.session.flashbag.get('notice') %}
+		<div class="text-center alert alert-danger" id="fadeMsg">
+			{{flash}}
+		</div>
+	{% endfor %}
+
+	{% for comment in comments%}
+		<div class="col-lg-3 col-md-4 col-sm-6 ">
+			<div class="border">
+				<p>
+					<span class="fa fa-user"></span> {{ comment.name}} 
+		
+				</p>
+				<span>{{comment.comment}}</span>
+				
+			</div>
+			<div class="text-right margin-bottom-5">
+					<a href="deleteComment/{{comment.id}}" class="btn btn-sm  btn-danger dlt-comment">Delete</a>
+				</div>
+		</div>
+	{% endfor%}
+</div>
+
+{% endblock %}
