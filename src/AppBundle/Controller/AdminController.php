@@ -193,15 +193,7 @@ class AdminController extends Controller
             return $this->render('default/editItem.html.twig',array(
                 'item'=>$item,'categories'=>$categories
             ));        
-            if (isset($_POST['update-btn'])) {
 
-                $item->setName('New product name!');
-                $em->flush();
-                return $this->redirectToRoute('edit');
-
-            }else{
-                die('poulo');
-            }
             $this->addFlash(
                 'notice',
                 'Item deleted'
@@ -215,18 +207,28 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/item-update", name="itemUpdate")
+     * @Route("/item-update/{id}", name="itemUpdate")
      */
-    public function itemUpdateAction(Request $request)
+    public function itemUpdateAction(Request $request,$id=0)
     {
           
                
             if (isset($_POST['update-btn'])) {
-                $em = $this->getDoctrine()->getManager();
-                $item = $em->getRepository('AppBundle:Products')->find(5);
+
                 $name =  $_POST['productName'];
+                $price =  $_POST['price'];
+                $category =  $_POST['category'];
+                $description =  $_POST['description'];
+                $tags =  $_POST['tags'];
+
+                $em = $this->getDoctrine()->getManager();
+                $item = $em->getRepository('AppBundle:Products')->find($id);
 
                 $item->setName($name);
+                $item->setPrice($price);
+                $item->setCategory($category);
+                $item->setDescription($description);
+                $item->setTags($tags);
                 $em->flush();
                 return $this->redirectToRoute('edit');
 
