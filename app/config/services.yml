@@ -3,7 +3,14 @@
 parameters:
 #    parameter_name: value
 
-services:
+#services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+services:
+    app.tokens.action_listener:
+        class: AppBundle\EventListener\TokenListener
+        arguments: ['%tokens%']
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }

@@ -10,7 +10,11 @@ namespace AppBundle\Repository;
  */
 class CommentsRepository extends \Doctrine\ORM\EntityRepository
 {
-	public function findAllLimit()
+	public function findAllLimit($limit=5 , $offset=0)
+    {
+        return $this->findBy(array(), array('date' => 'DESC'),$limit, $offset);
+    }
+    public function findAllLimitClean()
     {
         return $this->findBy(array(), array('date' => 'DESC'),5);
     }

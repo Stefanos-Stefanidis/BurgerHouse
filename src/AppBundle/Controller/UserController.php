@@ -9,11 +9,12 @@ use AppBundle\Entity\Newsletter;
 use AppBundle\Entity\Comments;
 use AppBundle\Entity\Products;
 use AppBundle\Entity\Login;
+use AppBundle\Entity\Users;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-class UserController extends Controller
+class UserController extends Controller 
 {
     /**
      * @Route("/", name="homepage")
@@ -55,8 +56,11 @@ class UserController extends Controller
     /**
      * @Route("/comments", name="comments")
      */
-    public function commentsAction()
+    public function commentsAction(Request $request)
     {
+        $session = $request->getSession();
+        $session->set('offset',0);
+
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
                     ->findAllLimit();
@@ -70,7 +74,9 @@ class UserController extends Controller
      * @Route("/commentsRefresh", name="commentsRefresh")
      */
     public function commentsRefreshAction()
-    {
+    {       
+    
+            
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
                     ->findAllLimit();
@@ -79,6 +85,29 @@ class UserController extends Controller
             ));        
 
     }  
+
+    /**
+    * @Route("/next", name="next")
+    */
+    public function nextAction($limit =5 ,Request $request)
+    {     
+        $session = $request->getSession();
+        $offset = $session->get('offset');
+            $offset = $offset +5;
+            $session->set('offset', $offset);
+  
+  
+    
+
+            
+        $comments = $this->getDoctrine()
+                    ->getRepository('AppBundle:Comments')
+                    ->findAllLimit($limit,$offset);
+        return $this->render('default/commentsRefresh.html.twig',array(
+                'comments'=>$comments
+            ));        
+
+    } 
 
 
     /**
@@ -136,31 +165,49 @@ class UserController extends Controller
     }
 
     /**
-    * @Route("/admin", name="admin")
+    * @Route("/login", name="login")
     */
-    public function adminAction(Request $request)
+    public function loginAction(Request $request)
     {
         if (isset($_POST['loginBtn'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-
                 $userFound = $this->getDoctrine()
                     ->getRepository('AppBundle:Login')
                     ->findOneBy(
                     array('username' => $username, 'password' => $password));
 
+                $userExist = $this->getDoctrine()
+                    ->getRepository('AppBundle:Users')
+                    ->findOneBy(
+                    array('mail' => $username, 'password' => $password));
+                    if ($userExist) {
+                        $session = $request->getSession();
+                        $session->set('user', 'logged');
+                        return $this->redirectToRoute('list');
+                    }
                     if ($userFound) {
                        
-                        $session = $request->getSession();
-                        $session->set('admin', 'TRUE');
-                        return $this->redirectToRoute('homeAdmin'); 
+                        $isAdmin = $this->getDoctrine()
+                        ->getRepository('AppBundle:Login')
+                        ->findOneBy(
+                        array('username' => $username, 'password' => $password,'type' => 'admin'));
+
+                        if ($isAdmin) {
+                            $session = $request->getSession();
+                            $session->set('admin', 'TRUE');
+                            return $this->redirectToRoute('homeAdmin'); 
+                        }else{
+                            return $this->redirectToRoute('list');                        
+                        }
+                       
                     }
                     else{
                         $this->addFlash(
                             'notice',
                             'Incorect username or password'
                         );
-                        return $this->redirectToRoute('admin');                        
+                        return $this->redirectToRoute('login');                        
                     }
         }else{
             return $this->render('default/login.html.twig');
@@ -202,5 +249,34 @@ class UserController extends Controller
             ));        
 
     } 
+
+    /**
+     * @Route("/add-user", name="add-user")
+     */
+    public function registerAction(Request $request)
+    {
+        if (isset($_POST['firstName'])) {
+            $name = $_POST['firstName'];
+            $surname = $_POST['lastName'];
+            $mail = $_POST['email'];
+            $pass = $_POST['password'];
+
+            $addUser = new Users();
+
+            $addUser -> setName($name)
+                    -> setLastname($surname)
+                    -> setMail($mail)
+                    -> setPassword($pass);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($addUser);
+            $em->flush();
+            return $this->redirectToRoute('login'); 
+        }
+       else{
+            return $this->redirectToRoute('login');  
+       }        
+
+    } 
+
 
 }

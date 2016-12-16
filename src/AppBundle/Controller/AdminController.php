@@ -10,8 +10,10 @@ use AppBundle\Entity\Category;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Session\Session;
+use AppBundle\Controller\TokenAuthenticatedController;
 
-class AdminController extends Controller
+
+class AdminController extends Controller implements TokenAuthenticatedController
 {
     /**
      * @Route("/admin-homepage", name="homeAdmin")

@@ -2,6 +2,7 @@
 
 {% block body %}
 <div id="wait"><i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i></div>
+<div id="loading-wrapper"></div>
 	<div class="container margin-top-100" >
 		<h2>Add your comment here</h2>
 		<div class="row">
@@ -32,8 +33,17 @@
 					</p>
 					<p id="comment">{{comment.comment}}</p>
 				{% endfor%}
+				<!-- <form method="post" action="commentsRefresh" > -->
+				<!-- </form> -->
 			</div>
+			<div class="col-xs-8 col-xs-push-4 col-md-5 col-md-push-7 margin-top-10">
+				<button  class="btn btn-primary btn-block" id="nextComment"name="next">
+					Next five comments <span class="fa fa-forward"></span>
+				</button>
 
+			</div>
+			
+			
 		</div>
 				
 	</div>
