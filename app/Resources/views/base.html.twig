@@ -37,8 +37,8 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="/BurgerHouse/web/">
-                                    <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+                                <a href="{{asset('basket')}}">
+                                    <span id= "shop-basket" class="fa fa-shopping-cart" aria-hidden="true"> (0)</span>
                                 </a>
                             </li>
                             <li>
@@ -130,6 +130,7 @@
         <script src="{{ asset('js/comment.js') }}"></script> 
         <script src="{{ asset('js/goTop.js') }}"></script> 
         <script src="{{ asset('js/contact.js') }}"></script> 
+        <script src="{{ asset('js/cart.js') }}"></script> 
         <script src="{{ asset('js/flash.js') }}"></script> 
     
     {% endblock %}

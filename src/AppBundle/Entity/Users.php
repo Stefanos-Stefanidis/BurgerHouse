@@ -29,6 +29,14 @@ class Users
      */
     private $name;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type;
+
     /**
      * @var string
      *
@@ -160,6 +168,20 @@ class Users
     }
 
     /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Users
+     */
+
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+    /**
      * Get password
      *
      * @return string
@@ -169,6 +191,16 @@ class Users
         return $this->password;
     }
 
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
     /**
      * Set date
      *

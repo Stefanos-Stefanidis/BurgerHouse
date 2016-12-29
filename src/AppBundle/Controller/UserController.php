@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Newsletter;
 use AppBundle\Entity\Comments;
+use AppBundle\Entity\Cart;
 use AppBundle\Entity\Products;
 use AppBundle\Entity\Login;
 use AppBundle\Entity\Users;
@@ -54,6 +55,72 @@ class UserController extends Controller
     }	
 
     /**
+     * @Route("/cart", name="cart")
+     */
+    public function cartAction(Request $request)
+    {
+        
+        $session = $request->getSession();
+        $usermailsess = $session->get('user');
+        $prname =  $_POST['name'];
+        $prprice =  $_POST['price'];
+        // replace this example code with whatever you need
+        $cart = new Cart();
+
+        $cart   -> setPrname($prname)
+                -> setPrice($prprice)
+                ->setUser($usermailsess);
+
+        $em = $this->getDoctrine()->getManager();
+
+        // tells Doctrine you want to (eventually) save the Product (no queries yet)
+        $em->persist($cart);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+       // return $this->render('default/details.html.twig');        
+
+
+    }
+
+    /**
+     * @Route("/basket", name="basket")
+     */
+    public function basketAction(Request $request)
+    {
+        $session = $request->getSession();
+        $usermailsess = $session->get('user');
+
+        $basket = $this->getDoctrine()
+                    ->getRepository('AppBundle:Cart')
+                    ->findByUser($usermailsess);
+        return $this->render('default/basket.html.twig',array(
+                'items'=>$basket
+            ));        
+
+    }  
+
+
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function deleteAction($id=0, Request $request)
+    {   
+
+        $em = $this->getDoctrine()->getManager();
+        $item = $em->getRepository('AppBundle:Cart')->find($id);
+       
+        $em->remove($item);
+        $em->flush();
+        $this->addFlash(
+            'notice',
+            'Item removed from basket'
+        );
+        return $this->redirectToRoute('basket');        
+    }
+
+    /**
      * @Route("/comments", name="comments")
      */
     public function commentsAction(Request $request)
@@ -68,7 +135,8 @@ class UserController extends Controller
                 'comments'=>$comments
             ));        
 
-    } 
+    }
+
 
     /**
      * @Route("/commentsRefresh", name="commentsRefresh")
@@ -172,32 +240,24 @@ class UserController extends Controller
         if (isset($_POST['loginBtn'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-                $userFound = $this->getDoctrine()
-                    ->getRepository('AppBundle:Login')
-                    ->findOneBy(
-                    array('username' => $username, 'password' => $password));
-
                 $userExist = $this->getDoctrine()
                     ->getRepository('AppBundle:Users')
                     ->findOneBy(
-                    array('mail' => $username, 'password' => $password));
+                    array('mail' => $username, 'password' => $password));    
                     if ($userExist) {
-                        $session = $request->getSession();
-                        $session->set('user', 'logged');
-                        return $this->redirectToRoute('list');
-                    }
-                    if ($userFound) {
                        
                         $isAdmin = $this->getDoctrine()
-                        ->getRepository('AppBundle:Login')
+                        ->getRepository('AppBundle:Users')
                         ->findOneBy(
-                        array('username' => $username, 'password' => $password,'type' => 'admin'));
+                        array('mail' => $username, 'password' => $password,'type' => 'admin'));
 
                         if ($isAdmin) {
                             $session = $request->getSession();
                             $session->set('admin', 'TRUE');
                             return $this->redirectToRoute('homeAdmin'); 
                         }else{
+                            $session = $request->getSession();
+                            $session->set('user', $username);
                             return $this->redirectToRoute('list');                        
                         }
                        
@@ -266,7 +326,8 @@ class UserController extends Controller
             $addUser -> setName($name)
                     -> setLastname($surname)
                     -> setMail($mail)
-                    -> setPassword($pass);
+                    -> setPassword($pass)
+                    -> setType("user");
             $em = $this->getDoctrine()->getManager();
             $em->persist($addUser);
             $em->flush();

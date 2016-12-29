@@ -2,7 +2,6 @@
 	var data;
 	var username;
 	var comment;
-	var next ="ss";
 	$(document).ready(function(){
 
 
