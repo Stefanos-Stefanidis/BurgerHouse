@@ -17,6 +17,7 @@
 			<p id="dlt-product" ><a href="delete/{{item.id}}" class="fa fa-trash fa-2x"></a></p>
 		</div>
 	{% endfor %}
+	
 	</div>
 	<hr>
 	{% for flash in app.session.flashbag.get('notice') %}
@@ -25,7 +26,15 @@
 		</div>
 	{% endfor%}
 	<p class="pull-right">Total price {{ totalPrice }}&euro; </p>
-	<button class="pull-left btn btn-success">Send order</button>
-
 </div>
+<div class="container margin-top-10 ">
+	<p class="text-info">Want something extra!?</p>
+	<div class="col-md-6 col-md-push-2">
+		<textarea class="form-control" rows="3"></textarea>
+	</div>
+	<div class="col-md-12 margin-top-10">
+		<button class="btn btn-success pull-right">Send order</button>
+	</div>		
+</div>
+
 {% endblock %}

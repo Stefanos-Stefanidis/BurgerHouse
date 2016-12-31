@@ -26,13 +26,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                <a class="navbar-brand" href="/BurgerHouse/web/" id="logo">Stef Burger</a>
+                <a class="navbar-brand" id="logo">Stef Burger</a>
                 </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="/BurgerHouse/web/">Home</a></li>
                             <li><a href="/BurgerHouse/web/list">List</a></li>
-                            <li><a href="comments">Comments</a></li>
+                            <li><a href="{{asset('comments')}}">Comments</a></li>
                             <li><a href="contact">Contact</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -123,6 +123,7 @@
     {% block javascripts %}
 
         <script src="{{ asset('js/jquery.min.js') }}"></script> 
+        <script src="{{ asset('js/cookies.min.js') }}"></script> 
         <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
         <script src="{{ asset('js/validation.js') }}"></script> 
         <script src="{{ asset('js/modals.js') }}"></script> 

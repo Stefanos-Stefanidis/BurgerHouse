@@ -57,6 +57,9 @@ gulp.task('compoments', function() {
 	var bootstrapjs = gulp.src('assets/bower_components/bootstrap/dist/js/bootstrap.min.js')
 		.pipe(gulp.dest('web/js'));
 
+	var cookiejs = gulp.src('assets/bower_components/cookies-js/dist/cookies.min.js')
+		.pipe(gulp.dest('web/js'));
+
   
 });
 
