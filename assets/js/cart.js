@@ -22,11 +22,11 @@ $(document).ready(function(){
 		data += "&name="+productName;
 		$.ajax({
 			type: "POST",
-			url: '/BurgerHouse/web/cart',
+			url: '/cart',
 			data: data
 
 		});
-		
+
 		setTimeout(function () {
 			$("#shop-basket").removeClass("animated wobble");			
 		}, 1200)

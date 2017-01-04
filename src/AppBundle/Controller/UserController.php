@@ -79,8 +79,7 @@ class UserController extends Controller
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-       // return $this->render('default/details.html.twig');        
-
+        return $this->render('default/index.html.twig');
 
     }
 
@@ -280,11 +279,26 @@ class UserController extends Controller
      */
     public function listAction()
     {
-        $listItems = $this->getDoctrine()
+        $listAppet = $this->getDoctrine()
                     ->getRepository('AppBundle:Products')
-                    ->findAll();
+                    ->findByCategory('appetizer');
+
+        $listSalads = $this->getDoctrine()
+                    ->getRepository('AppBundle:Products')
+                    ->findByCategory('salad');
+
+
+        $listBurgers = $this->getDoctrine()
+                    ->getRepository('AppBundle:Products')
+                    ->findByCategory('burgers');
+
+        $listDrinks = $this->getDoctrine()
+                    ->getRepository('AppBundle:Products')
+                    ->findByCategory('drinks');
+
         return $this->render('default/list.html.twig',array(
-                'list'=>$listItems
+                'appetizers'=>$listAppet,'salads'=>$listSalads,
+                'burgers'=>$listBurgers,'drinks'=>$listDrinks
             ));        
 
     } 

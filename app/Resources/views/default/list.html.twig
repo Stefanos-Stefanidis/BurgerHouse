@@ -1,19 +1,81 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div id="list-nav">
+	<ul>
+		<li>Appetizers</li>
+		<li>Salads</li>
+		<li>Burgers</li>
+		<li>Drinks</li>
+	</ul>
+</div>
 <div class="panel panel-default margin-top-100 container">
 	<div class="container margin-top-10">
-		{% for listItem in list%}
-		 <div class="col-md-8 col-sm-8 col-xs-10"> 
-			<span>{{listItem.name}}</span>
-			<p class="text-muted">{{listItem.description}}</p>
+		<div class="col-xs-12">
+			<h3>Appetizers</h3>
 		</div>
-		<div class="col-md-1 col-sm-1 col-md-pull-3 col-xs-2"> 
-			<strong>{{listItem.price}}&euro;</strong>
+		
+		{% for appetizer in appetizers%}
+		<div class="col-md-6 col-sm-6">
+			<div class="col-md-12  col-xs-12 margin-top-10"> 
+				<a  href="details/{{appetizer.id}}">
+					<span class="btn btn-info btn-md">{{appetizer.name}} 
+						<strong> {{appetizer.price}}&euro;</strong>
+					</span>
+				</a>
+			</div>
 		</div>
-		<div class="col-md-3 col-sm-3 col-xs-12"> 
-			<!-- <button class="btn btn-success btn-sm addCart">Grap it</button> -->
-			<a class="btn btn-info btn-sm" href="details/{{listItem.id}}">Details</a>
+
+		{% endfor%}
+
+		<div class="col-xs-12 margin-top-10">
+			<h3 >Salads</h3>
+		</div>
+		
+
+		{% for salad in salads%}
+		<div class="col-md-6 col-sm-6">
+			<div class="col-md-12  col-xs-12 margin-top-10"> 
+				<a  href="details/{{salad.id}}">
+					<span class="btn btn-info btn-md">{{salad.name}} 
+						<strong> {{salad.price}}&euro;</strong>
+					</span>
+				</a>
+			</div>
+		</div>
+		{% endfor%}
+
+		<div class="col-xs-12 margin-top-10">
+			<h3>Burgers</h3>
+		</div>
+		
+
+		{% for burger in burgers%}
+		<div class="col-md-6 col-sm-6">
+			<div class="col-md-12  col-xs-12 margin-top-10"> 
+				<a  href="details/{{burger.id}}">
+					<span class="btn btn-info btn-md">{{burger.name}} 
+						<strong> {{burger.price}}&euro;</strong>
+					</span>
+				</a>
+			</div>
+		</div>
+		{% endfor%}
+
+		<div class="col-xs-12 margin-top-10">
+			<h3 >Drinks</h3>
+		</div>
+		
+		
+		{% for drink in drinks%}
+		<div class="col-md-6 col-sm-6">
+			<div class="col-md-12  col-xs-12 margin-top-10"> 
+				<a  href="details/{{drink.id}}">
+					<p class="btn btn-info btn-md">{{drink.name}} 
+						<strong> {{drink.price}}&euro;</strong>
+					</p>
+				</a>
+			</div>
 		</div>
 		{% endfor%}
 	</div>

@@ -1,23 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div class="col-xs-12 text-center">
+<div class="container margin-top-100">
+	<div class="col-md-4 text-center">
 		<img src="{{ asset('images/col1.jpg') }}" class="img-thumbnail" alt="cake" width="304" height="236"> 
 	</div>
-	<div class="margin-top-100 container">
-		<div class="container">
-			<h1 id="prname">{{item.name}}</h1>
-			<p class="pull-right"><span id="prprice">{{item.price}}</span>&euro;</p>
-			<!-- <span id="prprice">1</span> -->
-			<p class="text-center">{{item.description}}</p>
-			{%set tag = item.tags|split(',')%}
-			
-			{% for split in tag%}
-				<p class="fa fa-tag ">{{split}}</p>
-			{% endfor%}
-			<br>
-			<button class="btn btn-success btn-sm addCart">Grap me</button>
-		</div>
+	<div class="col-md-8 margin-top-100">
+		<p class="text-center">{{item.description}}</p>
 	</div>
+	<div class="margin-top-100 container">
+			<div class="col-md-12 text-center">
+				<hr>
+				<h1 id="prname">{{item.name}}</h1>
+			</div>
+			{%set tag = item.tags|split(',')%}
+			<div class="col-md-6">
+				
+				{% for split in tag%}
+					<p class="fa fa-tag ">{{split}}</p>
+				{% endfor%}
+			</div>
+			<div class="col-md-6">
+				<h4 class="pull-right"><span id="prprice">{{item.price}}</span>&euro;</h4>
+			</div>
+			<div class="col-md-6">
+				<button class="btn btn-success btn-sm addCart">Grap me</button>
+			</div>
+	</div>
+</div>
 {% endblock %}
 
