@@ -1,0 +1,39 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div>
+	<button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col ">
+			{% for product in products %}
+				<div class="panel">
+					<p class="pr-name"> {{product.name}},{{product.price}}&euro;</p>
+				</div>
+			{% endfor%}
+		</div>
+		<div class="col-xs-6 col-md-4 margin-top-100 col-md-push-2">
+			<p id="create-offer-box" class="fa fa-gift fa-10x text-danger"> <span id="send-offer">Click to send</span> </p>
+			<br class="margin-top-100">
+				<div class=" panel margin-top-100 ">
+					<span id="offer-box" ></span>
+					<div>
+					<hr>
+					{% for offer in offers %}
+							<p>
+								{{offer.product}}
+								<a  class="btn btn-xs btn-danger pull-right return" href="/remove/{{offer.id}}">Remove</a>
+							</p>
+					{% endfor %}
+					</div>
+				</div>
+				<div class="panel col-xs-2 pull-right">
+					<h3 id="total-price">0</h3>
+				</div>
+		</div>
+
+		
+	</div>
+</div>
+{% endblock %}

@@ -29,6 +29,10 @@
 
 		});
 		
+		$(".view-offers").click(function(){
+			document.getElementById("offersli").click();
+		});
+		
 
 	});
 

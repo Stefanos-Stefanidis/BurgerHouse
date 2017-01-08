@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Products;
 use AppBundle\Entity\Category;
+use AppBundle\Entity\Offers;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -31,7 +32,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
             
         }
     }
-       
+
     /**
      * @Route("/add-product", name="add-product")
      */
@@ -39,7 +40,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
     {
 
         if (isset($_POST['add-btn'])) {
-            
+
             $name =  $_POST['productName'];
             $price =  $_POST['price'];
             $category = $_POST['category'];
@@ -49,10 +50,10 @@ class AdminController extends Controller implements TokenAuthenticatedController
             $addProduct = new Products();
 
             $addProduct -> setName($name)
-                        -> setPrice($price)
-                        -> setCategory($category)
-                        -> setDescription($description)
-                        -> setTags($tags);
+            -> setPrice($price)
+            -> setCategory($category)
+            -> setDescription($description)
+            -> setTags($tags);
 
             $em = $this->getDoctrine()->getManager();
 
@@ -65,7 +66,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
             $this->addFlash(
                 'notice',
                 'Product added'
-            );
+                );
             return $this->redirectToRoute('add-product'); 
 
         }
@@ -83,7 +84,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
             $this->addFlash(
                 'notice',
                 'Category added'
-            );
+                );
 
             return $this->redirectToRoute('add-product'); 
 
@@ -93,19 +94,19 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $admin = $session->get('admin');
 
         if ($admin) {
-            
+
             $categories = $this->getDoctrine()
-                ->getRepository('AppBundle:Category')
-                ->findAll();
+            ->getRepository('AppBundle:Category')
+            ->findAll();
             return $this->render('default/addProduct.html.twig',array(
                 'category'=>$categories
-            ));           
+                ));           
         }
         else{
             return $this->render('default/login.html.twig');
             
         }
- 
+
     }
 
     /**
@@ -117,8 +118,20 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $admin = $session->get('admin');
 
         if ($admin) {
-            
-            return $this->render('default/addOffer.html.twig');           
+
+            $offer1 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(1);
+            $offer2 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(2);
+            $offer3 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(3);
+
+            return $this->render('default/addOffer.html.twig',array(
+                'offers1'=>$offer1,'offers2'=>$offer2,'offers3'=>$offer3
+                ));        
         }
         else{
             return $this->render('default/login.html.twig');
@@ -126,6 +139,74 @@ class AdminController extends Controller implements TokenAuthenticatedController
         }
     }
 
+
+    /**
+    * @Route("/createOffer/{id}", name="createOffer")
+    */
+    public function createOfferAction($id=0,Request $request)
+    {
+
+        $product = $this->getDoctrine()
+        ->getRepository('AppBundle:Products')
+        ->findAll();
+
+        $offer = $this->getDoctrine()
+        ->getRepository('AppBundle:Offers')
+        ->findByOffer($id);
+
+        return $this->render('default/manageOffers.html.twig',array(
+            'offers'=>$offer,'products'=>$product
+            ));          
+
+    }
+    
+    /**
+    * @Route("/remove", name="removeOffer")
+    */
+    public function removeOfferAction(Request $request)
+    {
+        $id =  $_POST['removeid'];
+        $em = $this->getDoctrine()->getManager();
+        $offer = $em->getRepository('AppBundle:Offers')->find($id);
+
+        $em->remove($offer);
+        $em->flush();
+
+        return $this->redirectToRoute('createOffer');
+
+    }
+    /**
+    * @Route("/post-offer", name="post-offer")
+    */
+    public function postOfferAction(Request $request)
+    {
+        $offer =  $_POST['products'];
+        $prprice =  $_POST['price'];
+        $offerNum =  $_POST['offer'];
+       
+        $offerArray = explode(",",$offer);
+        $priceArray = explode(",",$prprice);
+        
+        for ($i=0; $i < (sizeof($offerArray)-1) ; $i++) { 
+                $createOffer = new Offers();
+                $createOffer  -> setProduct($offerArray[$i])
+                -> setTimes($priceArray[$i])
+                ->setOffer($offerNum);
+
+                $em = $this->getDoctrine()->getManager();
+
+            // tells Doctrine you want to (eventually) save the Product (no queries yet)
+                $em->persist($createOffer);
+
+            // actually executes the queries (i.e. the INSERT query)
+                $em->flush();
+
+        }
+        
+
+        return $this->redirectToRoute('createOffer');          
+
+    }
     /**
      * @Route("/edit", name="edit")
      */
@@ -135,12 +216,12 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $admin = $session->get('admin');
 
         if ($admin) {
-                $listItems = $this->getDoctrine()
-                    ->getRepository('AppBundle:Products')
-                    ->findAll();
-        return $this->render('default/editList.html.twig',array(
+            $listItems = $this->getDoctrine()
+            ->getRepository('AppBundle:Products')
+            ->findAll();
+            return $this->render('default/editList.html.twig',array(
                 'list'=>$listItems
-            ));            
+                ));            
         }
         else{
             return $this->render('default/login.html.twig');
@@ -159,23 +240,23 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $admin = $session->get('admin');
 
         if ($admin) {
-            
+
             $em = $this->getDoctrine()->getManager();
             $item = $em->getRepository('AppBundle:Products')->find($id);
-           
+
             $em->remove($item);
             $em->flush();
             $this->addFlash(
                 'notice',
                 'Item deleted'
-            );
-        return $this->redirectToRoute('edit');        
+                );
+            return $this->redirectToRoute('edit');        
         }
         else{
             return $this->render('default/login.html.twig');
             
         }
- 
+
 
     }
 
@@ -188,18 +269,18 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $admin = $session->get('admin');
 
         if ($admin) {
-            
+
             $em = $this->getDoctrine()->getManager();
             $item = $em->getRepository('AppBundle:Products')->find($id);
             $categories = $em->getRepository('AppBundle:Category')->findAll();
             return $this->render('default/editItem.html.twig',array(
                 'item'=>$item,'categories'=>$categories
-            ));        
+                ));        
 
             $this->addFlash(
                 'notice',
                 'Item deleted'
-            );
+                );
         }
         else{
             return $this->render('default/login.html.twig');
@@ -213,28 +294,28 @@ class AdminController extends Controller implements TokenAuthenticatedController
      */
     public function itemUpdateAction(Request $request,$id=0)
     {
-          
-               
-            if (isset($_POST['update-btn'])) {
 
-                $name =  $_POST['productName'];
-                $price =  $_POST['price'];
-                $category =  $_POST['category'];
-                $description =  $_POST['description'];
-                $tags =  $_POST['tags'];
 
-                $em = $this->getDoctrine()->getManager();
-                $item = $em->getRepository('AppBundle:Products')->find($id);
+        if (isset($_POST['update-btn'])) {
 
-                $item->setName($name);
-                $item->setPrice($price);
-                $item->setCategory($category);
-                $item->setDescription($description);
-                $item->setTags($tags);
-                $em->flush();
-                return $this->redirectToRoute('edit');
+            $name =  $_POST['productName'];
+            $price =  $_POST['price'];
+            $category =  $_POST['category'];
+            $description =  $_POST['description'];
+            $tags =  $_POST['tags'];
 
-            }
+            $em = $this->getDoctrine()->getManager();
+            $item = $em->getRepository('AppBundle:Products')->find($id);
+
+            $item->setName($name);
+            $item->setPrice($price);
+            $item->setCategory($category);
+            $item->setDescription($description);
+            $item->setTags($tags);
+            $em->flush();
+            return $this->redirectToRoute('edit');
+
+        }
     }
 
     /**
@@ -249,7 +330,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $this->addFlash(
             'notice',
             'Comment deleted'
-        );
+            );
 
         return $this->redirectToRoute('manageComments');
 
@@ -265,12 +346,12 @@ class AdminController extends Controller implements TokenAuthenticatedController
 
         if ($admin) {         
             $comments = $this->getDoctrine()
-                ->getRepository('AppBundle:Comments')
-                ->findAllDesc();
+            ->getRepository('AppBundle:Comments')
+            ->findAllDesc();
             return $this->render('default/manageComments.html.twig',array(
                 'comments'=>$comments
-            ));        
-         
+                ));        
+
         }
         else{
             return $this->render('default/login.html.twig');    

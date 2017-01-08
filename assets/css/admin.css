@@ -16,10 +16,18 @@
 .margin-top-10{
 	margin-top: 10px;
 }
+
+.margin-bottom-10{
+  margin-bottom: 10px;
+}
 .nav-panel{
 	/* width: 75%;
 	right: 2%; */
 
+}
+
+.fa-10x{
+	font-size: 150px;
 }
 
 .margin-left{
@@ -66,4 +74,15 @@
 .border::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+#create-offer-box{
+	position: fixed;
+}
+#send-offer{
+	font-size: 14px;
+	color:green;
+	cursor: pointer;
+}
+.remove-offer{
+	cursor: pointer;
 }
