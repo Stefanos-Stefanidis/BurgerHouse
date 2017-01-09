@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<!-- TODO: comment "next five" does not stop when all comments finished -->
 <div id="wait"><i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i></div>
 <div id="loading-wrapper"></div>
 	<div class="container margin-top-100" >
@@ -9,10 +10,10 @@
 		<div class="jumbotron">
 			<div class="container">
 				<div class="row">
-					<div class="form-group">
+					<!-- <div class="form-group">
 					    <label for="usernameComment">username</label>
 					    <input type="text" class="form-control half-input" id="usernameComment" name="usernameComment" placeholder="username">
-					  </div>
+					  </div> -->
 					  <div class="form-group">
 					    <label for="commentBox">Comment</label>
 					    <textarea type="text" name="bodyMessage" class="form-control" id="commentBox" rows="5"></textarea>

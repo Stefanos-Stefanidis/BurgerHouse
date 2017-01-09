@@ -1,6 +1,7 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
+<!-- TODO: better front end for the fa-gift make pagination for products remove from list before send -->
 <div>
 	<button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
 </div>
@@ -29,7 +30,11 @@
 					</div>
 				</div>
 				<div class="panel col-xs-2 pull-right">
-					<h3 id="total-price">0</h3>
+					{% set totalPrice = 0 %}
+					{% for offer in offers  %}
+						{% set totalPrice = totalPrice + offer.times %}
+					{% endfor %}
+					<h4 id="total-price">{{totalPrice}}&euro;</h4>
 				</div>
 		</div>
 

@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use AppBundle\Controller\TokenAuthenticatedController;
 
 
-class AdminController extends Controller implements TokenAuthenticatedController
+class AdminController extends Controller /*implements TokenAuthenticatedController*/
 {
     /**
      * @Route("/admin-homepage", name="homeAdmin")
@@ -24,7 +24,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $session = $request->getSession();
         $admin = $session->get('admin');
 
-        if ($admin) {
+        if ($admin=='TRUE') {
             return $this->render('default/admin.html.twig');           
         }
         else{
@@ -33,6 +33,17 @@ class AdminController extends Controller implements TokenAuthenticatedController
         }
     }
 
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logoutAction(Request $request)
+    {
+        $session = $request->getSession();
+        $session->set('admin', 'FALSE');
+
+        return $this->redirectToRoute('login');
+            
+    }
     /**
      * @Route("/add-product", name="add-product")
      */
@@ -93,7 +104,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $session = $request->getSession();
         $admin = $session->get('admin');
 
-        if ($admin) {
+        if ($admin=='TRUE') {
 
             $categories = $this->getDoctrine()
             ->getRepository('AppBundle:Category')
@@ -117,7 +128,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $session = $request->getSession();
         $admin = $session->get('admin');
 
-        if ($admin) {
+        if ($admin=='TRUE') {
 
             $offer1 = $this->getDoctrine()
             ->getRepository('AppBundle:Offers')
@@ -215,7 +226,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $session = $request->getSession();
         $admin = $session->get('admin');
 
-        if ($admin) {
+        if ($admin=='TRUE') {
             $listItems = $this->getDoctrine()
             ->getRepository('AppBundle:Products')
             ->findAll();
@@ -239,7 +250,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $session = $request->getSession();
         $admin = $session->get('admin');
 
-        if ($admin) {
+        if ($admin=='TRUE') {
 
             $em = $this->getDoctrine()->getManager();
             $item = $em->getRepository('AppBundle:Products')->find($id);
@@ -268,7 +279,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $session = $request->getSession();
         $admin = $session->get('admin');
 
-        if ($admin) {
+        if ($admin=='TRUE') {
 
             $em = $this->getDoctrine()->getManager();
             $item = $em->getRepository('AppBundle:Products')->find($id);
@@ -344,7 +355,7 @@ class AdminController extends Controller implements TokenAuthenticatedController
         $session = $request->getSession();
         $admin = $session->get('admin');
 
-        if ($admin) {         
+        if ($admin=='TRUE') {         
             $comments = $this->getDoctrine()
             ->getRepository('AppBundle:Comments')
             ->findAllDesc();

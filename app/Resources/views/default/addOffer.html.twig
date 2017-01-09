@@ -17,7 +17,11 @@
 					{% endfor%}
 				</div>
 				<div class="panel col-xs-2 pull-right">
-				 	<h4>0</h4>
+					{% set totalPrice1 = 0 %}
+					{% for offer in offers1  %}
+						{% set totalPrice1 = totalPrice1 + offer.times %}
+					{% endfor %}
+					<h4>{{totalPrice1}}&euro;</h4>
 				</div>
 			</div>
 			
@@ -26,11 +30,15 @@
 				<a class="btn-xs btn btn-primary" href="createOffer/2">Edit</a>
 				<div class="panel">
 					{% for offer in offers2%}
-						<h3> {{offer.product}}</h3>
+					<h3> {{offer.product}}</h3>
 					{% endfor%}
 				</div>
 				<div class="panel col-xs-2 pull-right">
-				 	<h4>0</h4>
+					{% set totalPrice2 = 0 %}
+					{% for offer in offers2  %}
+						{% set totalPrice2 = totalPrice2 + offer.times %}
+					{% endfor %}
+					<h4>{{totalPrice2}}&euro;</h4>
 				</div>
 			</div>		
 			
@@ -39,11 +47,15 @@
 				<a class="btn-xs btn btn-primary" href="createOffer/3">Edit</a>
 				<div class="panel">
 					{% for offer in offers3%}
-						<h3> {{offer.product}}</h3>
+					<h3> {{offer.product}}</h3>
 					{% endfor%}
 				</div>
 				<div class="panel col-xs-2 pull-right">
-				 	<h4>0</h4>
+					{% set totalPrice3 = 0 %}
+					{% for offer in offers3  %}
+						{% set totalPrice3 = totalPrice3 + offer.times %}
+					{% endfor %}
+					<h4>{{totalPrice3}}&euro;</h4>
 				</div>
 			</div>
 		</div>

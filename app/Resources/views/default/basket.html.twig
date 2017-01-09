@@ -5,19 +5,20 @@
 
 	<div class="container margin-top-10">
 		{% set totalPrice = 0 %}
-		{% for item in items  %}
-		{% set totalPrice = totalPrice + item.price %}
-		 <div class="col-md-8 col-sm-8 col-xs-10"> 
-			<h4>{{item.prname}}  </h4>
-		</div>
-		 <div class="col-md-1 col-sm-8 col-xs-10"> 
-			<h4>{{item.price}}&euro;</h4>
-		</div>
-		<div class="col-md-3">
-			<p id="dlt-product" ><a href="delete/{{item.id}}" class="fa fa-trash fa-2x"></a></p>
-		</div>
-	{% endfor %}
-	
+		<div id="order">
+			{% for item in items  %}
+				{% set totalPrice = totalPrice + item.price %}
+				<div class="col-md-8 col-sm-8 col-xs-12"> 
+					<h4>{{item.prname}}</h4>
+				</div>
+				 <div class="col-md-1 col-sm-2 col-xs-6"> 
+					<h4>{{item.price}}&euro;</h4>
+				</div>
+				<div class="col-md-3 col-sm-2 col-xs-6">
+					<p id="dlt-product" ><a href="delete/{{item.id}}" class="fa fa-trash fa-2x"></a></p>
+				</div>
+			{% endfor %}
+		 </div>
 	</div>
 	<hr>
 	{% for flash in app.session.flashbag.get('notice') %}
@@ -25,15 +26,15 @@
 			{{flash}}
 		</div>
 	{% endfor%}
-	<h3 class="pull-right text-info">Total price {{ totalPrice }}&euro; </h3>
+	<h3 id="order-price" class="pull-right text-info">Total price {{ totalPrice }}&euro; </h3>
 </div>
 <div class="container margin-top-10 ">
 	<p class="text-info">Want something extra!?</p>
 	<div class="col-md-6 col-md-push-2">
-		<textarea class="form-control" rows="3"></textarea>
+		<textarea id="description" class="form-control" rows="3"></textarea>
 	</div>
 	<div class="col-md-12 margin-top-10">
-		<button class="btn btn-success pull-right">Send order</button>
+		<button  id="send-order"   class="btn btn-success pull-right">Send order</button>
 	</div>		
 </div>
 

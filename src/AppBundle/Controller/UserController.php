@@ -11,6 +11,7 @@ use AppBundle\Entity\Cart;
 use AppBundle\Entity\Products;
 use AppBundle\Entity\Login;
 use AppBundle\Entity\Users;
+use AppBundle\Entity\Notice;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -22,8 +23,18 @@ class UserController extends Controller
      */
     public function indexAction(Request $request)
     {
-
-        return $this->render('default/index.html.twig');
+        $offer1 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(1);
+        $offer2 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(2);
+        $offer3 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(3);
+        return $this->render('default/index.html.twig',array(
+                'offers1'=>$offer1,'offers2'=>$offer2,'offers3'=>$offer3
+                ));
        
     }
 
@@ -70,13 +81,8 @@ class UserController extends Controller
         $cart   -> setPrname($prname)
                 -> setPrice($prprice)
                 ->setUser($usermailsess);
-
         $em = $this->getDoctrine()->getManager();
-
-        // tells Doctrine you want to (eventually) save the Product (no queries yet)
         $em->persist($cart);
-
-        // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
         return $this->render('default/index.html.twig');
@@ -101,6 +107,39 @@ class UserController extends Controller
     }  
 
 
+    /**
+    * @Route("/send-order", name="send-order")
+    */
+    public function sendAction(Request $request)
+    {
+        $session = $request->getSession();
+        $usermailsess = $session->get('user');
+
+        $order =  $_POST['order'];
+        $orderPrice =  $_POST['price'];
+        $description =  $_POST['descr'];
+
+        $notice = new Notice();
+        $notice -> setProducts($order)
+                -> setPrice($orderPrice)
+                ->setUser($usermailsess)
+                ->setDescription($description);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($notice);
+        $em->flush();
+
+        $em = $this->getDoctrine()->getManager();
+        $cartArray = $em->getRepository('AppBundle:Cart')->findByUser($usermailsess);
+
+        foreach ($cartArray as $cart) {
+            $em->remove($cart);
+        }
+
+        $em->flush();
+        return $this->redirectToRoute('basket');
+       
+    } 
     /**
      * @Route("/delete/{id}", name="delete")
      */
@@ -180,15 +219,16 @@ class UserController extends Controller
     /**
      * @Route("/commentsSubmit", name="commentsSubmit")
      */
-    public function commentsSubmitAction()
+    public function commentsSubmitAction(Request $request)
     {
-        $username =  $_POST['username'];
+        $session = $request->getSession();
+        $usermailsess = $session->get('user');
         $comment =  $_POST['comment'];
       
         // replace this example code with whatever you need
         $addComment = new Comments();
 
-        $addComment -> setName($username)
+        $addComment -> setName($usermailsess)
                 -> setComment($comment);
         $em = $this->getDoctrine()->getManager();
 
@@ -197,7 +237,7 @@ class UserController extends Controller
 
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
-        return $this->render('default/index.html.twig');        
+        return $this->render('default/contact.html.twig');        
 
     } 
 

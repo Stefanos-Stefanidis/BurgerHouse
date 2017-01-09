@@ -34,12 +34,10 @@
 
 	function addComment() {
 
-		username = $("#usernameComment").val();
 		comment = $("#commentBox").val();
 
 		
-		data = "username="+ username;
-		data += "&comment="+comment;
+		data = "comment="+comment;
 
 		$.ajax({
 			type: "POST",

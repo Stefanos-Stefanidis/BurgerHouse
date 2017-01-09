@@ -3,5 +3,7 @@ namespace AppBundle\Controller;
 
 interface TokenAuthenticatedController
 {
+	
+   
    
 }

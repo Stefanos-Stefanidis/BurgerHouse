@@ -28,7 +28,7 @@ class TokenListener
             return;
         }
 
-        if ($controller[1] instanceof TokenAuthenticatedController) {
+        if ($controller[0] instanceof TokenAuthenticatedController) {
             $token = $event->getRequest()->query->get('token');
             if (!in_array($token, $this->tokens)) {
                 throw new AccessDeniedHttpException('This action needs a valid token!');

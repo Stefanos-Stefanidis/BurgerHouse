@@ -90,43 +90,49 @@
 <div class="well"></div>
     <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+          <div class="col-lg-4 col-md-4 col-sm-12 text-center panel panel-1">
             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
             <h2>Offer 1</h2>
-            <p class="text-justify">
-              Cras rhoncus ut lectus quis aliquet. Nam sit amet auctor lorem. 
-              Morbi eu erat dictum, dignissim dolor euismod, ornare urna. 
-              Donec semper metus ex, et rhoncus ligula tincidunt vitae. 
-              Aenean aliquam pharetra ultricies. Nunc eleifend, ex eget viverra iaculis, 
-              mi turpis efficitur eros, a volutpat tellus risus et justo.
-              Nullam vel libero est. 
-            </p>
+            {% set totalPrice1 = 0 %}
+            {% for offer in offers1%}
+            {% set totalPrice1 = totalPrice1 +offer.times %}
+              <h4>
+                <ul class="text-justify"> 
+                  <li>{{offer.product}}</li> 
+                </ul>
+              </h4>
+            {% endfor%}
+            <span >{{totalPrice1}}</span>&euro;
             <p><a class="btn btn-success" href="#" role="button">Grab it</a></p>
           </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+          <div class="col-lg-4 col-md-4 col-sm-12 text-center panel panel-2">
             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
             <h2>Offer 2</h2>
-            <p class="text-justify">
-              Cras rhoncus ut lectus quis aliquet. Nam sit amet auctor lorem. 
-              Morbi eu erat dictum, dignissim dolor euismod, ornare urna. 
-              Donec semper metus ex, et rhoncus ligula tincidunt vitae. 
-              Aenean aliquam pharetra ultricies. Nunc eleifend, ex eget viverra iaculis, 
-              mi turpis efficitur eros, a volutpat tellus risus et justo.
-              Nullam vel libero est.
-            </p>
+            {% set totalPrice2 = 0 %}
+            {% for offer in offers2%}
+            {% set totalPrice2 = totalPrice2 +offer.times %}
+            <h4> 
+                <ul class="text-justify"> 
+                  <li>{{offer.product}}</li> 
+                </ul>
+              </h4>
+            {% endfor%}
+            <span >{{totalPrice2}}</span>&euro;
             <p><a class="btn btn-success" href="#" role="button">Grab it</a></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 text-center panel panel-3">
             <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="140" width="140">
             <h2>Offer 3</h2>
-            <p class="text-justify">
-              Cras rhoncus ut lectus quis aliquet. Nam sit amet auctor lorem. 
-              Morbi eu erat dictum, dignissim dolor euismod, ornare urna. 
-              Donec semper metus ex, et rhoncus ligula tincidunt vitae. 
-              Aenean aliquam pharetra ultricies. Nunc eleifend, ex eget viverra iaculis, 
-              mi turpis efficitur eros, a volutpat tellus risus et justo.
-              Nullam vel libero est.
-            </p>
+            {% set totalPrice3 = 0 %}
+            {% for offer in offers3%}
+            {% set totalPrice3 = totalPrice3 +offer.times %}
+             <h4>
+                <ul class="text-justify"> 
+                  <li>{{offer.product}}</li> 
+                </ul>
+              </h4>
+            {% endfor%}
+            <span >{{totalPrice3}}</span>&euro;
             <p><a class="btn btn-success" href="#" role="button">Grab it</a></p>
           </div><!-- /.col-lg-4 -->      
         </div>
