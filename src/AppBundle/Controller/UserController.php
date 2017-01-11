@@ -66,26 +66,38 @@ class UserController extends Controller
     }	
 
     /**
-     * @Route("/cart", name="cart")
+     * @Route("/cart/{id}", name="cart")
      */
-    public function cartAction(Request $request)
+    public function cartAction($id=0,Request $request)
     {
         
         $session = $request->getSession();
-        $usermailsess = $session->get('user');
-        $prname =  $_POST['name'];
-        $prprice =  $_POST['price'];
-        // replace this example code with whatever you need
-        $cart = new Cart();
+        if (!empty($_POST["name"])) {
+            $usermailsess = $session->get('user');
+            $prname =  $_POST['name'];
+            $prprice =  $_POST['price'];
 
-        $cart   -> setPrname($prname)
-                -> setPrice($prprice)
-                ->setUser($usermailsess);
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($cart);
-        $em->flush();
 
-        return $this->render('default/index.html.twig');
+
+
+            $cart = new Cart();
+
+            $cart   -> setPrname($prname)
+                    -> setPrice($prprice)
+                    ->setUser($usermailsess);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($cart);
+            $em->flush();
+
+    
+            return $this->redirectToRoute('homepage');
+        }
+        else{
+            return $this->redirectToRoute('homepage');
+
+        }
+
+
 
     }
 
@@ -97,11 +109,26 @@ class UserController extends Controller
         $session = $request->getSession();
         $usermailsess = $session->get('user');
 
+
+        $offer1 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(1);
+        $offer2 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(2);
+        $offer3 = $this->getDoctrine()
+            ->getRepository('AppBundle:Offers')
+            ->findByOffer(3);
+
         $basket = $this->getDoctrine()
                     ->getRepository('AppBundle:Cart')
                     ->findByUser($usermailsess);
+        $notice = $this->getDoctrine()
+                    ->getRepository('AppBundle:Notice')
+                    ->findByUser($usermailsess);
         return $this->render('default/basket.html.twig',array(
-                'items'=>$basket
+                'items'=>$basket,'offers1'=>$offer1,'offers2'=>$offer2,
+                'offers3'=>$offer3,'notices'=>$notice
             ));        
 
     }  

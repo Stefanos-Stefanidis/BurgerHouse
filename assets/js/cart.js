@@ -11,12 +11,15 @@ $(document).ready(function(){
 	}
 	
 	$('#send-order').click(function(){
-		var order = $("#order").text();
-		var orderPrice = $("#order-price").text().replace(/[^\d.]/g,'');
+		var orderName = $(".orderName").text();
+		orderArray = orderName.split(",");
+		var orderPrice = $(".orderPrice").text();
+/*		var orderPrice = $("#order-price").text().replace(/[^\d.]/g,'');
 		var description = $("textarea#description").val();
 		var withNoDigits = order.replace(/[0-9]/g, '');
 		 orderArray = withNoDigits.split("€").join(","); 
-		data = "order="+ orderArray;
+		*/
+		data = "order="+ orderName;
         data += "&price="+orderPrice;
         data += "&descr="+description;
         $.ajax({
@@ -25,9 +28,9 @@ $(document).ready(function(){
             data: data
 
         });
-        setTimeout(function(){
+/*        setTimeout(function(){
         	location.reload();           
-        },500)
+        },500)*/
 	});
 
 	$('.addCart').click(function(){
@@ -51,6 +54,43 @@ $(document).ready(function(){
 		setTimeout(function () {
 			$("#shop-basket").removeClass("animated wobble");			
 		}, 1200)
+	});
+
+
+	$('#offer1').click(function(){
+		var priceOffer1 = $('#priceOffer1').text();
+
+		data = "price="+ priceOffer1;
+		data += "&name=Offer 1";
+		$.ajax({
+			type: "POST",
+			url: '/cart',
+			data: data
+		});
+	});
+
+	$('#offer2').click(function(){
+		var priceOffer2 = $('#priceOffer2').text();
+
+		data = "price="+ priceOffer2;
+		data += "&name=Offer 2";
+		$.ajax({
+			type: "POST",
+			url: '/cart',
+			data: data
+		});
+	});
+
+	$('#offer3').click(function(){
+		var priceOffer3 = $('#priceOffer3').text();
+
+		data = "price="+ priceOffer3;
+		data += "&name=Offer 3";
+		$.ajax({
+			type: "POST",
+			url: '/cart',
+			data: data
+		});
 	});
 	
 });

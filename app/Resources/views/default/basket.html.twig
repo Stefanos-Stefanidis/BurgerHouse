@@ -4,15 +4,34 @@
 <div class="panel panel-default margin-top-100 container">
 
 	<div class="container margin-top-10">
+			{% for notice in notices  %}
+				<p>{{notice.products}}</p>
+			{% endfor %}
 		{% set totalPrice = 0 %}
 		<div id="order">
 			{% for item in items  %}
 				{% set totalPrice = totalPrice + item.price %}
 				<div class="col-md-8 col-sm-8 col-xs-12"> 
-					<h4>{{item.prname}}</h4>
+					<h4 class="orderName">{{item.prname}}:</h4>
+					<ul>
+						{% if item.prname =="Offer 1" %}
+							{% for offer in offers1 %}
+								<li>{{offer.product}}</li>
+							{% endfor %}
+						{% elseif item.prname =="Offer 2"%}
+							{% for offer in offers2 %}
+								<li>{{offer.product}}</li>
+							{% endfor %}
+						{% elseif item.prname =="Offer 3"%}
+							{% for offer in offers3 %}
+								<li>{{offer.product}}</li>
+							{% endfor %}
+						{% endif %}
+						
+					</ul>
 				</div>
 				 <div class="col-md-1 col-sm-2 col-xs-6"> 
-					<h4>{{item.price}}&euro;</h4>
+					<h4 >{{item.price}}&euro;</h4>
 				</div>
 				<div class="col-md-3 col-sm-2 col-xs-6">
 					<p id="dlt-product" ><a href="delete/{{item.id}}" class="fa fa-trash fa-2x"></a></p>
@@ -26,7 +45,7 @@
 			{{flash}}
 		</div>
 	{% endfor%}
-	<h3 id="order-price" class="pull-right text-info">Total price {{ totalPrice }}&euro; </h3>
+	<h3 id="order-price" class="pull-right text-info orderPrice">Total price {{ totalPrice }}&euro; </h3>
 </div>
 <div class="container margin-top-10 ">
 	<p class="text-info">Want something extra!?</p>
