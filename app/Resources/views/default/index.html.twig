@@ -35,7 +35,6 @@
     <div class="row">
 
         <div class="col-md-4">
-
             <p>
               <span class="drop-cap">A</span>nean aliquam nulla diam, ut pellentesque ante ultricies id.
               Duis quis convallis neque. Donec sit amet massa at tortor volutpat tincidunt nec eu tellus.
@@ -88,6 +87,9 @@
 
 
 <div class="well"></div>
+<div class="text-center alert alert-success" id="offerSendMsg">
+    <p>Offer added to basket</p>
+</div>
     <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 text-center panel panel-1">
@@ -102,7 +104,7 @@
                 </ul>
               </h4>
             {% endfor%}
-            <span>{{totalPrice1}} </span><span id="priceOffer1"> {{totalPrice1*0.90}}</span>&euro;
+            <span class="slash">{{totalPrice1}}&euro; </span><span id="priceOffer1"> {{totalPrice1*0.90}}</span>&euro;
             <p><p id="offer1" class="btn btn-success" >Grab it</p></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4 col-md-4 col-sm-12 text-center panel panel-2">
@@ -117,7 +119,7 @@
                 </ul>
               </h4>
             {% endfor%}
-            <span>{{totalPrice2}} </span> <span id="priceOffer2"> {{totalPrice2*0.85}}</span>&euro;
+            <span class="slash">{{totalPrice2}}&euro; </span> <span id="priceOffer2"> {{totalPrice2*0.85}}</span>&euro;
             <p><p id="offer2" class="btn btn-success" >Grab it</p></p>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 text-center panel panel-3">
@@ -132,7 +134,7 @@
                 </ul>
               </h4>
             {% endfor%}
-            <span >{{totalPrice3}} </span><span id="priceOffer3"> {{totalPrice3*0.80}}</span>&euro;
+            <span class="slash">{{totalPrice3}}&euro; </span><span id="priceOffer3"> {{totalPrice3*0.80}}</span>&euro;
             <p><p id="offer3" class="btn btn-success" >Grab it</p></p>
           </div><!-- /.col-lg-4 -->      
         </div>

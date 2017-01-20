@@ -5,6 +5,13 @@ imports:
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+# services:
+#     app.twig_extension:
+#         class: AppBundle\Twig\AppExtension
+#         public: false
+#         tags:
+#             - { name: twig.extension }
+
 parameters:
     locale: en
     tokens:

@@ -1,3 +1,9 @@
+/*
+	# Rund this command to increase the number of files gulp can watch
+	#if you got this error Fatal error: watch ENOSPC
+	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+*/
+
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var imgmin = require('gulp-imagemin');
@@ -70,6 +76,4 @@ gulp.task('compoments', function() {
 		gulp.watch('assets/less/*.less', ['less']);
 	});
 
-gulp.task('default',['scripts','styles','images','less','compoments']
-	
-);
+	gulp.task('default',['scripts','styles','images','less','compoments']);

@@ -32,6 +32,10 @@
 		$(".view-offers").click(function(){
 			document.getElementById("offersli").click();
 		});
+
+		$(".view-orders").click(function(){
+			document.getElementById("viewOrdersli").click();
+		});
 		
 
 	});

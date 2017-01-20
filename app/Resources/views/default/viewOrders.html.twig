@@ -1,0 +1,94 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div>
+	<button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
+</div>
+{% set orderNum = 0 %}
+{% for menu in menus %}
+{% set orderNum = orderNum +1 %}
+<div class="row">
+	<div class="col-md-1 pull-right">
+		<small>{{menu.user}}</small>
+		<div class="margin-top-50">
+			<div class="ribbon base"><a href="/view-orders/{{menu.id}}">Order.{{orderNum}}</a></div>
+		</div>
+		<br>
+	</div>
+</div>
+{% endfor%}
+<div class="container">
+	<div id="order-panel" class="jumbotron ">
+		{% for notice in notices %}
+		{%set product = notice.products|split(':')%}
+			{% for split in product%}
+			<div class="col-md-12 ">
+				<h4 class="productLine">
+					{{split}}   
+					<span class="button-checkbox pull-right">
+						<button type="button" class="btn btn-default" >done</button>
+						<input type="checkbox" class="hidden"  />
+					</span>
+					<ul>
+						{% if split =="Offer 1" %}
+							<small class="bg-info" id="offer1Show">show more <span class="fa fa-caret-down"></span></small>
+							<div id="offer1">									
+							{% for offer in offers1 %}
+									<li>{{offer.product}}</li>
+							{% endfor %}
+							</div>
+						{% elseif split =="Offer 2"%}
+							<small class="bg-info" id="offer2Show">show more <span class="fa fa-caret-down"></span></small>
+							<div id="offer2">									
+							{% for offer in offers2 %}
+									<li>{{offer.product}}</li>
+							{% endfor %}
+							</div>
+						{% elseif split =="Offer 3"%}
+							<small class="bg-info" id="offer3Show">show more <span class="fa fa-caret-down"></span></small>
+							<div id="offer3">									
+							{% for offer in offers3 %}
+									<li>{{offer.product}}</li>
+							{% endfor %}
+							</div>
+						{% endif %}
+						
+					</ul>
+				</h4>
+
+			</div>
+			{% endfor%}
+		{% endfor%}
+		{% for notice in notices %}
+		<div class="col-md-8">
+			<br>
+			<h4 class="bg-success col-md-6">{{notice.user}}</h4>
+		</div>
+		<div class="col-md-4  ">
+			<p>Order send at:</p>
+			<div class="panel col-md-6">
+				<span class="bg-warning" >{{notice.date|date("h:s:i") }}</span>
+				<span class="bg-info">,{{notice.date|date("d/m/y") }}</span>
+			</div>
+		</div>
+		{% endfor%}
+		<div class="col-xs-12">
+			{% for notice in notices %}
+				<h3>Description:</h3>
+				<h2 class="panel descr-panel">{{notice.description}}</h2>
+			{% endfor%}
+		</div>
+		<div class="col-xs-6 ">
+			{% for notice in notices %}
+				<a href="/cancel-order/{{notice.id}}"  class="btn btn-danger">Order Cancel</a>
+			{% endfor%}
+		</div>
+		<div class="col-xs-6">
+			{% for notice in notices %}
+				<a href="{{notice.id}}" class="btn btn-primary  pull-right">Order finished</a>
+			{% endfor%}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

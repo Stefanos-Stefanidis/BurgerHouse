@@ -12,6 +12,7 @@ use AppBundle\Entity\Products;
 use AppBundle\Entity\Login;
 use AppBundle\Entity\Users;
 use AppBundle\Entity\Notice;
+use AppBundle\Entity\Rate;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -145,9 +146,10 @@ class UserController extends Controller
         $order =  $_POST['order'];
         $orderPrice =  $_POST['price'];
         $description =  $_POST['descr'];
+        $trimOrder = rtrim($order, ":");
 
         $notice = new Notice();
-        $notice -> setProducts($order)
+        $notice -> setProducts($trimOrder)
                 -> setPrice($orderPrice)
                 ->setUser($usermailsess)
                 ->setDescription($description);
@@ -419,6 +421,62 @@ class UserController extends Controller
        }        
 
     } 
+
+
+
+    /**
+     * @Route("/rate", name="rate")
+     */
+    public function rateAction(Request $request)
+    {
+        $session = $request->getSession();
+        $usermailsess = $session->get('user');
+
+        if (isset($usermailsess)){
+            $prid =  $_POST['prid'];
+            $rating =  $_POST['rate'];
+            
+            $isVoted = $this->getDoctrine()
+                    ->getRepository('AppBundle:Rate')
+                    ->findOneBy(
+                    array('prid' => $prid, 'user' => $usermailsess));
+            
+            if ($isVoted) {
+                
+                $em = $this->getDoctrine()->getManager();
+                $isVoted = $em->getRepository('AppBundle:Rate')->findOneBy(
+                    array('prid' => $prid, 'user' => $usermailsess));
+
+                $isVoted->setRate($rating);
+                $em->flush();
+            }else
+            {
+                $rate = new Rate();
+
+                $rate -> setPrid($prid)
+                        -> setRate($rating)
+                        -> setUser($usermailsess);
+                    
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($rate);
+                $em->flush();
+            }
+
+
+
+/*            $em = $this->getDoctrine()->getManager();
+            $item = $em->getRepository('AppBundle:Products')->find($id);
+
+            $item->setName($name);
+            $item->setPrice($price);
+            $item->setCategory($category);
+            $item->setDescription($description);
+            $item->setTags($tags);
+            $em->flush();*/
+            return $this->redirectToRoute('list');
+
+        }
+    }
 
 
 }

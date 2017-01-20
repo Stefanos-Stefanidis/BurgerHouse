@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	var orderArray = [];
+	var url = document.URL;
+    var lastPart = url.split("/").pop();
 	if (Cookies.get('name')==undefined) {
 		var counter = 0;
 		document.getElementById("shop-basket").innerHTML = "("+0+")";
@@ -13,12 +15,8 @@ $(document).ready(function(){
 	$('#send-order').click(function(){
 		var orderName = $(".orderName").text();
 		orderArray = orderName.split(",");
-		var orderPrice = $(".orderPrice").text();
-/*		var orderPrice = $("#order-price").text().replace(/[^\d.]/g,'');
+		var orderPrice = $(".orderPrice").text().replace(/[^\d.]/g,'');
 		var description = $("textarea#description").val();
-		var withNoDigits = order.replace(/[0-9]/g, '');
-		 orderArray = withNoDigits.split("€").join(","); 
-		*/
 		data = "order="+ orderName;
         data += "&price="+orderPrice;
         data += "&descr="+description;
@@ -28,9 +26,9 @@ $(document).ready(function(){
             data: data
 
         });
-/*        setTimeout(function(){
+        setTimeout(function(){
         	location.reload();           
-        },500)*/
+        },500)
 	});
 
 	$('.addCart').click(function(){
@@ -50,15 +48,38 @@ $(document).ready(function(){
 			data: data
 
 		});
-
+		$( "#offerSendMsg" ).show(1000);
+			setTimeout(function(){
+				$( "#offerSendMsg" ).hide(1000);
+			},2000)
 		setTimeout(function () {
 			$("#shop-basket").removeClass("animated wobble");			
 		}, 1200)
 	});
 
 
+
+	$('.rate').click(function(){
+		var rate = $('input[name=star]:checked').val();
+		
+
+		data = "prid="+ lastPart;
+		data += "&rate="+rate;
+		$.ajax({
+			type: "POST",
+			url: '/rate',
+			data: data
+		});
+	});
+
+
+
 	$('#offer1').click(function(){
 		var priceOffer1 = $('#priceOffer1').text();
+		$( "#offerSendMsg" ).show(1000);
+		setTimeout(function(){
+			$( "#offerSendMsg" ).hide(1000);
+		},2000)
 
 		data = "price="+ priceOffer1;
 		data += "&name=Offer 1";
@@ -71,6 +92,10 @@ $(document).ready(function(){
 
 	$('#offer2').click(function(){
 		var priceOffer2 = $('#priceOffer2').text();
+		$( "#offerSendMsg" ).show(1000);
+		setTimeout(function(){
+			$( "#offerSendMsg" ).hide(1000);
+		},2000)
 
 		data = "price="+ priceOffer2;
 		data += "&name=Offer 2";
@@ -83,6 +108,10 @@ $(document).ready(function(){
 
 	$('#offer3').click(function(){
 		var priceOffer3 = $('#priceOffer3').text();
+		$( "#offerSendMsg" ).show(1000);
+		setTimeout(function(){
+			$( "#offerSendMsg" ).hide(1000);
+		},2000)
 
 		data = "price="+ priceOffer3;
 		data += "&name=Offer 3";
@@ -93,4 +122,6 @@ $(document).ready(function(){
 		});
 	});
 	
+
+
 });
