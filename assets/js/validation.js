@@ -16,10 +16,10 @@ var userMail;
 	var email = $("#userMail").val();
 
 	if (email.indexOf("@") > -1 && email.indexOf(".") >-1 ) {
-		$("#result").text(email + " is valid");
+		$("#result").text(email + " Has subscribed");
 		$("#result").css("color", "green");
 		$( "#result" ).fadeIn();
-		$( "#result" ).fadeOut(1600);
+		$( "#result" ).fadeOut(1900);
 
 		userMail = $('#userMail').val();
 		
@@ -38,7 +38,7 @@ var userMail;
 		$("#result").text(email + " is not valid");
 			$("#result").css("color", "red");
 			$( "#result" ).fadeIn();
-			$( "#result" ).fadeOut( 1600);
+			$( "#result" ).fadeOut( 1900);
 		}
 	}
 

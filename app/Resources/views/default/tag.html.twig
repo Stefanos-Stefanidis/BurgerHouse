@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container margin-top-100">
+		<div class="row">
+			{% for tag in tags%}
+			<div class="">
+				<div class="col-md-7 margin-top-10 border">
+					<img src="/images/products/{{tag.image}}">
+				</div>
+				<div class="col-md-4 margin-top-100">
+					<h3 class="remove-decoration"><a href="/details/{{tag.id}}">{{tag.name}}</a></h3>
+				</div>
+				<div class="col-md-1 margin-top-100">
+					<h3>{{tag.price}}&euro;</h3>
+				</div>
+			</div>
+			{% endfor %}
+
+		</div>
+
+	</div>
+
+{% endblock %}
+

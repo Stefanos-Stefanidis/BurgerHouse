@@ -110,8 +110,8 @@ class UserController extends Controller
         $session = $request->getSession();
         $usermailsess = $session->get('user');
 
-
-        $offer1 = $this->getDoctrine()
+        if (isset($usermailsess)) {
+             $offer1 = $this->getDoctrine()
             ->getRepository('AppBundle:Offers')
             ->findByOffer(1);
         $offer2 = $this->getDoctrine()
@@ -131,6 +131,10 @@ class UserController extends Controller
                 'items'=>$basket,'offers1'=>$offer1,'offers2'=>$offer2,
                 'offers3'=>$offer3,'notices'=>$notice
             ));        
+        }else{
+            return $this->redirectToRoute('mustLog');
+        }
+       
 
     }  
 
@@ -230,10 +234,6 @@ class UserController extends Controller
         $offset = $session->get('offset');
             $offset = $offset +5;
             $session->set('offset', $offset);
-  
-  
-    
-
             
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
@@ -253,20 +253,19 @@ class UserController extends Controller
         $session = $request->getSession();
         $usermailsess = $session->get('user');
         $comment =  $_POST['comment'];
-      
-        // replace this example code with whatever you need
-        $addComment = new Comments();
+        if (isset($usermailsess)) { 
+            $addComment = new Comments();
+            $addComment -> setName($usermailsess)
+                    -> setComment($comment);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($addComment);
+            $em->flush();
+            return $this->redirectToRoute('comments');  
+        }else{
+             return $this->redirectToRoute('mustLog');
+        }
 
-        $addComment -> setName($usermailsess)
-                -> setComment($comment);
-        $em = $this->getDoctrine()->getManager();
-
-        // tells Doctrine you want to (eventually) save the Product (no queries yet)
-        $em->persist($addComment);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $em->flush();
-        return $this->render('default/contact.html.twig');        
+            
 
     } 
 
@@ -382,16 +381,37 @@ class UserController extends Controller
         $listItem = $this->getDoctrine()
                     ->getRepository('AppBundle:Products')
                     ->find($id);
+        $rate =    $this->getDoctrine()
+                    ->getRepository('AppBundle:Rate')
+                    ->findByPrid($id);
         if (!$listItem) {
             throw $this->createNotFoundException(
                 'No product found for id '. $id
             );
         }
         return $this->render('default/details.html.twig',array(
-                'item'=>$listItem
+                'item'=>$listItem,'rates'=>$rate
             ));        
 
     } 
+
+    /**
+     * @Route("/tag/{tag}", name="tag")
+     */
+    public function tagAction($tag='', Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $tag = $em->getRepository("AppBundle:Products")->createQueryBuilder('o')
+               ->where('o.tags LIKE :tag')
+               ->setParameter('tag', '%'.$tag.'%')
+               ->getQuery()
+               ->getResult();
+
+        return $this->render('default/tag.html.twig',array(
+                'tags'=>$tag
+            ));        
+
+    }
 
     /**
      * @Route("/add-user", name="add-user")
@@ -462,21 +482,18 @@ class UserController extends Controller
                 $em->flush();
             }
 
-
-
-/*            $em = $this->getDoctrine()->getManager();
-            $item = $em->getRepository('AppBundle:Products')->find($id);
-
-            $item->setName($name);
-            $item->setPrice($price);
-            $item->setCategory($category);
-            $item->setDescription($description);
-            $item->setTags($tags);
-            $em->flush();*/
             return $this->redirectToRoute('list');
 
         }
     }
 
-
+    /**
+     * @Route("/mustLog", name="mustLog")
+     */
+    public function logAction(Request $request)
+    {
+      
+        return $this->render('default/notLogged.html.twig');
+       
+    }
 }

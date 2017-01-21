@@ -38,7 +38,7 @@ class Rate
     /**
      * @var string
      *
-     * @ORM\Column(name="user", type="string", length=255)
+     * @ORM\Column(name="user", type="string", length=255 ,nullable=true)
      */
     private $user;
 

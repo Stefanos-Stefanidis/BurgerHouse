@@ -26,6 +26,7 @@ $(document).ready(function(){
             data: data
 
         });
+        Cookies.set('name', counter = 0);
         setTimeout(function(){
         	location.reload();           
         },500)
@@ -35,7 +36,7 @@ $(document).ready(function(){
 		$("#shop-basket").addClass("animated wobble");
 		Cookies.set('name', counter += 1);
 		
-		document.getElementById("shop-basket").innerHTML = "("+parseInt(Cookies.get('name'))+")";
+		$("#shop-basket").html("("+parseInt(Cookies.get('name'))+")");
 	
 		var productPrice = $('#prprice').text();
 		var productName = $('#prname').text();
@@ -72,7 +73,9 @@ $(document).ready(function(){
 		});
 	});
 
-
+	$('#dlt-product a').click(function(){
+		Cookies.set('name', counter -= 1);
+	});
 
 	$('#offer1').click(function(){
 		var priceOffer1 = $('#priceOffer1').text();
@@ -80,7 +83,8 @@ $(document).ready(function(){
 		setTimeout(function(){
 			$( "#offerSendMsg" ).hide(1000);
 		},2000)
-
+		Cookies.set('name', counter += 1);
+		$("#shop-basket").html("("+parseInt(Cookies.get('name'))+")");
 		data = "price="+ priceOffer1;
 		data += "&name=Offer 1";
 		$.ajax({
@@ -96,7 +100,8 @@ $(document).ready(function(){
 		setTimeout(function(){
 			$( "#offerSendMsg" ).hide(1000);
 		},2000)
-
+		Cookies.set('name', counter += 1);
+		$("#shop-basket").html("("+parseInt(Cookies.get('name'))+")");
 		data = "price="+ priceOffer2;
 		data += "&name=Offer 2";
 		$.ajax({
@@ -112,7 +117,8 @@ $(document).ready(function(){
 		setTimeout(function(){
 			$( "#offerSendMsg" ).hide(1000);
 		},2000)
-
+		Cookies.set('name', counter += 1);
+		$("#shop-basket").html("("+parseInt(Cookies.get('name'))+")");
 		data = "price="+ priceOffer3;
 		data += "&name=Offer 3";
 		$.ajax({

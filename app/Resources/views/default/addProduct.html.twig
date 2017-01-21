@@ -75,6 +75,14 @@
 								{% endfor%}
 							</select>
 						</div>
+						<div class="form-group">
+							<label for="image">Select image</label>
+							<select class="form-control" id="image" name="image">
+								{% for file in files %}
+									<option>{{file}} </option>
+								{% endfor%}
+							</select>
+						</div>
 						{% for flash in app.session.flashbag.get('notice') %}
 		    				<div class="text-center alert alert-success" id="fadeMsg">
 		    					{{flash}}
@@ -114,5 +122,13 @@
 
 	</div>
 </div>
-
+<div class="container">
+	<div class="row">
+		<div class="panel img-panel">
+			<div class="text-center margin-top-10 margin-bottom-10">
+				<img id="loadImg" src="images/products/cola.jpg">
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

@@ -56,6 +56,7 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
             $price =  $_POST['price'];
             $category = $_POST['category'];
             $description = $_POST['description'];
+            $image = $_POST['image'];
             $tags = $_POST['tags'];
 
             $addProduct = new Products();
@@ -63,6 +64,7 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
             $addProduct -> setName($name)
             -> setPrice($price)
             -> setCategory($category)
+            -> setImage($image)
             -> setDescription($description)
             -> setTags($tags);
 
@@ -105,12 +107,16 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
         $admin = $session->get('admin');
 
         if ($admin=='TRUE') {
+            $dir    = 'images/products';
+            $array_files = scandir($dir);
+      
 
             $categories = $this->getDoctrine()
             ->getRepository('AppBundle:Category')
             ->findAll();
+
             return $this->render('default/addProduct.html.twig',array(
-                'category'=>$categories
+                'category'=>$categories,'files'=>$array_files
                 ));           
         }
         else{
@@ -205,11 +211,7 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
                 ->setOffer($offerNum);
 
                 $em = $this->getDoctrine()->getManager();
-
-            // tells Doctrine you want to (eventually) save the Product (no queries yet)
                 $em->persist($createOffer);
-
-            // actually executes the queries (i.e. the INSERT query)
                 $em->flush();
 
         }
@@ -242,9 +244,9 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
     }
 
     /**
-     * @Route("/delete/{id}", name="delete")
+     * @Route("/delete-product/{id}", name="deletepr")
      */
-    public function deleteAction($id=0, Request $request)
+    public function deletePrAction($id=0, Request $request)
     {   
 
         $session = $request->getSession();
@@ -253,9 +255,8 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
         if ($admin=='TRUE') {
 
             $em = $this->getDoctrine()->getManager();
-            $item = $em->getRepository('AppBundle:Products')->find($id);
-
-            $em->remove($item);
+            $itemDlt = $em->getRepository('AppBundle:Products')->find($id);
+            $em->remove($itemDlt);
             $em->flush();
             $this->addFlash(
                 'notice',
@@ -280,18 +281,16 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
         $admin = $session->get('admin');
 
         if ($admin=='TRUE') {
-
+            $dir    = 'images/products';
+            $array_files = scandir($dir);
+      
             $em = $this->getDoctrine()->getManager();
             $item = $em->getRepository('AppBundle:Products')->find($id);
             $categories = $em->getRepository('AppBundle:Category')->findAll();
             return $this->render('default/editItem.html.twig',array(
-                'item'=>$item,'categories'=>$categories
+                'item'=>$item,'categories'=>$categories,'files'=>$array_files
                 ));        
 
-            $this->addFlash(
-                'notice',
-                'Item deleted'
-                );
         }
         else{
             return $this->render('default/login.html.twig');
@@ -314,6 +313,7 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
             $category =  $_POST['category'];
             $description =  $_POST['description'];
             $tags =  $_POST['tags'];
+            $image =  $_POST['image'];
 
             $em = $this->getDoctrine()->getManager();
             $item = $em->getRepository('AppBundle:Products')->find($id);
@@ -323,6 +323,7 @@ class AdminController extends Controller /*implements TokenAuthenticatedControll
             $item->setCategory($category);
             $item->setDescription($description);
             $item->setTags($tags);
+            $item->setImage($image);
             $em->flush();
             return $this->redirectToRoute('edit');
 

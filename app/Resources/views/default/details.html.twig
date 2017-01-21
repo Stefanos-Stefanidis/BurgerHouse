@@ -2,8 +2,8 @@
 
 {% block body %}
 <div class="container margin-top-100">
-	<div class="col-md-4 text-center">
-		<img src="{{ asset('images/col1.jpg') }}" class="img-thumbnail" alt="cake" width="304" height="236"> 
+	<div class="col-md-4 text-center ">
+		<img src="{{ asset('images/products/')}}{{item.image}}" class="img-thumbnail" alt="img" width="304" height="236"> 
 	</div>
 	<div class="col-md-8 margin-top-100">
 		<p class="text-center">{{item.description}}</p>
@@ -17,14 +17,15 @@
 		<div class="col-md-6">
 
 			{% for split in tag%}
-				<p class="fa fa-tag ">{{split}}</p>
+				<p class="fa fa-tag remove-decoration"> <a href="/tag/{{split}}">{{split}}</a> </p>
 			{% endfor%}
 		</div>
 		<div class="col-md-6">
-			<h4 class="pull-right"><span id="prprice">{{item.price}}</span>&euro;</h4>
+			<h3 class="pull-right text-primary"><span  id="prprice">{{item.price}}</span>&euro;</h3>
 		</div>
 		<div class="col-xs-12">
-			<button class="btn btn-success btn-sm addCart">Grap me</button>
+			<button class="btn btn-success btn-sm addCart btn3d">Grap me</button>
+			 
 		</div>
 	
 		<div class="col-xs-12 col-md-6  text-center col-md-push-2">
@@ -38,8 +39,17 @@
 		<div class="col-xs-12 col-md-6">
 			<div class="pull-right">
 
-				<h4>Average user rating</h4>
-				<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+				{% set rating = 0 %}
+				{% set votes = 0 %}
+				{% for rate in rates  %}
+					{% set rating = rating + rate.rate %}
+					{% set votes = votes + 1%}
+				{% endfor %}
+				<h4>Average user rating <span class="text-success">Users Voted {{votes}}</span></h4>
+				{% if votes == 0 %}
+					{% set votes = 1 %}
+				{% endif %}
+				<h2 class="bold padding-bottom-7">{{ (rating/votes)|number_format(1) }} <small>/ 5</small></h2>
 				<div id="rating-block ">
 <!-- 					<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
 						<span class="fa fa-star" aria-hidden="true"></span>

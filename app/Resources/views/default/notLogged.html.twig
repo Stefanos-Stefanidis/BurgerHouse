@@ -1,0 +1,23 @@
+{% extends 'clean.html.twig' %}
+
+{% block body %}
+    <div class="container jumbotron margin-top-100">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-danger text-center">
+                    <h1 class="fa fa-hand-paper-o"></h1>
+                    <h1 >You can not perform this action</h1>
+                </div>
+                <div class="text-info pull-left">
+                    <div class="col-xs-9">
+                        <h3>You must be logged in you can login : <a href="{{asset('/login')}}">here</a></h3>
+                    </div>
+                    <div class="col-xs-3">
+                        <h3>Or return <a href="{{asset('/')}}"><span class="fa fa-home"></span></a></h3>
+                    </div>             
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

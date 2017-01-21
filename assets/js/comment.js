@@ -15,7 +15,7 @@
 	    });
 		
 		$("#addComment").click(function(){
-			addComment();
+			//addComment();
 			setTimeout(
 				function() {
 					auto_load();
