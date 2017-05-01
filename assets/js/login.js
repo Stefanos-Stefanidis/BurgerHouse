@@ -3,12 +3,12 @@
 	$(document).ready(function(){
 
 		$("#show-register").click(function(){
-				$( "#register-panel" ).show();
-				$( "#fade-bg" ).show();	
+			$( "#register-panel" ).show();
+			$( "#fade-bg" ).show();	
 		});
 		$("#close-register").click(function(){
-				$( "#register-panel" ).hide();
-				$( "#fade-bg" ).hide();	
+			$( "#register-panel" ).hide();
+			$( "#fade-bg" ).hide();	
 		});
 
 	});
@@ -53,13 +53,42 @@
 			}, 3000);
 		}
 		else{
-			$("#regMsg").removeClass("alert-danger");
-			$("#regMsg").addClass("alert-success");
-			$("#regMsg").text("Registration Complete");
-			$( "#regMsg" ).show();
-			setTimeout(function(){
-				$( "#registerForm" ).submit();
-			}, 3000);
+			$("#registerForm").submit(function( event ) {
+				event.preventDefault();
+				$.ajax({
+					type     : "POST",
+					cache    : false,
+					url      : $(this).attr('action'),
+					data     : $(this).serialize(),
+					success  : function(data) {
+						if (data=="success") {
+							$('#regMsg').addClass("alert-success");
+							$('#regMsg').text(data);
+							$('#regMsg').show();
+							$('#regMsg').show();
+							setTimeout(
+								function() {
+									$('#regMsg').fadeOut();
+									$('#regMsg').fadeOut();
+									$('#regMsg').removeClass("alert-success");
+								}, 2000);
+
+						}else if(data  == "name exist" || data == "mail exist"){
+							$('#regMsg').show();
+							$('#regMsg').show();
+							$('#regMsg').addClass("alert-danger");
+							$('#regMsg').text(data);
+							console.log('hey');
+							setTimeout(
+								function() {
+									$('#regMsg').fadeOut();
+									$('#regMsg').fadeOut();
+									$('#regMsg').removeClass("alert-danger");
+								}, 2000);
+						}
+					}
+				});
+			});
 			
 		}
 	});

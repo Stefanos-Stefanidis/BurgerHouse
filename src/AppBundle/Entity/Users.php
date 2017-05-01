@@ -5,76 +5,178 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use \DateTime;
 
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Users
  *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UsersRepository")
  */
-class Users
+class Users implements UserInterface
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(type="string", length=25, unique=true)
      */
-    private $name;
-
+    private $username;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(type="array", length=60)
      */
-    private $type;
+    private $roles;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="lastname", type="string", length=255)
-     */
-    private $lastname;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="mail", type="string", length=255, unique=true)
-     */
-    private $mail;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255)
+     * @ORM\Column(type="string", length=64)
      */
     private $password;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(type="string", length=60, unique=true)
      */
-    private $date;
-    
+    private $email;
+
+    /**
+     * @ORM\Column(name="is_active", type="boolean")
+     */
+    private $isActive;
+
+    /**
+     * @ORM\Column(name="password_request_at", type="datetime", nullable=true)
+     */
+
+    private $password_request_at;
+
+    /**
+     * @return mixed
+     */
+    public function getPasswordRequestAt()
+    {
+        return $this->password_request_at;
+    }
+
+    /**
+     * @param mixed $password_request_at
+     */
+    public function setPasswordRequestAt($password_request_at)
+    {
+        $this->password_request_at = $password_request_at;
+    }
+    /**
+     * @ORM\Column(name="confirmation_token", type="string", length=60, nullable=true)
+     */
+    private $confirmation_token;
+
+    /**
+     * @return mixed
+     */
+    public function getConfirmationToken()
+    {
+        return $this->confirmation_token;
+    }
+
+    /**
+     * @param mixed $confirmation_token
+     */
+    public function setConfirmationToken($confirmation_token)
+    {
+        $this->confirmation_token = $confirmation_token;
+    }
+
+    /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @param mixed $created_at
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
+
     public function __construct()
     {
-        $this->date = new DateTime(); 
+        $this->isActive = true;
+        $this->created_at = new DateTime();
+        $this->roles = array('ROLE_USER');
     }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function getSalt()
+    {
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
+        return null;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+            ) = unserialize($serialized);
+    }
+
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -82,75 +184,17 @@ class Users
     }
 
     /**
-     * Set name
+     * Set username
      *
-     * @param string $name
-     *
-     * @return Users
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set lastname
-     *
-     * @param string $lastname
+     * @param string $username
      *
      * @return Users
      */
-    public function setLastname($lastname)
+    public function setUsername($username)
     {
-        $this->lastname = $lastname;
+        $this->username = $username;
 
         return $this;
-    }
-
-    /**
-     * Get lastname
-     *
-     * @return string
-     */
-    public function getLastname()
-    {
-        return $this->lastname;
-    }
-
-    /**
-     * Set mail
-     *
-     * @param string $mail
-     *
-     * @return Users
-     */
-    public function setMail($mail)
-    {
-        $this->mail = $mail;
-
-        return $this;
-    }
-
-    /**
-     * Get mail
-     *
-     * @return string
-     */
-    public function getMail()
-    {
-        return $this->mail;
     }
 
     /**
@@ -168,61 +212,50 @@ class Users
     }
 
     /**
-     * Set type
+     * Set email
      *
-     * @param string $type
-     *
-     * @return Users
-     */
-
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-    /**
-     * Set date
-     *
-     * @param \DateTime $date
+     * @param string $email
      *
      * @return Users
      */
-    public function setDate($date)
+    public function setEmail($email)
     {
-        $this->date = $date;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get date
+     * Get email
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDate()
+    public function getEmail()
     {
-        return $this->date;
+        return $this->email;
+    }
+
+    /**
+     * Set isActive
+     *
+     * @param boolean $isActive
+     *
+     * @return Users
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Get isActive
+     *
+     * @return boolean
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
     }
 }
-
