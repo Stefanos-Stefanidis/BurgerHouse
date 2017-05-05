@@ -7,7 +7,6 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
 
-
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory:
@@ -17,11 +16,7 @@ security:
                 class: AppBundle:Users
     firewalls:
 
-        #dev:
-        secured_area:
-            logout:
-                path: /logout
-                target: /list
+        dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
@@ -33,7 +28,7 @@ security:
             form_login:
                 login_path: login
                 check_path: login
-
+            logout: true
 
             # activate different ways to authenticate
 

@@ -44,6 +44,7 @@
                             <li>
                              {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{asset('logout')}}">Logout</a>
+                                <!-- <p>Username: {{ app.user.username }}</p> -->
                              {% else %}
                                 <a href="{{ asset('login')}}">
                                     <span class="fa fa-user" aria-hidden="true"></span>

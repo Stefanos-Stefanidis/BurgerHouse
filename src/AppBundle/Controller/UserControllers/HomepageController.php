@@ -9,7 +9,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\VarDumper\VarDumper;
-
 class HomepageController extends Controller{
 
 	 /**
@@ -26,8 +25,6 @@ class HomepageController extends Controller{
 	 	$offer3 = $this->getDoctrine()
 	 	->getRepository('AppBundle:Offers')
 	 	->findByOffer(3);
-	 	dump($offer3);
-
 	 	return $this->render('default/index.html.twig',array(
 	 		'offers1'=>$offer1,'offers2'=>$offer2,'offers3'=>$offer3
 	 		));

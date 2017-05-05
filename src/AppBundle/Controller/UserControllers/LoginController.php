@@ -19,17 +19,18 @@ class LoginController extends Controller{
     * @Route("/login", name="login")
     */
     public function loginAction(Request $request)
-    {
-        if (isset($_POST['loginBtn'])) {
-            $username = $_POST['_username'];
-            $password = $_POST['_password'];
+    {      
 
+        if (isset($_POST['loginBtn'])) {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+                    $result = "failed";
+                return new Response($result);
             $userExist = $this->getDoctrine()
             ->getRepository('AppBundle:Users')
             ->loadUserByUsername($username);
 
             $hash = $userExist->getPassword();
-            $roles = $userExist->getRoles();
             if (password_verify($password, $hash)){
    /*             $authenticationUtils = $this->get('security.authentication_utils');
                 // get the login error if there is one
@@ -37,10 +38,9 @@ class LoginController extends Controller{
                 // last username entered by the user
                 $lastUsername = $authenticationUtils->getLastUsername();*/
                 
-                return $this->redirectToRoute('login');  
+    
             }else{
-                dump("nooo");
-                $result = "Login failed";
+                $result = "failed";
                 return new Response($result);
             }
 
