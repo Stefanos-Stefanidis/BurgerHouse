@@ -20,7 +20,7 @@ class UpdateProductController extends Controller /*implements TokenAuthenticated
     /**
      * @Route("/item-update/{id}", name="itemUpdate")
      */
-    public function itemUpdateAction(Request $request,$id=0)
+    public function itemUpdateAction(Request $request, $id=0)
     {
 
 

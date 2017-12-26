@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container margin-top-100">
 	<div class="col-md-4 text-center ">
-		<img src="{{ asset('images/products/')}}{{item.image}}" class="img-thumbnail" alt="img" width="304" height="236"> 
+		<img src="{{ asset('images/uploads/')}}{{item.image}}" class="img-thumbnail" alt="img" width="304" height="236">
 	</div>
 	<div class="col-md-8 margin-top-100">
 		<p class="text-center">{{item.description}}</p>
@@ -30,7 +30,7 @@
 	
 		<div class="col-xs-12 col-md-6  text-center col-md-push-2">
 			<div class="margin-top-100">
-				<a href="/list" class="fa fa-arrow-left fa-2x btn btn-info "></a>
+				<a href="{{ asset('list') }}" class="fa fa-arrow-left fa-2x btn btn-info "></a>
 			</div>
 		</div>
 		<div class="text-center alert alert-success" id="offerSendMsg">
@@ -50,35 +50,22 @@
 					{% set votes = 1 %}
 				{% endif %}
 				<h2 class="bold padding-bottom-7">{{ (rating/votes)|number_format(1) }} <small>/ 5</small></h2>
-				<div id="rating-block ">
-<!-- 					<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-						<span class="fa fa-star" aria-hidden="true"></span>
-					</button>
-					<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-						<span class="fa fa-star" aria-hidden="true"></span>
-					</button>
-					<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-						<span class="fa fa-star" aria-hidden="true"></span>
-					</button>
-					<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-						<span class="fa fa-star" aria-hidden="true"></span>
-					</button>
-					<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-						<span class="fa fa-star" aria-hidden="true"></span>
-					</button> -->
+				<div id="rating-block">
 
-					 
-				    <input class="star star-5 rate" id="star-5" type="radio" name="star" value ="5"/>
-				    <label class="star star-5" for="star-5"></label>
-				    <input class="star star-4 rate" id="star-4" type="radio" name="star" value ="4"/>
-				    <label class="star star-4" for="star-4"></label>
-				    <input class="star star-3 rate" id="star-3" type="radio" name="star" value ="3"/>
-				    <label class="star star-3" for="star-3"></label>
-				    <input class="star star-2 rate" id="star-2" type="radio" name="star" value ="2"/>
-				    <label class="star star-2" for="star-2"></label>
-				    <input class="star star-1 rate" id="star-1" type="radio" name="star" value ="1"/>
-				    <label class="star star-1" for="star-1"></label>
-				
+                    {% if is_granted('ROLE_USER') %}
+						<input class="star star-5 rate" id="star-5" type="radio" name="star" value ="5"/>
+						<label class="star star-5" for="star-5"></label>
+						<input class="star star-4 rate" id="star-4" type="radio" name="star" value ="4"/>
+						<label class="star star-4" for="star-4"></label>
+						<input class="star star-3 rate" id="star-3" type="radio" name="star" value ="3"/>
+						<label class="star star-3" for="star-3"></label>
+						<input class="star star-2 rate" id="star-2" type="radio" name="star" value ="2"/>
+						<label class="star star-2" for="star-2"></label>
+						<input class="star star-1 rate" id="star-1" type="radio" name="star" value ="1"/>
+						<label class="star star-1" for="star-1"></label>
+					{% else %}
+						<h2><a href="{{ asset('login') }}" class="burger-a">Login</a> to vote</h2>
+					{% endif %}
 				</div>
 			</div>
 

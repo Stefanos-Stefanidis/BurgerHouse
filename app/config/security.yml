@@ -1,19 +1,33 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/book/security.html
 security:
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_USER]
     encoders:
-      AppBundle\Entity\Users:
-         algorithm: bcrypt
+        AppBundle\Entity\Users:
+            algorithm: bcrypt
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/add-product, roles: ROLE_ADMIN }
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, our_db_provider]
         in_memory:
-            memory: ~
+            memory: 
+                users:
+                    admin:
+                        password: $2y$12$KC2yTNpNBOEV2YtLh3uIO.5o50PAM.MRYL4F/Qmoy5GM6fzx3cmV.
+                        roles: 'ROLE_ADMIN'
         our_db_provider:
             entity:
                 class: AppBundle:Users
+                property: username
     firewalls:
 
         dev:
@@ -24,7 +38,7 @@ security:
             anonymous: ~
             pattern:    ^/
             http_basic: ~
-            provider: our_db_provider
+            provider: chain_provider
             form_login:
                 login_path: login
                 check_path: login

@@ -22,9 +22,7 @@ class LogoutController extends Controller /*implements TokenAuthenticatedControl
      */
     public function logoutAction(Request $request)
     {
-        $session = $request->getSession();
-        $session->set('admin', 'FALSE');
-
+     
         return $this->redirectToRoute('login');
             
     }

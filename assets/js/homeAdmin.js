@@ -1,42 +1,53 @@
-(function  ($) {
+(function ($) {
 
-	$(document).ready(function(){
+	$(document).ready(function () {
 
-		$("#menu-btn").mouseenter(function(){
-			$(".nav-left").css({"left": "0%"});
-			$("#menu-btn").css({"visibility": "hidden"});
+		$("#menu-btn").mouseenter(function () {
+			$(".nav-left").css({
+				"left": "0%"
+			});
+			$("#menu-btn").css({
+				"visibility": "hidden"
+			});
 			$("body").addClass("margin-left");
 		});
-		$(".nav-left").mouseleave(function(){
-			$(".nav-left").css({"left": "-210px"});
+		$(".nav-left").mouseleave(function () {
+			$(".nav-left").css({
+				"left": "-210px"
+			});
 			$("body").removeClass("margin-left");
-			$("#menu-btn").css({"visibility": "visible"});
-			
+			$("#menu-btn").css({
+				"visibility": "visible"
+			});
+
 		});
 
-	
 
-		$(".add-item").click(function(){
+
+		$(".add-item").click(function () {
 			document.getElementById("addProductli").click();
 
 		});
-		$(".edit-list").click(function(){
+		$(".edit-list").click(function () {
 			document.getElementById("editli").click();
 
 		});
-		$(".manage-comment").click(function(){
+		$(".manage-comment").click(function () {
 			document.getElementById("mngCommentli").click();
 
 		});
-		
-		$(".view-offers").click(function(){
+
+		$(".view-offers").click(function () {
 			document.getElementById("offersli").click();
 		});
 
-		$(".view-orders").click(function(){
+		$(".view-orders").click(function () {
 			document.getElementById("viewOrdersli").click();
 		});
-		
+
+		$(".view-subscribers").click(function () {
+			document.getElementById("subscribersli").click();
+		});
 
 	});
 

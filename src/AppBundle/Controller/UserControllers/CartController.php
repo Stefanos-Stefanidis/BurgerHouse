@@ -6,12 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Cart;
-use AppBundle\Entity\Products;
-use AppBundle\Entity\Users;
-use AppBundle\Entity\Notice;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\VarDumper\VarDumper;
+
 
 class CartController extends Controller{
  
@@ -22,11 +17,22 @@ class CartController extends Controller{
     public function cartAction($id=0,Request $request)
     {
         
-        $session = $request->getSession();
+
         if (!empty($_POST["name"])) {
-            $usermailsess = $session->get('user');
+
+
+            $securityContext = $this->container->get('security.authorization_checker');
+            if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+                $usermailsess = $this->getUser()->getEmail();
+            }else{
+                $usermailsess = $_SERVER['REMOTE_ADDR'];
+            }
+
+
             $prname =  $_POST['name'];
             $prprice =  $_POST['price'];
+
+
 
             $cart = new Cart();
 

@@ -1,49 +1,54 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
+{% extends 'base.html.twig' %} {% block body %}
 <!-- TODO: comment "next five" does not stop when all comments finished -->
 <div id="wait"><i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i></div>
 <div id="loading-wrapper"></div>
-	<div class="container margin-top-100" >
-		<h2>Add your comment here</h2>
-		<div class="row">
-		<div class="jumbotron">
-			<div class="container">
-				<div class="row">
-					<form method="post"  action="commentsSubmit">
-						  <div class="form-group">
-						    <label for="commentBox">Comment</label>
-						    <textarea type="text" name="comment" class="form-control" id="commentBox" rows="5"></textarea>
-						  </div>
+<div class="container margin-top-100">
+    <h2>Add your comment here</h2>
+    <div class="row">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <form method="post" action="commentsSubmit">
+                        {% if is_granted('ROLE_USER') %}
+                        <div class="form-group">
+                            <label for="commentBox">Comment</label>
+                            <textarea type="text" name="comment" class="form-control" id="commentBox" rows="5"></textarea>
+                        </div>
 
-						  <button id="addComment" type="submit" class="burger-btn btn btn-default "><i class="fa fa-share"> </i>Share</button>
-					</form>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>
-	<div class="container margin-top-100">
-		<div class="row">
-			<div id="loadAjax">
-				{% for comment in comments%}
-					<p id="username-comment">{{comment.name}} 
-						<span id="comment-label"> has commented <i class="fa fa-comment"></i></span>
-					</p>
-					<p id="comment">{{comment.comment}}</p>
-				{% endfor%}
-				<!-- <form method="post" action="commentsRefresh" > -->
-				<!-- </form> -->
-			</div>
-			<div class="col-xs-8 col-xs-push-4 col-md-5 col-md-push-7 margin-top-10">
-				<button  class="btn btn-primary btn-block" id="nextComment"name="next">
-					Next five comments <span class="fa fa-forward"></span>
+                        <button id="addComment" type="submit" class="burger-btn btn btn-default "><i class="fa fa-share"> </i>Share</button>                        {% else %}
+                        <div class="form-group">
+                            <label for="commentBox">Comment</label>
+                            <textarea disabled type="text" name="comment" class="form-control" id="commentBox" rows="5"></textarea>
+                        </div>
+                        <h3><a href="{{ asset('login') }}" class="burger-a">Login</a> to comment</h3>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container margin-top-100">
+    <div class="row">
+        <div id="loadAjax">
+            {% include 'default/commentsRefresh.html.twig' %}
+            <!-- <form method="post" action="commentsRefresh" > -->
+            <!-- </form> -->
+        </div>
+        <div class="col-xs-12 col-md-5 margin-top-50 pull-right">
+            <button class="btn btn-primary btn-block" id="nextComment" name="next">
+					Next <span class="fa fa-forward"></span>
 				</button>
 
-			</div>
-			
-			
-		</div>
-				
-	</div>
+        </div>
+        <div class="col-xs-12 col-md-5 margin-top-50">
+            <button class="btn btn-warning btn-block" id="previousComment" name="previous">
+					 <span class="fa fa-backward"> Previous</span>
+				</button>
+
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}

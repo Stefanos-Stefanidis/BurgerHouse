@@ -6,7 +6,9 @@
   "scripts": {},
   "author": "Stefanos Stefanidis",
   "license": "GNU GPLv3",
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "dependencies": {
     "gulp-clean-css": "^2.0.12",
     "gulp-imagemin": "^3.0.3",

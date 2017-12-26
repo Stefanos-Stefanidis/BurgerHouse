@@ -39,7 +39,7 @@ $(document).ready(function(){
         
     });
 
-    $('.pr-name').click(function(){
+    $('.pr-panel').click(function(){
         var prname = $(this).text() ;
         var price = prname.replace(/[^\d.]/g,'');
         
@@ -56,7 +56,7 @@ $(document).ready(function(){
         }, 1200)
 
         setTimeout(function () {
-            $(".pr-name").removeClass("bg-success");           
+            $(".pr-panel").removeClass("bg-success");
         }, 1500)
     });
 });

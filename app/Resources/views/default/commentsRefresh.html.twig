@@ -4,5 +4,6 @@
 			<i class="fa fa-comment"></i>
 		</span>
 	</p>
+    <p class="fa fa-calendar" ><em> {{ comment.date|date("d/m/y")}}</em></p>
 	<p id="comment">{{comment.comment}}</p>
 {% endfor%}

@@ -9,6 +9,7 @@
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/full-slider.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 </head>
 
@@ -26,7 +27,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                <a class="navbar-brand" id="logo">Stef Burger</a>
+                    <a class="navbar-brand" id="logo">Stef Burger</a>
                 </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
@@ -43,14 +44,16 @@
                             </li>
                             <li>
                              {% if is_granted('ROLE_ADMIN') %}
-                                <a href="{{asset('logout')}}">Logout</a>
+                                <a href="{{asset('admin-homepage')}}" class="fa fa-barcode"> Admin page</a>
                                 <!-- <p>Username: {{ app.user.username }}</p> -->
-                             {% else %}
+                            {% elseif is_granted('ROLE_USER') %}
+                                <a href="{{asset('logout')}}">Logout</a>
+                            {% else %}
                                 <a href="{{ asset('login')}}">
                                     <span class="fa fa-user" aria-hidden="true"></span>
                                     Login
                                 </a>
-                             {% endif %}                            
+                            {% endif %}
                             </li>
                         </ul>
 

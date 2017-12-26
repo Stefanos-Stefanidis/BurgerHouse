@@ -1,77 +1,26 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'base.html.twig' %} 
 {% block body %}
 
-<div class="panel panel-default margin-top-100 container">
+<div class="panel panel-default margin-top-100 container padding-bottom-20">
 	<div class="container margin-top-10">
-		<div class="col-xs-12">
-			<h3>Appetizers</h3>
-		</div>
-		
-		{% for appetizer in appetizers%}
-		<div class="col-md-6 col-sm-6">
-			<div class="col-md-12  col-xs-12 margin-top-10"> 
-				<a  href="details/{{appetizer.id}}">
-					<span class="btn btn-info btn-md">{{appetizer.name}} 
-						<strong> {{appetizer.price}}&euro;</strong>
-					</span>
-				</a>
-			</div>
-		</div>
-
-		{% endfor%}
-
-		<div class="col-xs-12 margin-top-10">
-			<h3 >Salads</h3>
-		</div>
-		
-
-		{% for salad in salads%}
-		<div class="col-md-6 col-sm-6">
-			<div class="col-md-12  col-xs-12 margin-top-10"> 
-				<a  href="details/{{salad.id}}">
-					<span class="btn btn-info btn-md">{{salad.name}} 
-						<strong> {{salad.price}}&euro;</strong>
-					</span>
-				</a>
-			</div>
-		</div>
-		{% endfor%}
-
-		<div class="col-xs-12 margin-top-10">
-			<h3>Burgers</h3>
-		</div>
-		
-
-		{% for burger in burgers%}
-		<div class="col-md-6 col-sm-6">
-			<div class="col-md-12  col-xs-12 margin-top-10"> 
-				<a  href="details/{{burger.id}}">
-					<span class="btn btn-info btn-md">{{burger.name}} 
-						<strong> {{burger.price}}&euro;</strong>
-					</span>
-				</a>
-			</div>
-		</div>
-		{% endfor%}
-
-		<div class="col-xs-12 margin-top-10">
-			<h3 >Drinks</h3>
-		</div>
-		
-		
-		{% for drink in drinks%}
-		<div class="col-md-6 col-sm-6">
-			<div class="col-md-12  col-xs-12 margin-top-10"> 
-				<a  href="details/{{drink.id}}">
-					<p class="btn btn-info btn-md">{{drink.name}} 
-						<strong> {{drink.price}}&euro;</strong>
-					</p>
-				</a>
-			</div>
-		</div>
-		{% endfor%}
-	</div>
+        {% for totalCategories in totalCategories %}            
+            <div class="col-xs-12">
+                <h3>{{totalCategories.name}}</h3>
+            </div>
+            {% for item in list %}
+                {% if totalCategories.name == item.category %}  
+                    <div class="col-md-6 col-sm-6">
+                        <div class="col-md-12  col-xs-12 margin-top-10">
+                            <a href="details/{{item.id}}">
+                                <span class="btn btn-info btn-md">{{item.name}} 
+                                    <strong> {{item.price}}&euro;</strong>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor%}
+        {% endfor%}
+    </div>
 </div>
 {% endblock %}
-

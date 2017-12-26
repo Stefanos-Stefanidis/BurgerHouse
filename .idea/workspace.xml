@@ -1,0 +1,2339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="69fb9c26-eaf8-4e60-86b7-babb429841b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/default/subscribers.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ImageUploadController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ViewSubscribers.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/checkbox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phpunit.xml.dist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Rating.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/LoginRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/RatingRepository.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/FontAwesome.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/appetizers.jpg" afterPath="$PROJECT_DIR$/assets/img/appetizers.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/burgers.jpg" afterPath="$PROJECT_DIR$/assets/img/burgers.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/col1.jpg" afterPath="$PROJECT_DIR$/assets/img/col1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/col2.jpg" afterPath="$PROJECT_DIR$/assets/img/col2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/col3.jpg" afterPath="$PROJECT_DIR$/assets/img/col3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/drinks.jpg" afterPath="$PROJECT_DIR$/assets/img/drinks.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/logo.png" afterPath="$PROJECT_DIR$/assets/img/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/magnifier.jpg" afterPath="$PROJECT_DIR$/assets/img/magnifier.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/salads.jpg" afterPath="$PROJECT_DIR$/assets/img/salads.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/slider1.png" afterPath="$PROJECT_DIR$/assets/img/slider1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/slider2.png" afterPath="$PROJECT_DIR$/assets/img/slider2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/slider3.png" afterPath="$PROJECT_DIR$/assets/img/slider3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/.gitkeep" afterPath="$PROJECT_DIR$/var/cache/.gitkeep" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/.gitkeep" afterPath="$PROJECT_DIR$/var/logs/.gitkeep" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/sessions/.gitkeep" afterPath="$PROJECT_DIR$/var/sessions/.gitkeep" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/apple-touch-icon.png" afterPath="$PROJECT_DIR$/web/apple-touch-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favicon.ico" afterPath="$PROJECT_DIR$/web/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/web/fonts/FontAwesome.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.htaccess" afterPath="$PROJECT_DIR$/app/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppCache.php" afterPath="$PROJECT_DIR$/app/AppCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" afterPath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.json.twig" afterPath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.json.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/exception.html~.twig" afterPath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/exception.html~.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/clean.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/clean.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/addOffer.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/addOffer.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/addProduct.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/addProduct.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/admin.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/admin.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/basket.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/basket.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/comments.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/comments.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/commentsRefresh.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/commentsRefresh.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/contact.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/contact.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/details.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/details.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/editItem.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/editItem.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/editList.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/editList.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/manageComments.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/manageComments.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/manageOffers.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/manageOffers.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/notLogged.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/notLogged.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/tag.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/tag.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/viewOrders.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/viewOrders.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/autoload.php" afterPath="$PROJECT_DIR$/app/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_dev.yml" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_prod.yml" afterPath="$PROJECT_DIR$/app/config/config_prod.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_test.yml" afterPath="$PROJECT_DIR$/app/config/config_test.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing_dev.yml" afterPath="$PROJECT_DIR$/app/config/routing_dev.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/.bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/LICENSE" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/animate-config.json" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/animate-config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/animate.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/animate.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/animate.min.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/animate.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/gulpfile.js" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/package.json" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/_base.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/_base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/bounce.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/bounce.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/flash.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/flash.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/headShake.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/headShake.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/jello.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/jello.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/pulse.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/pulse.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/rubberBand.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/rubberBand.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/shake.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/shake.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/swing.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/swing.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/tada.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/tada.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/wobble.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/attention_seekers/wobble.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceIn.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceIn.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceInDown.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceInDown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceInLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceInLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceInRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceInRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceInUp.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_entrances/bounceInUp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOut.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOut.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOutDown.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOutDown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOutLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOutLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOutRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOutRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOutUp.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/bouncing_exits/bounceOutUp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeIn.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeIn.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInDown.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInDown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInDownBig.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInDownBig.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInLeftBig.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInLeftBig.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInRightBig.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInRightBig.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInUp.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInUp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInUpBig.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_entrances/fadeInUpBig.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOut.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOut.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutDown.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutDown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutDownBig.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutDownBig.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutLeftBig.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutLeftBig.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutRightBig.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutRightBig.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutUp.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutUp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutUpBig.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/fading_exits/fadeOutUpBig.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flip.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flipInX.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flipInX.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flipInY.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flipInY.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flipOutX.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flipOutX.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flipOutY.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/flippers/flipOutY.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/lightspeed/lightSpeedIn.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/lightspeed/lightSpeedIn.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/lightspeed/lightSpeedOut.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/lightspeed/lightSpeedOut.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateIn.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateIn.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateInDownLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateInDownLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateInDownRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateInDownRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateInUpLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateInUpLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateInUpRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_entrances/rotateInUpRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOut.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOut.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOutDownLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOutDownLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOutDownRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOutDownRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOutUpLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOutUpLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOutUpRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/rotating_exits/rotateOutUpRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_entrances/slideInDown.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_entrances/slideInDown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_entrances/slideInLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_entrances/slideInLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_entrances/slideInRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_entrances/slideInRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_entrances/slideInUp.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_entrances/slideInUp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_exits/slideOutDown.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_exits/slideOutDown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_exits/slideOutLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_exits/slideOutLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_exits/slideOutRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_exits/slideOutRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_exits/slideOutUp.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/sliding_exits/slideOutUp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/specials/hinge.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/specials/hinge.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/specials/rollIn.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/specials/rollIn.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/specials/rollOut.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/specials/rollOut.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomIn.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomIn.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomInDown.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomInDown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomInLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomInLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomInRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomInRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomInUp.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_entrances/zoomInUp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOut.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOut.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOutDown.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOutDown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOutLeft.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOutLeft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOutRight.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOutRight.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOutUp.css" afterPath="$PROJECT_DIR$/assets/bower_components/animate.css/source/zooming_exits/zoomOutUp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/.bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/CHANGELOG.md" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/Gruntfile.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/LICENSE" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/README.md" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap-theme.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css.map" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/js/npm.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/js/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/.jshintrc" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/.jshintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/bs-commonjs-generator.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/bs-commonjs-generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/bs-glyphicons-data-generator.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/bs-glyphicons-data-generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/bs-lessdoc-parser.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/bs-lessdoc-parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/bs-raw-files-generator.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/bs-raw-files-generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/configBridge.json" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/configBridge.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/sauce_browsers.yml" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/grunt/sauce_browsers.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/.jscsrc" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/.jscsrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/.jshintrc" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/.jshintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/affix.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/affix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/alert.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/alert.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/button.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/button.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/carousel.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/carousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/collapse.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/collapse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/dropdown.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/dropdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/modal.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/modal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/popover.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/popover.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/scrollspy.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/scrollspy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/tab.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/tooltip.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/tooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/transition.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/js/transition.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/.csscomb.json" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/.csscomb.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/.csslintrc" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/.csslintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/alerts.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/alerts.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/badges.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/badges.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/bootstrap.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/bootstrap.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/breadcrumbs.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/breadcrumbs.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/button-groups.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/button-groups.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/buttons.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/buttons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/carousel.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/carousel.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/close.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/close.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/code.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/code.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/component-animations.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/component-animations.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/dropdowns.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/dropdowns.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/forms.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/forms.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/glyphicons.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/glyphicons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/grid.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/grid.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/input-groups.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/input-groups.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/jumbotron.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/jumbotron.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/labels.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/labels.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/list-group.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/list-group.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/media.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/media.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/alerts.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/alerts.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/background-variant.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/background-variant.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/border-radius.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/border-radius.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/buttons.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/buttons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/center-block.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/center-block.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/clearfix.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/clearfix.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/forms.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/forms.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/gradients.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/gradients.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/grid-framework.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/grid-framework.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/grid.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/grid.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/hide-text.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/hide-text.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/image.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/image.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/labels.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/labels.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/list-group.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/list-group.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/nav-divider.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/nav-divider.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/nav-vertical-align.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/nav-vertical-align.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/opacity.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/opacity.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/pagination.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/pagination.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/panels.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/panels.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/progress-bar.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/progress-bar.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/reset-filter.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/reset-filter.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/reset-text.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/reset-text.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/resize.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/resize.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/responsive-visibility.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/responsive-visibility.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/size.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/size.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/tab-focus.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/tab-focus.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/table-row.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/table-row.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/text-emphasis.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/text-emphasis.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/text-overflow.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/text-overflow.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/vendor-prefixes.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/mixins/vendor-prefixes.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/modals.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/modals.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/navbar.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/navbar.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/navs.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/navs.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/normalize.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/normalize.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/pager.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/pager.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/pagination.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/pagination.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/panels.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/panels.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/popovers.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/popovers.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/print.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/print.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/progress-bars.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/progress-bars.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/responsive-embed.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/responsive-embed.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/responsive-utilities.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/responsive-utilities.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/scaffolding.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/scaffolding.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/tables.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/tables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/theme.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/theme.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/thumbnails.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/thumbnails.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/tooltip.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/tooltip.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/type.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/type.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/utilities.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/utilities.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/variables.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/wells.less" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/less/wells.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/nuget/MyGet.ps1" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/nuget/MyGet.ps1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/nuget/bootstrap.less.nuspec" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/nuget/bootstrap.less.nuspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/nuget/bootstrap.nuspec" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/nuget/bootstrap.nuspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/package.js" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/package.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/bootstrap/package.json" afterPath="$PROJECT_DIR$/assets/bower_components/bootstrap/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/cookies-js/.bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/cookies-js/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/cookies-js/bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/cookies-js/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/cookies-js/dist/cookies.d.ts" afterPath="$PROJECT_DIR$/assets/bower_components/cookies-js/dist/cookies.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/cookies-js/dist/cookies.js" afterPath="$PROJECT_DIR$/assets/bower_components/cookies-js/dist/cookies.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/cookies-js/dist/cookies.min.js" afterPath="$PROJECT_DIR$/assets/bower_components/cookies-js/dist/cookies.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/HELP-US-OUT.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/css/font-awesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/css/font-awesome.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/animated.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/bordered-pulled.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/core.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/fixed-width.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/font-awesome.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/icons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/larger.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/list.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/mixins.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/path.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/rotated-flipped.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/screen-reader.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/stacked.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_animated.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_animated.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_core.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_fixed-width.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_icons.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_larger.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_list.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_mixins.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_path.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_screen-reader.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_stacked.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/_variables.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/assets/bower_components/font-awesome/scss/font-awesome.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery.cookie/.bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/jquery.cookie/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery.cookie/bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/jquery.cookie/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery.cookie/jquery.cookie.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery.cookie/jquery.cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/.bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/.bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/AUTHORS.txt" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/AUTHORS.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/LICENSE.txt" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/README.md" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/bower.json" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/dist/jquery.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/dist/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/dist/jquery.min.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/dist/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/dist/jquery.min.map" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/dist/jquery.min.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/external/sizzle/LICENSE.txt" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/external/sizzle/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/external/sizzle/dist/sizzle.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/external/sizzle/dist/sizzle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/external/sizzle/dist/sizzle.min.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/external/sizzle/dist/sizzle.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/external/sizzle/dist/sizzle.min.map" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/external/sizzle/dist/sizzle.min.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/.jshintrc" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/.jshintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/jsonp.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/jsonp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/load.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/load.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/parseJSON.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/parseJSON.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/parseXML.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/parseXML.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/script.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/var/location.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/var/location.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/var/nonce.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/var/nonce.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/var/rquery.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/var/rquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/xhr.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/ajax/xhr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/attr.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/attr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/classes.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/classes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/prop.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/prop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/support.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/support.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/val.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/attributes/val.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/callbacks.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/callbacks.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/core.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/access.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/access.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/init.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/parseHTML.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/parseHTML.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/ready.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/ready.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/var/rsingleTag.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/core/var/rsingleTag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/addGetHookIf.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/addGetHookIf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/adjustCSS.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/adjustCSS.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/curCSS.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/curCSS.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/defaultDisplay.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/defaultDisplay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/hiddenVisibleSelectors.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/hiddenVisibleSelectors.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/showHide.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/showHide.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/support.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/support.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/cssExpand.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/cssExpand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/getStyles.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/getStyles.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/isHidden.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/isHidden.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/rmargin.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/rmargin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/rnumnonpx.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/rnumnonpx.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/swap.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/css/var/swap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/data.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/data.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/data/Data.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/data/Data.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/data/var/acceptData.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/data/var/acceptData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/data/var/dataPriv.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/data/var/dataPriv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/data/var/dataUser.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/data/var/dataUser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/deferred.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/deferred.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/deprecated.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/deprecated.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/dimensions.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/dimensions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/effects.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/effects.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/effects/Tween.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/effects/Tween.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/effects/animatedSelector.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/effects/animatedSelector.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/event.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/ajax.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/alias.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/alias.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/focusin.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/focusin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/support.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/support.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/trigger.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/event/trigger.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/exports/amd.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/exports/amd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/exports/global.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/exports/global.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/intro.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/intro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/jquery.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/_evalUrl.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/_evalUrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/buildFragment.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/buildFragment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/getAll.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/getAll.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/setGlobalEval.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/setGlobalEval.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/support.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/support.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/var/rcheckableType.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/var/rcheckableType.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/var/rscriptType.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/var/rscriptType.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/var/rtagName.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/var/rtagName.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/wrapMap.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/manipulation/wrapMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/offset.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/offset.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/outro.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/outro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/queue.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/queue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/queue/delay.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/queue/delay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/selector-native.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/selector-native.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/selector-sizzle.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/selector-sizzle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/selector.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/selector.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/serialize.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/serialize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing/findFilter.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing/findFilter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing/var/dir.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing/var/dir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing/var/rneedsContext.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing/var/rneedsContext.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing/var/siblings.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/traversing/var/siblings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/arr.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/arr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/class2type.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/class2type.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/concat.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/concat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/document.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/document.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/documentElement.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/documentElement.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/hasOwn.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/hasOwn.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/indexOf.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/indexOf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/pnum.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/pnum.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/push.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/push.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/rcssNum.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/rcssNum.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/rnotwhite.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/rnotwhite.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/slice.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/slice.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/support.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/support.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/toString.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/var/toString.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bower_components/jquery/src/wrap.js" afterPath="$PROJECT_DIR$/assets/bower_components/jquery/src/wrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/admin.css" afterPath="$PROJECT_DIR$/assets/css/admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/style.css" afterPath="$PROJECT_DIR$/assets/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/cart.js" afterPath="$PROJECT_DIR$/assets/js/cart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/comment.js" afterPath="$PROJECT_DIR$/assets/js/comment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/contact.js" afterPath="$PROJECT_DIR$/assets/js/contact.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/flash.js" afterPath="$PROJECT_DIR$/assets/js/flash.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/goTop.js" afterPath="$PROJECT_DIR$/assets/js/goTop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/homeAdmin.js" afterPath="$PROJECT_DIR$/assets/js/homeAdmin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/image.js" afterPath="$PROJECT_DIR$/assets/js/image.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/login.js" afterPath="$PROJECT_DIR$/assets/js/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/menu.js" afterPath="$PROJECT_DIR$/assets/js/menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/modals.js" afterPath="$PROJECT_DIR$/assets/js/modals.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/offers.js" afterPath="$PROJECT_DIR$/assets/js/offers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/orders.js" afterPath="$PROJECT_DIR$/assets/js/orders.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/validation.js" afterPath="$PROJECT_DIR$/assets/js/validation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/less/adminMain.less" afterPath="$PROJECT_DIR$/assets/less/adminMain.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/less/main.less" afterPath="$PROJECT_DIR$/assets/less/main.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/console" afterPath="$PROJECT_DIR$/bin/console" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/.htaccess" afterPath="$PROJECT_DIR$/src/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" afterPath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/AddProductController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/AddProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/AdminHomepageController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/AdminHomepageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/CancelOrderController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/CancelOrderController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/DeleteProductController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/DeleteProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/EditListController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/EditListController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/EditProductController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/EditProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/LogoutController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/LogoutController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ManageCommentsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ManageCommentsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/OffersController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/OffersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/UpdateProductController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/UpdateProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ViewOrdersController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ViewOrdersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TokenAuthenticatedController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TokenAuthenticatedController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/BasketController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/BasketController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/CartController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/CartController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/CommentsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/CommentsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/ContactController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/ContactController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/DetailsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/DetailsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/HomepageController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/HomepageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/ListController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/ListController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/LoginController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/LoginController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/MustLogController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/MustLogController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/NewsLetterContoller.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/NewsLetterContoller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RateController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RegisterController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RegisterController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RemoveProductController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RemoveProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/SendOrderController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/SendOrderController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/TagsController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/TagsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Cart.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Cart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Comments.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Newsletter.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Newsletter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Notice.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Notice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Offers.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Offers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Products.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Products.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Rate.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Rate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Users.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/TokenListener.php" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/TokenListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CartRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CartRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CommentsRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CommentsRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/NewsletterRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/NewsletterRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/NoticeRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/NoticeRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/OffersRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/OffersRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ProductsRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ProductsRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/RateRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/RateRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UsersRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UsersRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Twig/AppExtension.php" afterPath="$PROJECT_DIR$/src/AppBundle/Twig/AppExtension.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/.htaccess" afterPath="$PROJECT_DIR$/web/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app.php" afterPath="$PROJECT_DIR$/web/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/robots.txt" afterPath="$PROJECT_DIR$/web/robots.txt" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="BurgerHouse" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1083">
+              <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewSubscribers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ViewSubscribers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="18" column="79" lean-forward="false" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
+              <folding>
+                <element signature="e#57#116#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subscribers.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/subscribers.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <folding>
+                <marker date="1504843915887" expanded="true" signature="498:503" ph="..." />
+                <marker date="1504843915887" expanded="true" signature="498:522" ph="{% block body ...%}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contact.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/contact.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="912">
+              <caret line="48" column="33" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/list.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminHomepageController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/AdminHomepageController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/admin.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminMain.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/less/adminMain.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="110" lean-forward="false" selection-start-line="15" selection-start-column="110" selection-end-line="15" selection-end-column="110" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/admin.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1007">
+              <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mustLog</find>
+      <find>form</find>
+      <find>#7BA4A8</find>
+      <find>lastname</find>
+      <find>margin-top-</find>
+      <find>slash</find>
+      <find>font-fa</find>
+      <find>padding-top-</find>
+      <find>/*  return new Response(dump($phone));*/</find>
+      <find>heig</find>
+      <find>rating-b</find>
+      <find>fa-10x</find>
+      <find>send-of</find>
+      <find>pr-name</find>
+      <find>user</find>
+      <find>bg-s</find>
+      <find>ordere</find>
+      <find>margin-top</find>
+      <find>rating-block</find>
+      <find>/are</find>
+      <find>/ar</find>
+      <find>/a</find>
+      <find>/</find>
+      <find>/r</find>
+      <find>/ra</find>
+      <find>/rat</find>
+      <find>/rate</find>
+      <find>rate</find>
+      <find>send-order</find>
+      <find>:hover</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/assets/js</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/LoginController.php" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/tag.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/assets/js/image.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/UploadImage.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/UploadImageController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/addProduct.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ImageUploadController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/AddProductController.php" />
+        <option value="$PROJECT_DIR$/assets/bower_components/bootstrap/dist/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/CommentsController.php" />
+        <option value="$PROJECT_DIR$/assets/js/comment.js" />
+        <option value="$PROJECT_DIR$/assets/js/menu.js" />
+        <option value="$PROJECT_DIR$/assets/css/full-slider.css" />
+        <option value="$PROJECT_DIR$/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RegisterController.php" />
+        <option value="$PROJECT_DIR$/assets/js/login.js" />
+        <option value="$PROJECT_DIR$/assets/less/main.less" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/comments.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/OffersController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/addOffer.html.twig" />
+        <option value="$PROJECT_DIR$/assets/js/offers.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/manageOffers.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/manageComments.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/basket.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/SendOrderController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ViewOrdersController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Cart.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/BasketController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Users.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Notice.php" />
+        <option value="$PROJECT_DIR$/assets/css/admin.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/viewOrders.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/details.html.twig" />
+        <option value="$PROJECT_DIR$/assets/js/cart.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RateController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/admin.html.twig" />
+        <option value="$PROJECT_DIR$/assets/js/homeAdmin.js" />
+        <option value="$PROJECT_DIR$/assets/less/adminMain.less" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/CartController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/ListController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/AdminHomepageController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ViewSubscribers.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/contact.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/subscribers.html.twig" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <tasks>
+          <GulpTaskState>
+            <task-name>images</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>scripts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>less</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>styles</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>compoments</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>watch</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="scripts" />
+              <dependency value="styles" />
+              <dependency value="images" />
+              <dependency value="less" />
+              <dependency value="compoments" />
+            </dependencies>
+            <task-name>default</task-name>
+          </GulpTaskState>
+        </tasks>
+      </GulpfileState>
+    </gulpfiles>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="97" />
+    <option name="width" value="1922" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="fd">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ef">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="eb">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="e8">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="e6">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="e4">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ce">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="c5">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="c0">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="98">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="96">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="85">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="60">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="5a">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="36">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="1d">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="var">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="cache">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="profiler">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="01">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AppBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AppBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Repository">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AppBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Entity">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AppBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AppBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="UserControllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AppBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AdminControllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="assets">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="assets">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="js">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BurgerHouse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserControllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurgerHouse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AdminControllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="contac&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/contact.html.twig&#10;subs&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/subscribers.html.twig&#10;list.t&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/list.html.twig&#10;adminHo&#9;null&#9;null&#10;admin.h&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/admin.html.twig&#10;listCon&#9;null&#9;null&#10;admin.&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/less/adminMain.less&#10;adminM&#9;FILE&#9;file:///home/stef/www/BurgerHouse/web/css/adminMain.css&#10;admin.cs&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/css/admin.css&#10;ad&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/admin.html.twig&#10;admin&#9;null&#9;null&#10;cart&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/UserControllers/CartController.php&#10;detai&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/details.html.twig&#10;rate&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/UserControllers/RateController.php&#10;rateC&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/UserControllers/RateController.php&#10;main&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/less/main.less&#10;style.cs&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/css/style.css&#10;admin.c&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/css/admin.css&#10;user&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Entity/Users.php&#10;notice&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Entity/Notice.php&#10;baske&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/UserControllers/BasketController.php&#10;vie&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/viewOrders.html.twig&#10;viewO&#9;null&#9;null&#10;send&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/UserControllers/SendOrderController.php&#10;basket&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/basket.html.twig&#10;comment&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/UserControllers/CommentsController.php&#10;ca&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/UserControllers/CartController.php&#10;cart.php&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Entity/Cart.php&#10;manageComments.h&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/manageComments.html.twig&#10;manage&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/AdminControllers/ManageCommentsController.php&#10;offer.j&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/js/offers.js&#10;manageOf&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/manageOffers.html.twig&#10;createOf&#9;null&#9;null&#10;addOff&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/addOffer.html.twig&#10;offe&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/AdminControllers/OffersController.php&#10;offers.h&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/manageOffers.html.twig&#10;details&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/details.html.twig&#10;bas&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/base.html.twig&#10;regi&#9;FILE&#9;file:///home/stef/www/BurgerHouse/src/AppBundle/Controller/UserControllers/RegisterController.php&#10;login.js&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/js/login.js&#10;login/&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/default/login.html.twig&#10;register&#9;null&#9;null&#10;users&#9;null&#9;null&#10;MAIN&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/less/main.less&#10;full-&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/css/full-slider.css&#10;menu.j&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/js/menu.js&#10;menus&#9;FILE&#9;file:///home/stef/www/BurgerHouse/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Icon/menu.svg&#10;base&#9;FILE&#9;file:///home/stef/www/BurgerHouse/app/Resources/views/base.html.twig&#10;commentC&#9;null&#9;null&#10;commen&#9;FILE&#9;file:///home/stef/www/BurgerHouse/assets/js/comment.js" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.PHP" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="PHP" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="69fb9c26-eaf8-4e60-86b7-babb429841b1" name="Default" comment="" />
+      <created>1494766135402</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1494766135402</updated>
+      <workItem from="1494766136775" duration="163000" />
+      <workItem from="1494851776757" duration="32000" />
+      <workItem from="1494877004858" duration="3092000" />
+      <workItem from="1494962118012" duration="2515000" />
+      <workItem from="1494965436992" duration="1355000" />
+      <workItem from="1495036733079" duration="4140000" />
+      <workItem from="1495041195837" duration="5604000" />
+      <workItem from="1495126581318" duration="1683000" />
+      <workItem from="1496483321288" duration="8801000" />
+      <workItem from="1496494423157" duration="21000" />
+      <workItem from="1496509670624" duration="4683000" />
+      <workItem from="1496565969673" duration="23937000" />
+      <workItem from="1496661086787" duration="15190000" />
+      <workItem from="1504905981715" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="71219000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="97" width="1922" height="1053" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16862327" sideWeight="0.50429183" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1814301" sideWeight="0.49570817" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="99" y="197" width="1722" height="853" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19479166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Icon/menu.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/full-slider.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Tests/Fixtures/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-319">
+          <caret line="41" column="14" lean-forward="false" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="98" column="10" lean-forward="false" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/comments.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="102" lean-forward="false" selection-start-line="21" selection-start-column="102" selection-end-line="21" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/OffersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ManageCommentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/manageOffers.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/manageComments.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/addOffer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="47" column="53" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/CommentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/basket.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="52" column="23" lean-forward="false" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="93" lean-forward="false" selection-start-line="40" selection-start-column="93" selection-end-line="40" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="91" column="31" lean-forward="false" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/BasketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Notice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="193" column="47" lean-forward="false" selection-start-line="193" selection-start-column="47" selection-end-line="193" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ViewOrdersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="38" column="45" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/less/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="46" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/SendOrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/NoticeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/checkbox.js" />
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7805">
+          <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/flash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/offers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/goTop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/viewOrders.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="64" column="47" lean-forward="false" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="88" column="23" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/homeAdmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/notLogged.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/adminMain.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/less/adminMain.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="110" lean-forward="false" selection-start-line="15" selection-start-column="110" selection-end-line="15" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/details.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/CartController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/AdminHomepageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/RateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserControllers/ListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/contact.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="48" column="33" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminControllers/ViewSubscribers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="18" column="79" lean-forward="false" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
+          <folding>
+            <element signature="e#57#116#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/subscribers.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <marker date="1504843915887" expanded="true" signature="498:503" ph="..." />
+            <marker date="1504843915887" expanded="true" signature="498:522" ph="{% block body ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

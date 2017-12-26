@@ -22,25 +22,20 @@ class CancelOrderController extends Controller /*implements TokenAuthenticatedCo
     */
     public function cancelOrderAction($id=0,Request $request)
     {
-        $session = $request->getSession();
-        $admin = $session->get('admin');
 
-        if ($admin=='TRUE') {         
-            $em = $this->getDoctrine()->getManager();
-            $order = $em->getRepository('AppBundle:Notice')->find($id);
 
-            $em->remove($order);
-            $em->flush();
-            $this->addFlash(
-                'notice',
-                'Item deleted'
-                );
-            return $this->redirectToRoute('viewOrders'); 
+        $em = $this->getDoctrine()->getManager();
+        $order = $em->getRepository('AppBundle:Notice')->find($id);
 
-        }
-        else{
-            return $this->render('default/login.html.twig');    
-        }
+        $em->remove($order);
+        $em->flush();
+        $this->addFlash(
+            'notice',
+            'Item deleted'
+            );
+        return $this->redirectToRoute('viewOrders'); 
+
+        
 
     } 
 

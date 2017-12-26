@@ -5,46 +5,35 @@ namespace AppBundle\Controller\AdminControllers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Products;
-use AppBundle\Entity\Category;
 use AppBundle\Entity\Offers;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\HttpFoundation\Session\Session;
-use AppBundle\Controller\TokenAuthenticatedController;
 
 
-class OffersController extends Controller /*implements TokenAuthenticatedController*/
+
+class OffersController extends Controller
 {
    /**
      * @Route("/offer", name="offer")
      */
-    public function offerAction(Request $request)
-    {
-        $session = $request->getSession();
-        $admin = $session->get('admin');
+   public function offerAction(Request $request)
+   {
 
-        if ($admin=='TRUE') {
 
-            $offer1 = $this->getDoctrine()
-            ->getRepository('AppBundle:Offers')
-            ->findByOffer(1);
-            $offer2 = $this->getDoctrine()
-            ->getRepository('AppBundle:Offers')
-            ->findByOffer(2);
-            $offer3 = $this->getDoctrine()
-            ->getRepository('AppBundle:Offers')
-            ->findByOffer(3);
 
-            return $this->render('default/addOffer.html.twig',array(
-                'offers1'=>$offer1,'offers2'=>$offer2,'offers3'=>$offer3
-                ));        
-        }
-        else{
-            return $this->render('default/login.html.twig');
-            
-        }
-    }
+    $offer1 = $this->getDoctrine()
+    ->getRepository('AppBundle:Offers')
+    ->findByOffer(1);
+    $offer2 = $this->getDoctrine()
+    ->getRepository('AppBundle:Offers')
+    ->findByOffer(2);
+    $offer3 = $this->getDoctrine()
+    ->getRepository('AppBundle:Offers')
+    ->findByOffer(3);
+
+    return $this->render('default/addOffer.html.twig',array(
+        'offers1'=>$offer1,'offers2'=>$offer2,'offers3'=>$offer3
+        ));        
+
+}
 
 
     /**
@@ -90,19 +79,19 @@ class OffersController extends Controller /*implements TokenAuthenticatedControl
         $offer =  $_POST['products'];
         $prprice =  $_POST['price'];
         $offerNum =  $_POST['offer'];
-       
+        
         $offerArray = explode(",",$offer);
         $priceArray = explode(",",$prprice);
         
         for ($i=0; $i < (sizeof($offerArray)-1) ; $i++) { 
-                $createOffer = new Offers();
-                $createOffer  -> setProduct($offerArray[$i])
-                -> setTimes($priceArray[$i])
-                ->setOffer($offerNum);
+            $createOffer = new Offers();
+            $createOffer  -> setProduct($offerArray[$i])
+            -> setTimes($priceArray[$i])
+            ->setOffer($offerNum);
 
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($createOffer);
-                $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($createOffer);
+            $em->flush();
 
         }
         

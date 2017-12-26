@@ -1,77 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>{% block title %}Welcome admin{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/adminMain.css') }}" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/adminMain.css') }}" rel="stylesheet"/>
 </head>
 
 <body>
 
-    <div class="nav-left">
-      <div>
-            <li>
-                <a id="homeBtn" class="col-xs-12" href="{{ asset('/admin-homepage') }}">
-                   Home
-                </a>  
-            </li>
+<div class="nav-left">
+    <div>
+        <li>
+            <a id="homeBtn" class="col-xs-12" href="{{ asset('/admin-homepage') }}">
+                Home
+            </a>
+        </li>
 
-            <li>
-                <a id="addProductli" class="col-xs-12" href="{{ asset('/add-product') }}">
-                    Add product
-                </a>  
-            </li>
-            <li>
-                <a id="mngCommentli" class="col-xs-12" href="{{ asset('/manage-comments') }}">
-                    Manage comments
-                </a>  
-            </li>
-            <li>
-                <a id="editli" class="col-xs-12" href="{{ asset('/edit') }}">
-                    Edit list
-                </a>  
-            </li>
-            <li>
-                <a id="offersli" class="col-xs-12" href="{{ asset('/offer') }}">
-                   Create offers
-                </a>  
-            </li>
-            <li>
-                <a id="viewOrdersli" class="col-xs-12" href="{{ asset('/view-orders') }}">
-                    View orders
-                </a>  
-            </li>
-            <li>
-                <a id="logoutli" class="col-xs-12" href="{{ asset('/logout') }}">
-                   <span class="fa fa-sign-out fa-2x"></span>Log out
-                </a>  
-            </li>
-      </div>
+        <li>
+            <a id="addProductli" class="col-xs-12" href="{{ asset('/add-product') }}">
+                Add product
+            </a>
+        </li>
+        <li>
+            <a id="mngCommentli" class="col-xs-12" href="{{ asset('/manage-comments') }}">
+                Manage comments
+            </a>
+        </li>
+        <li>
+            <a id="editli" class="col-xs-12" href="{{ asset('/edit') }}">
+                Edit list
+            </a>
+        </li>
+        <li>
+            <a id="offersli" class="col-xs-12" href="{{ asset('/offer') }}">
+                Create offers
+            </a>
+        </li>
+        <li>
+            <a id="viewOrdersli" class="col-xs-12" href="{{ asset('/view-orders') }}">
+                View orders
+            </a>
+        </li>
+        <li>
+            <a id="subscribersli" class="col-xs-12" href="{{ asset('/view-subscribers') }}">
+                Subscribers
+            </a>
+        </li>
+        <li>
+            <a id="logoutli" class="col-xs-12" href="{{ asset('/logout') }}">
+                <span class="fa fa-sign-out fa-2x"></span>Log out
+            </a>
+        </li>
     </div>
-            
-
-    {% block body %} 
+</div>
 
 
-    {% endblock %}
+{% block body %}
 
-    {% block javascripts %}
 
-    <script src="{{ asset('js/jquery.min.js') }}"></script> 
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
-    <script src="{{ asset('js/cookies.min.js') }}"></script> 
-    <script src="{{ asset('js/homeAdmin.js') }}"></script> 
-    <script src="{{ asset('js/flash.js') }}"></script> 
-    <script src="{{ asset('js/offers.js') }}"></script> 
-    <script src="{{ asset('js/checkbox.js') }}"></script>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/cookies.min.js') }}"></script>
+    <script src="{{ asset('js/homeAdmin.js') }}"></script>
+    <script src="{{ asset('js/flash.js') }}"></script>
+    <script src="{{ asset('js/offers.js') }}"></script>
     <script src="{{ asset('js/orders.js') }}"></script>
     <script src="{{ asset('js/image.js') }}"></script>
-    {% endblock %}
+{% endblock %}
 
 </body>
 </html>

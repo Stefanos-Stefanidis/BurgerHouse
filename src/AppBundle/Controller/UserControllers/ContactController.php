@@ -4,11 +4,6 @@ namespace AppBundle\Controller\UserControllers;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\VarDumper\VarDumper;
 
 class ContactController extends Controller{
 
@@ -20,20 +15,15 @@ class ContactController extends Controller{
         if (isset($_POST['submit'])){
             $mailacc = $_POST['usermail'];
             $message = $_POST['message'];
+            $subject  = $_POST['subject'];
+            $mail = 'ruzuroshiv@gmail.com';
 
-            $to      = 'prettyfilemanager@gmail.com';
-            $subject = 'the subject';
-            $message = $message;
-            $headers = 'From:'.$mailacc . "\r\n" .
-                'Reply-To:'.$mailacc. "\r\n" .
-                'X-Mailer: PHP/' . phpversion();
-
-            mail($to, $subject, $message, $headers);
-            $this->addFlash(
-                'notice',
-                'Mail send'
-                );
-
+            $message = \Swift_Message::newInstance()
+                ->setSubject($subject)
+                ->setFrom($mailacc)
+                ->setTo($mail)
+                ->setBody('Mail From '.$mailacc.'<br>'.$message,'text/html');
+            $this->get('mailer')->send($message);
             return $this->redirectToRoute('contact');        
 
         }else{

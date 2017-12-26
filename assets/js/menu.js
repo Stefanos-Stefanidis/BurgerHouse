@@ -1,5 +1,13 @@
 $(document).ready(function () {
+
+    $('.carousel').carousel({
+        interval: 3000
+    });
     var index = Cookies.get('active');
+    console.log(index);
+    if (index == undefined) {
+        $('#logo').addClass('active');
+    }
     $('.navbar-nav').find('li').removeClass('active');
     $(".navbar-nav").find('li').eq(index).addClass('active');
     $('.navbar-nav').on('click', 'li', function (e) {

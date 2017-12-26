@@ -28,6 +28,12 @@ class Category
      */
     private $name;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="order", type="integer")
+     */
+    private $order;
 
     /**
      * Get id
@@ -61,6 +67,30 @@ class Category
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set order
+     *
+     * @param integer $order
+     *
+     * @return Category
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+
+        return $this;
+    }
+
+    /**
+     * Get order
+     *
+     * @return integer
+     */
+    public function getOrder()
+    {
+        return $this->order;
     }
 }
 

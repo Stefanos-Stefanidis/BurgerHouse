@@ -6,19 +6,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Rate;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\VarDumper\VarDumper;
 
-class CartController extends Controller{
+
+class RateController extends Controller{
  
     /**
      * @Route("/rate", name="rate")
      */
     public function rateAction(Request $request)
     {
-        $session = $request->getSession();
-        $usermailsess = $session->get('user');
+
+        $usermailsess = $this->getUser()->getEmail();
 
         if (isset($usermailsess)){
             $prid =  $_POST['prid'];

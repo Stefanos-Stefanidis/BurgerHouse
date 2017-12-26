@@ -16,27 +16,21 @@ use AppBundle\Controller\TokenAuthenticatedController;
 
 class EditListController extends Controller /*implements TokenAuthenticatedController*/
 {
- 
+   
     /**
      * @Route("/edit", name="edit")
      */
     public function editAction(Request $request)
     {
-        $session = $request->getSession();
-        $admin = $session->get('admin');
+      
 
-        if ($admin=='TRUE') {
-            $listItems = $this->getDoctrine()
-            ->getRepository('AppBundle:Products')
-            ->findAll();
-            return $this->render('default/editList.html.twig',array(
-                'list'=>$listItems
-                ));            
-        }
-        else{
-            return $this->render('default/login.html.twig');
-            
-        }
+        $listItems = $this->getDoctrine()
+        ->getRepository('AppBundle:Products')
+        ->findAll();
+        return $this->render('default/editList.html.twig',array(
+            'list'=>$listItems
+            ));            
+        
 
     }
 }

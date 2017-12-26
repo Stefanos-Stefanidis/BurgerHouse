@@ -19,7 +19,7 @@ class NewsLetterContoller extends Controller{
     public function mailAction()
     {
 
-        
+
         $usermail =  $_POST['usermail'];
       
         // replace this example code with whatever you need

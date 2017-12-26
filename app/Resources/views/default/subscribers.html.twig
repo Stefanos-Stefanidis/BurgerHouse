@@ -1,0 +1,36 @@
+{% extends 'admin.html.twig' %} {% block body %}
+<div>
+    <button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="margin-top-100 ">
+            {% set mails = "" %}
+            {% for subscriber in subscribers %}
+            <div class="col-md-3 col-xs-6">
+                <p class="panel padding-10 cursor-pointer">{{ subscriber.mail }}</p>
+                	{% set mails = mails ~ subscriber.mail ~ ',' %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="margin-top-100 ">
+            <div class="col-xs-12">
+                <div class="col-xs-12 col-md-6 col-md-push-3 col-xs-push-0">
+                    <input type="hidden" name="mails" value="{{mails}}" /> 
+                    <div class="form-group">
+                        <label for="message">message:</label>
+                        <textarea class="form-control" rows="5" id="message"></textarea>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

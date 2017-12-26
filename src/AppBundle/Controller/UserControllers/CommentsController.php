@@ -6,12 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Comments;
-use AppBundle\Entity\Users;
-use AppBundle\Entity\Notice;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\VarDumper\VarDumper;
+
 
 class CommentsController extends Controller{
 
@@ -56,7 +51,7 @@ class CommentsController extends Controller{
     {     
         $session = $request->getSession();
         $offset = $session->get('offset');
-            $offset = $offset +5;
+            $offset = $offset + 5;
             $session->set('offset', $offset);
             
         $comments = $this->getDoctrine()
@@ -64,22 +59,36 @@ class CommentsController extends Controller{
                     ->findAllLimit($limit,$offset);
         return $this->render('default/commentsRefresh.html.twig',array(
                 'comments'=>$comments
-            ));        
+            ));
+    }
 
-    } 
+    /**
+     * @Route("/previous", name="previous")
+     */
+    public function previousAction($limit = 5 ,Request $request)
+    {
+        $session = $request->getSession();
+        $offset = $session->get('offset');
+        $offset = $offset - 5;
+        $session->set('offset', $offset);
 
-
+        $comments = $this->getDoctrine()
+            ->getRepository('AppBundle:Comments')
+            ->findAllLimit($limit,$offset);
+        return $this->render('default/commentsRefresh.html.twig',array(
+            'comments'=>$comments
+        ));
+    }
     /**
      * @Route("/commentsSubmit", name="commentsSubmit")
      */
     public function commentsSubmitAction(Request $request)
     {
-        $session = $request->getSession();
-        $usermailsess = $session->get('user');
+        $username = $this->getUser()->getUsername();
         $comment =  $_POST['comment'];
-        if (isset($usermailsess)) { 
+        if (isset($username)) {
             $addComment = new Comments();
-            $addComment -> setName($usermailsess)
+            $addComment -> setName($username)
                     -> setComment($comment);
             $em = $this->getDoctrine()->getManager();
             $em->persist($addComment);

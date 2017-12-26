@@ -21,20 +21,15 @@
 			url      : $(this).attr('action'),
 			data     : $(this).serialize(),
 			success  : function(data) {
-				if (data=="failed") {
-					alert('nop');
+				if (data ==="success") {
+                    location.reload();
 
-				}else if(data  == "name exist" || data == "mail exist"){
-					$('#regMsg').show();
-					$('#regMsg').show();
-					$('#regMsg').addClass("alert-danger");
-					$('#regMsg').text(data);
-					console.log('hey');
+				}else if(data  === "failed" ){
+					$('#failLogin').show();
+
 					setTimeout(
 						function() {
-							$('#regMsg').fadeOut();
-							$('#regMsg').fadeOut();
-							$('#regMsg').removeClass("alert-danger");
+							$('#failLogin').fadeOut();
 						}, 2000);
 				}
 			}
@@ -46,30 +41,27 @@
 	});
 	$("#register").click(function(){
 
-		if ($("#first_name" ).val()=="") {		
-			$("#regMsg").text("You must fill a username");
-			$( "#regMsg" ).show();
+		if ($("#first_name" ).val() === "") {
+
+			$( "#regMsg" ).show().text("You must fill a username");
 			setTimeout(function(){
 				$( "#regMsg" ).fadeOut();
 			}, 3000);
 		}
-		else if ($("#email").val()=="") {
-			$("#regMsg").text("You must fill an email");
-			$( "#regMsg" ).show();
+		else if ($("#email").val()==="") {
+			$( "#regMsg" ).show().text("You must fill an email");
 			setTimeout(function(){
 				$( "#regMsg" ).fadeOut();
 			}, 3000);
 		}
-		else if ($("#password").val()=="") {
-			$("#regMsg").text("You must fill a password");
-			$( "#regMsg" ).show();
+		else if ($("#password").val()==="") {
+			$( "#regMsg" ).show().text("You must fill a password");
 			setTimeout(function(){
 				$( "#regMsg" ).fadeOut();
 			}, 3000);
 		}
-		else if ($("#password").val()!=$("#password_confirmation").val()) {
-			$("#regMsg").text("passwords do not match");
-			$( "#regMsg" ).show();
+		else if ($("#password").val()!== $("#password_confirmation").val()) {
+			$( "#regMsg" ).show().text("passwords do not match");
 			setTimeout(function(){
 				$( "#regMsg" ).fadeOut();
 			}, 3000);
@@ -83,29 +75,19 @@
 					url      : $(this).attr('action'),
 					data     : $(this).serialize(),
 					success  : function(data) {
-						if (data=="success") {
-							$('#regMsg').addClass("alert-success");
-							$('#regMsg').text(data);
-							$('#regMsg').show();
-							$('#regMsg').show();
+						if (data==="success") {
+							$('#regMsg').show().text(data).addClass("alert-success");
 							setTimeout(
 								function() {
-									$('#regMsg').fadeOut();
-									$('#regMsg').fadeOut();
-									$('#regMsg').removeClass("alert-success");
+									$('#regMsg').fadeOut().removeClass("alert-success");
 								}, 2000);
 
-						}else if(data  == "name exist" || data == "mail exist"){
-							$('#regMsg').show();
-							$('#regMsg').show();
-							$('#regMsg').addClass("alert-danger");
-							$('#regMsg').text(data);
-							console.log('hey');
+						}else if(data  === "name exist" || data === "mail exist"){
+							$('#regMsg').show().text(data).addClass("alert-danger");
+
 							setTimeout(
 								function() {
-									$('#regMsg').fadeOut();
-									$('#regMsg').fadeOut();
-									$('#regMsg').removeClass("alert-danger");
+									$('#regMsg').fadeOut().removeClass("alert-danger");
 								}, 2000);
 						}
 					}

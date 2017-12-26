@@ -26,9 +26,16 @@
 			//nextComment();
 			setTimeout(
 				function() {
-					pagination();
+                    next();
 				}, 500);
 		});
+
+        $("#previousComment").click(function(){
+            setTimeout(
+                function() {
+                    previous();
+                }, 500);
+        });
 	});
 	
 
@@ -46,16 +53,7 @@
 
 		});
 	}
-	function nextComment() {
-		data = "test="+next;
 
-		$.ajax({
-			type: 'POST',
-			url: 'next',
-			data: data
-
-		});
-	}
 	function auto_load(){
 		$.ajax({
 			url: "commentsRefresh",
@@ -65,7 +63,7 @@
 			} 
 		});
 	}
-	function pagination(){
+	function next(){
 		$.ajax({
 			url: "next",
 			cache: false,
@@ -75,5 +73,14 @@
 		});
 	}
 
+    function previous(){
+        $.ajax({
+            url: "previous",
+            cache: false,
+            success: function(data){
+                $("#loadAjax").html(data);
+            }
+        });
+    }
 
 })(jQuery);

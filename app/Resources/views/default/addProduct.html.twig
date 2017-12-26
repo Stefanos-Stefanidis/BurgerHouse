@@ -1,134 +1,179 @@
-{% extends 'admin.html.twig' %}
-
-{% block body %}
+{% extends 'admin.html.twig' %} {% block body %}
 <div>
-	<button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
+    <button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
 </div>
 <div class="container margin-top-10">
-  
 
-  <!-- Modal -->
-  <div class="modal fade" id="add-category" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Manage your categories</h4>
-        </div>
-        <div class="modal-body">
-			<form method="post" action="add-product">
-				<div class="form-group">
-					<label for="category">Category name</label>
-					<input type="text" class="form-control" name="addCategory" id="category">
 
-					{% for flash in app.session.flashbag.get('notice') %}
-	    				<div class="text-center alert alert-success" id="fadeMsg">
-	    					{{flash}}
-	    				</div>
-					{% endfor %}
-				</div>
-			
+    <!-- Modal -->
+    <div class="modal fade" id="add-category" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Manage your categories</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="add-product">
+                        <div class="form-group">
+                            <label for="category">Category name</label>
+                            <input type="text" class="form-control" name="addCategory" id="category"> {% for flash in app.session.flashbag.get('notice') %}
+                            <div class="text-center alert alert-success" id="fadeMsg">
+                                {{flash}}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="modal-footer">
+                            <button name="category-btn" class="btn btn-success">
+                                <i class="fa fa-save "></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>
-        <div class="modal-footer">
-         	<button name= "category-btn" class="btn btn-success">
-				<i class="fa fa-save "></i>
-			</button>
-			</form>
-        </div>
-      </div>
-      
     </div>
-  </div>
-  
+
+    <!-- Modal -->
+    <div class="modal fade" id="dlt-category" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Manage your categories</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="add-product">
+                        <div class="form-group">
+                            <label for="category">Category name</label>
+                            <select class="form-control" id="select" name="dltCategory">
+                                {% for category in category %}
+                                <option>{{category.name}} </option>
+                                {% endfor%}
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button name="dlt-category-btn" class="btn btn-danger">
+                                <i class="fa fa-trash "></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 <div class="container">
-	<div class="jumbotron">
-		<div class="container">
-			<div class="row">
-				<form method="post" action="add-product" >
-					<div class="col-md-6 col-xs-12">
-						<label for="productName">
-							Enter food name
-						</label>
-						<div class="input-group">
-							<span class="input-group-addon">
-								<span class="fa fa-cutlery"></span>
-							</span>
-							<input type="text" class="form-control" name="productName" />
-						</div>
-						<label for="price">
-							Enter price
-						</label>
-						<div class="input-group">
-							<span class="input-group-addon">
-								<span class="fa fa-eur"></span>
-							</span>
-							<input type="text" class="form-control" name="price" />
-						</div>
-						<div class="form-group">
-							<label for="select">Select category</label>
-							<select class="form-control" id="select" name="category">
-								{% for category in category %}
-									<option>{{category.name}} </option>
-								{% endfor%}
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="image">Select image</label>
-							<select class="form-control" id="image" name="image">
-								{% for file in files %}
-									<option>{{file}} </option>
-								{% endfor%}
-							</select>
-						</div>
-						{% for flash in app.session.flashbag.get('notice') %}
-		    				<div class="text-center alert alert-success" id="fadeMsg">
-		    					{{flash}}
-		    				</div>
-						{% endfor %}
-					</div>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <form method="post" action="add-product">
+                    <div class="col-md-6 col-xs-12">
+                        <label for="productName">
+                            Enter food name
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="fa fa-cutlery"></span>
+                            </span>
+                            <input type="text" class="form-control" name="productName" />
+                        </div>
+                        <label for="price">
+                            Enter price
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="fa fa-eur"></span>
+                            </span>
+                            <input type="text" class="form-control" name="price" />
+                        </div>
+                        <div class="form-group">
+                            <label for="select">Select category</label>
+                            <select class="form-control" id="select" name="category">
+                                {% for category in category %}
+                                <option>{{category.name}} </option>
+                                {% endfor%}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Select image</label>
+                            <select class="form-control" id="image" name="image">
+                                {% for file in files %}
+                                <option>{{file}} </option>
+                                {% endfor%}
+                            </select>
+                        </div>
+                        {% for flash in app.session.flashbag.get('notice') %}
+                        <div class="text-center alert alert-success" id="fadeMsg">
+                            {{flash}}
+                        </div>
+                        {% endfor %}
+                    </div>
 
-					<div class="col-md-4 col-md-push-2 col-xs-12" >
-						<label for="description">
-							Enter description
-						</label>
-						<div class="input-group">
-							<span class="input-group-addon">
-								<span class="fa fa-pencil"></span>
-							</span>
-							<input type="text" class="form-control" name="description" />
-						</div>
-						<label for="tags">
-							Enter tags
-						</label>
-						<div class="input-group">
-							<span class="input-group-addon">
-								<span class="fa fa-tags"></span>
-							</span>
-							<input type="text" class="form-control" name="tags" />
-						</div>
-						<small class="bg-danger"> use coma for each tag </small>
-						<div class="form-group margin-top-10">
-							<button class="btn btn-success btn-block" name="add-btn">Add</button>
-						</div>
-					</div>
-				</form>
+                    <div class="col-md-4 col-md-push-2 col-xs-12">
+                        <label for="description">
+                            Enter description
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="fa fa-pencil"></span>
+                            </span>
+                            <input type="text" class="form-control" name="description" />
+                        </div>
+                        <label for="tags">
+                            Enter tags
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="fa fa-tags"></span>
+                            </span>
+                            <input type="text" class="form-control" name="tags" />
+                        </div>
+                        <small class="bg-danger"> use coma for each tag </small>
+                        <div class="form-group margin-top-10">
+                            <button class="btn btn-success btn-block" name="add-btn">Add</button>
+                        </div>
+                    </div>
+                </form>
 
-			</div>
-		</div>
-  		<button type="button" class="btn btn-info " data-toggle="modal" data-target="#add-category">Add new category</button>
+            </div>
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-info " data-toggle="modal" data-target="#add-category">Add new category</button>
+            <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#dlt-category">Delete category</button>
+        </div>
 
-	</div>
+    </div>
 </div>
 <div class="container">
-	<div class="row">
-		<div class="panel img-panel">
-			<div class="text-center margin-top-10 margin-bottom-10">
-				<img id="loadImg" src="images/logo.png">
-			</div>
-		</div>
-	</div>
+    <div class="row  margin-bottom-10">
+        <div class="col-xs-12 img-upload-bg">
+            <form class="form-inline" action="{{asset('image-upload')}}" method="post" enctype="multipart/form-data">
+                <div class="form-group ">
+                    <label for="image">Upload image</label>
+                    <input name="image" type="file" id="image" class="margin-bottom-10">
+                </div>
+                <div class="form-group margin-bottom-10">
+                    <button type="submit" class="btn btn-success btn-sm">Upload</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="panel img-panel">
+            <div class="text-center margin-top-10 margin-bottom-10">
+                <img id="loadImg" src="{{ asset('images/logo.png') }}">
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

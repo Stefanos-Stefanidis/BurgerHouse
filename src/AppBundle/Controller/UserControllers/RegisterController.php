@@ -24,6 +24,9 @@ class RegisterController extends Controller{
             $username = $_POST['_firstName'];
             $mail = $_POST['_email'];
             $password = $_POST['_password'];
+            $address = $_POST['_address'];
+            $lastname = $_POST['_lastname'];
+            $phone = $_POST['_phone'];
 
             $usernameExist = $this->getDoctrine()
             ->getRepository('AppBundle:Users')
@@ -48,8 +51,11 @@ class RegisterController extends Controller{
             $encoded = $encoder->encodePassword($addUser, $password);
 
             $addUser -> setUsername($username)
-            -> setEmail($mail)
-            -> setPassword($encoded);
+                -> setEmail($mail)
+                -> setAddress($address)
+                -> setPhone($phone)
+                ->setLastname($lastname)
+                -> setPassword($encoded);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($addUser);

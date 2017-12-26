@@ -10,6 +10,7 @@ namespace AppBundle\Repository;
  */
 class ProductsRepository extends \Doctrine\ORM\EntityRepository
 {
+
 	public function findAll()
     {
         return $this->findBy(array(), array('category' => 'DESC'));

@@ -14,6 +14,7 @@ imports:
 
 parameters:
     locale: en
+    save_image: "%kernel.root_dir%/../web/images/uploads"
     tokens:
         client1: pass1
         client2: pass2
@@ -46,6 +47,7 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    cache:  false
 
 # Doctrine Configuration
 doctrine:

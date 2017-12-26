@@ -16,12 +16,13 @@ use AppBundle\Controller\TokenAuthenticatedController;
 
 class AddProductController extends Controller /*implements TokenAuthenticatedController*/
 {
- 
+   
     /**
      * @Route("/add-product", name="add-product")
      */
     public function AddProductAction(Request $request)
     {
+     
 
         if (isset($_POST['add-btn'])) {
 
@@ -71,31 +72,36 @@ class AddProductController extends Controller /*implements TokenAuthenticatedCon
                 'notice',
                 'Category added'
                 );
-
             return $this->redirectToRoute('add-product'); 
 
         }
 
-        $session = $request->getSession();
-        $admin = $session->get('admin');
 
-        if ($admin=='TRUE') {
-            $dir    = 'images/products';
-            $array_files = scandir($dir);
-      
-
-            $categories = $this->getDoctrine()
-            ->getRepository('AppBundle:Category')
-            ->findAll();
-
-            return $this->render('default/addProduct.html.twig',array(
-                'category'=>$categories,'files'=>$array_files
-                ));           
-        }
-        else{
-            return $this->render('default/login.html.twig');
+        if (isset($_POST['dlt-category-btn'])) {
             
-        }
+            $categoryName = $_POST['dltCategory'];
+            $em = $this->getDoctrine()->getManager();
+            $categoryDlt = $em->getRepository('AppBundle:Category')->findOneByName($categoryName);
+
+            $em->remove($categoryDlt);
+            $em->flush(); 
+            
+            return $this->redirectToRoute('add-product'); 
+
+            }
+
+        $dir    = 'images/uploads';
+        $array_files = scandir($dir);
+
+        $array_files = array_diff($array_files, array('.', '..'));
+        $categories = $this->getDoctrine()
+        ->getRepository('AppBundle:Category')
+        ->findAll();
+
+        return $this->render('default/addProduct.html.twig',array(
+            'category'=>$categories,'files'=>$array_files
+            ));           
+        
 
     }
 

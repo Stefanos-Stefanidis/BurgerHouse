@@ -1,5 +1,9 @@
-
-
+ html,body * {
+  font-family: Ubuntu, "times new roman", times, roman, serif;
+}
+p{
+  line-height: normal;
+}
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -31,7 +35,7 @@
 
 /* Carousel base class */
 .carousel {
-  height: 500px;
+  /*height: 500px;*/
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -41,7 +45,7 @@
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 500px;
+ /* height: 500px;*/
   background-color: #777;
 }
 .carousel-inner > .item > img {
@@ -49,7 +53,7 @@
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 500px;
+ /* height: 500px;*/
 }
 
 
@@ -227,6 +231,12 @@ iframe{
 .margin-bottom-10{
   margin-bottom: 10px;
 }
+.padding-top-15{
+  padding-top: 15px;
+}
+.padding-bottom-20{
+  padding-bottom: 20px;
+}
 textarea{
   resize:none;
 }
@@ -377,7 +387,7 @@ textarea{
 
 #list-nav{
   position: fixed;
-  margin-left: 0px
+  margin-left: 0;
   margin-top:200px;
   display: none;
 }
@@ -395,14 +405,8 @@ textarea{
   background-color: #E5BDB5;
   border: 4px solid #F5F5F5;
 }
-.slash:after{
-  position: absolute;
-  content: "/";
-  color: red;
-  font-weight: 700;
-  font-size: 2.1em;
-  margin-left: -23px;
-  margin-top: -10px;
+.slash{
+  text-decoration: line-through;
 }
 #offerSendMsg{
   display: none;
@@ -485,4 +489,16 @@ label.star:before {
 .btn3d.btn-success:active, .btn3d.btn-success.active {
     box-shadow:0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
     background-color: #78d739;
+}
+.offer-container div{
+  min-height: 600px;
+}
+
+#failLogin{
+  display: none;
+}
+
+.max-height-200{
+  max-height: 200px;
+  overflow-y: scroll;
 }

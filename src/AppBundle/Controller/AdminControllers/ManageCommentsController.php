@@ -16,8 +16,8 @@ use AppBundle\Controller\TokenAuthenticatedController;
 
 class ManageCommentsController extends Controller /*implements TokenAuthenticatedController*/
 {
- 
    
+ 
     /**
      * @Route("/deleteComment/{id}", name="deleteComment")
      */
@@ -41,21 +41,16 @@ class ManageCommentsController extends Controller /*implements TokenAuthenticate
     */
     public function manageCommentsAction(Request $request)
     {
-        $session = $request->getSession();
-        $admin = $session->get('admin');
 
-        if ($admin=='TRUE') {         
-            $comments = $this->getDoctrine()
-            ->getRepository('AppBundle:Comments')
-            ->findAllDesc();
-            return $this->render('default/manageComments.html.twig',array(
-                'comments'=>$comments
-                ));        
 
-        }
-        else{
-            return $this->render('default/login.html.twig');    
-        }
+        $comments = $this->getDoctrine()
+        ->getRepository('AppBundle:Comments')
+        ->findAllDesc();
+        return $this->render('default/manageComments.html.twig',array(
+            'comments'=>$comments
+            ));        
+
+        
 
     } 
 

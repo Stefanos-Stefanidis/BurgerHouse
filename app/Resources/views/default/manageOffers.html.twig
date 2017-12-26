@@ -7,38 +7,41 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-xs-6 col ">
+		<div class="col-xs-12 col-md-4 margin-top-50">
 			{% for product in products %}
-				<div class="panel">
+				<div class="pr-panel">
 					<p class="pr-name"> {{product.name}},{{product.price}}&euro;</p>
 				</div>
 			{% endfor%}
 		</div>
-		<div class="col-xs-6 col-md-4 margin-top-100 col-md-push-2">
-			<p id="create-offer-box" class="fa fa-gift fa-10x text-danger"> <span id="send-offer">Click to send</span> </p>
-			<br class="margin-top-100">
-				<div class=" panel margin-top-100 ">
-					<span id="offer-box" ></span>
-					<div>
+		<div class="col-xs-12 col-md-5 margin-top-10 pull-right">
+			<div class="text-center">
+				<p id="create-offer-box" class="fa fa-gift fa-9x text-danger"></p>
+			</div>
+			<div class="margin-top-10">
+				<div class=" panel margin-top-10 ">
+					<span id="offer-box" class="padding-10"></span>
+					<div class="padding-10">
+						<span id="send-offer" class="text-success">Click to send</span>
 					<hr>
-					{% for offer in offers %}
-							<p>
-								{{offer.product}}
-								<a  class="btn btn-xs btn-danger pull-right return" href="/remove/{{offer.id}}">Remove</a>
-							</p>
-					{% endfor %}
+						{% for offer in offers %}
+								<p class="padding-10">
+									{{offer.product}}
+									<a  class="btn btn-xs btn-danger pull-right return" href="/remove/{{offer.id}}">Remove</a>
+								</p>
+						{% endfor %}
 					</div>
+
 				</div>
-				<div class="panel col-xs-2 pull-right">
+				<div class="panel col-xs-3 pull-right">
 					{% set totalPrice = 0 %}
 					{% for offer in offers  %}
 						{% set totalPrice = totalPrice + offer.times %}
 					{% endfor %}
 					<h4 id="total-price">{{totalPrice}}&euro;</h4>
 				</div>
+			</div>
 		</div>
-
-		
 	</div>
 </div>
 {% endblock %}
