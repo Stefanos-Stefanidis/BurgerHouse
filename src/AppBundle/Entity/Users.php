@@ -26,6 +26,22 @@ class Users implements UserInterface
      */
     private $username;
 
+
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    private $address;
+
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    private $lastname;
+
+    /**
+     * @ORM\Column(type="integer", length=25)
+     */
+    private $phone;
+
     /**
      * @ORM\Column(type="array", length=60)
      */
