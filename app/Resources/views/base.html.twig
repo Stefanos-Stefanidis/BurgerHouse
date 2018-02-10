@@ -31,25 +31,25 @@
                 </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="{{asset('')}}">Home</a></li>
-                            <li><a href="{{asset('list')}}">List</a></li>
-                            <li><a href="{{asset('comments')}}">Comments</a></li>
-                            <li><a href="{{asset('contact')}}">Contact</a></li>
+                            <li class="active"><a href="{{url('homepage')}}">Home</a></li>
+                            <li><a href="{{url('list')}}">List</a></li>
+                            <li><a href="{{url('comments')}}">Comments</a></li>
+                            <li><a href="{{url('contact')}}">Contact</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="{{asset('basket')}}">
+                                <a href="{{url('basket')}}">
                                     <span id= "shop-basket" class="fa fa-shopping-cart" aria-hidden="true"> (0)</span>
                                 </a>
                             </li>
                             <li>
                              {% if is_granted('ROLE_ADMIN') %}
-                                <a href="{{asset('admin-homepage')}}" class="fa fa-barcode"> Admin page</a>
+                                <a href="{{url('admin-homepage')}}" class="fa fa-barcode"> Admin page</a>
                                 <!-- <p>Username: {{ app.user.username }}</p> -->
                             {% elseif is_granted('ROLE_USER') %}
-                                <a href="{{asset('logout')}}">Logout</a>
+                                <a href="{{url('logout')}}">Logout</a>
                             {% else %}
-                                <a href="{{ asset('login')}}">
+                                <a href="{{url('login')}}">
                                     <span class="fa fa-user" aria-hidden="true"></span>
                                     Login
                                 </a>
