@@ -7,12 +7,12 @@
   "author": "Stefanos Stefanidis",
   "license": "GNU GPLv3",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-install": "^0.6.0"
   },
   "dependencies": {
     "gulp-clean-css": "^2.0.12",
     "gulp-imagemin": "^3.0.3",
-    "gulp-install": "^0.6.0",
     "gulp-less": "^3.1.0",
     "gulp-uglify": "^2.0.0"
   }
