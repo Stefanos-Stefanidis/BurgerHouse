@@ -46,8 +46,16 @@ class ManageCommentsController extends Controller /*implements TokenAuthenticate
         $comments = $this->getDoctrine()
         ->getRepository('AppBundle:Comments')
         ->findAllDesc();
+
+        $paginator = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $comments,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 12)
+        );
+
         return $this->render('default/manageComments.html.twig',array(
-            'comments'=>$comments
+            'comments'=>$result
             ));        
 
         

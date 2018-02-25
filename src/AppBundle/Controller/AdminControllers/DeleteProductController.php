@@ -21,10 +21,7 @@ class DeleteProductController extends Controller /*implements TokenAuthenticated
      * @Route("/delete-product/{id}", name="deletepr")
      */
     public function deleteProductAction($id=0, Request $request)
-    {   
-
-
-
+    {  
 
         $em = $this->getDoctrine()->getManager();
         $itemDlt = $em->getRepository('AppBundle:Products')->find($id);

@@ -22,8 +22,6 @@
 
 		});
 
-
-
 		$(".add-item").click(function () {
 			document.getElementById("addProductli").click();
 
@@ -51,10 +49,5 @@
 
 	});
 
-
-	function login() {
-
-
-	}
 
 })(jQuery);

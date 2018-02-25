@@ -29,7 +29,8 @@
         "sensio/framework-extra-bundle": "^5.0.0",
         "incenteev/composer-parameter-handler": "^2.0",
         "symfony/http-kernel": "^3.1",
-        "symfony/var-dumper": "^3.2"
+        "symfony/var-dumper": "^3.2",
+        "knplabs/knp-paginator-bundle": "^2.7"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $('.carousel').carousel({
-        interval: 3000
+        interval: 6000
     });
     var index = Cookies.get('active');
     console.log(index);
