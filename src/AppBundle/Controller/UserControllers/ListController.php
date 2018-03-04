@@ -15,9 +15,7 @@ class ListController extends Controller{
      */
     public function listAction()
     {
-
         $categoriesOrderedByOrder = $this->getDoctrine()->getRepository('AppBundle:Category')->findByMaxCategory();
-        
         $result=[];
         for ($i = 0; $i < sizeOf($categoriesOrderedByOrder); $i++) { 
             

@@ -345,8 +345,8 @@ textarea{
   background: #BD081C;
 }
 
-.fa.fa-shopping-cart{
-  font-size: 18px;
+.cart-font-size{
+  font-size: 20px;
 }
 .img-responsive{
   display: inline;
@@ -460,7 +460,11 @@ label.star:before {
   border-top: 2px solid black;
 }
 
+.current > a {
 
+  background: #edb83d !important;
+
+}
 
 .btn3d {
     position:relative;

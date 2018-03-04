@@ -4,6 +4,7 @@ namespace AppBundle\Controller\UserControllers;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Comments;
 
@@ -13,14 +14,18 @@ class CommentsController extends Controller{
     /**
      * @Route("/comments", name="comments")
      */
-    public function commentsAction(Request $request)
+    public function commentsAction(Request $request,$limit = 5)
     {
         $session = $request->getSession();
-        $session->set('offset',0);
 
+        $offset = $session->get('offset');
+        
+        if ($offset < 0) {
+            $offset = 0;
+        }
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
-                    ->findAllLimit();
+                    ->findAllLimit($limit,$offset);
         return $this->render('default/comments.html.twig',array(
                 'comments'=>$comments
             ));        
@@ -33,8 +38,7 @@ class CommentsController extends Controller{
      */
     public function commentsRefreshAction()
     {       
-    
-            
+
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
                     ->findAllLimit();
@@ -47,17 +51,29 @@ class CommentsController extends Controller{
     /**
     * @Route("/next", name="next")
     */
-    public function nextAction($limit =5 ,Request $request)
+    public function nextAction($limit = 5 ,Request $request)
     {     
         $session = $request->getSession();
         $offset = $session->get('offset');
-            $offset = $offset + 5;
-            $session->set('offset', $offset);
-            
+
+        
+        $numOfComments = $this->getDoctrine()
+        ->getRepository('AppBundle:Comments')
+        ->findAll();
+
+        if ($offset > sizeOf($numOfComments) - 5) {
+            $this->addFlash(
+                'notice',
+                'No more comments'
+                );        
+            return new Response('false');
+        }
+        $offset = $offset + 5;
+        $session->set('offset', $offset);
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
                     ->findAllLimit($limit,$offset);
-        return $this->render('default/commentsRefresh.html.twig',array(
+            return $this->render('default/commentsRefresh.html.twig',array(
                 'comments'=>$comments
             ));
     }
@@ -69,9 +85,17 @@ class CommentsController extends Controller{
     {
         $session = $request->getSession();
         $offset = $session->get('offset');
+
+        if ($offset < 6) {
+            $this->addFlash(
+                'notice',
+                'No previous comments'
+                );
+        
+        return new Response('false');
+        }
         $offset = $offset - 5;
         $session->set('offset', $offset);
-
         $comments = $this->getDoctrine()
             ->getRepository('AppBundle:Comments')
             ->findAllLimit($limit,$offset);

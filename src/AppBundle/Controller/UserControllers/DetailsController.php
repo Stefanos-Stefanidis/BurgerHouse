@@ -20,12 +20,14 @@ class DetailsController extends Controller{
     public function detailsAction($id=0, Request $request)
     {
 
+
         $listItem = $this->getDoctrine()
                     ->getRepository('AppBundle:Products')
                     ->find($id);
         $rate =    $this->getDoctrine()
                     ->getRepository('AppBundle:Rate')
                     ->findByPrid($id);
+        dump($rate);
         if (!$listItem) {
             throw $this->createNotFoundException(
                 'No product found for id '. $id

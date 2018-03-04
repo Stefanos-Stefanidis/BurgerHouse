@@ -4,15 +4,6 @@ $(document).ready(function () {
     var url = document.URL;
     var lastPart = url.split("/").pop();
     var orderName = $(".orderName").text();
-    if (Cookies.get('name') == undefined) {
-        var counter = 0;
-        document.getElementById("shop-basket").innerHTML = "(" + 0 + ")";
-
-    } else {
-        var counter = parseInt(Cookies.get('name'));
-        document.getElementById("shop-basket").innerHTML = "(" + parseInt(Cookies.get('name')) + ")";
-
-    }
     if (orderName !== '') {
         $('#send-order').removeClass('disabled');
     }
@@ -43,7 +34,6 @@ $(document).ready(function () {
                 data: data
 
             });
-            Cookies.set('name', counter = 0);
             setTimeout(function () {
                 location.reload();
             }, 500)
@@ -54,11 +44,10 @@ $(document).ready(function () {
     });
 
     $('.addCart').click(function () {
-        $("#shop-basket").addClass("animated wobble");
-        Cookies.set('name', counter += 1);
-
-        $("#shop-basket").html("(" + parseInt(Cookies.get('name')) + ")");
-
+        $(".cart-font-size").addClass("animated wobble");
+        var NumOfPrInCart = $("#NumOfPrInCart").text();        
+        NumOfPrInCart++;
+        $("#NumOfPrInCart").text(NumOfPrInCart);
         var productPrice = $('#prprice').text();
         var productName = $('#prname').text();
 
@@ -75,7 +64,7 @@ $(document).ready(function () {
             $("#offerSendMsg").hide(1000);
         }, 2000)
         setTimeout(function () {
-            $("#shop-basket").removeClass("animated wobble");
+            $("cart-font-size").removeClass("animated wobble");
         }, 1200)
     });
 

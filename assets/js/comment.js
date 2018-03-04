@@ -68,6 +68,11 @@
 			url: "next",
 			cache: false,
 			success: function(data){
+				if (data == 'false') {
+					location.reload();
+					return;
+				}
+				console.log('hey');
 				$("#loadAjax").html(data);
 			} 
 		});
@@ -78,6 +83,10 @@
             url: "previous",
             cache: false,
             success: function(data){
+				if (data == 'false') {
+					location.reload();
+					return;
+				}
                 $("#loadAjax").html(data);
             }
         });

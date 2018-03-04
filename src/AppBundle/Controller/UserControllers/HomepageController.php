@@ -16,6 +16,8 @@ class HomepageController extends Controller{
      */
 	 public function indexAction(Request $request)
 	 {
+
+
 	 	$offer1 = $this->getDoctrine()
 	 	->getRepository('AppBundle:Offers')
 	 	->findByOffer(1);

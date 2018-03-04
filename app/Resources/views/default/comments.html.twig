@@ -1,4 +1,6 @@
-{% extends 'base.html.twig' %} {% block body %}
+{% extends 'base.html.twig' %} 
+{% block title %}{{site_title}}|Comments{% endblock %}
+{% block body %}
 <!-- TODO: comment "next five" does not stop when all comments finished -->
 <div id="wait"><i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i></div>
 <div id="loading-wrapper"></div>
@@ -29,26 +31,23 @@
     </div>
 </div>
 <div class="container margin-top-100">
-    <div class="row">
-        <div id="loadAjax">
-            {% include 'default/commentsRefresh.html.twig' %}
-            <!-- <form method="post" action="commentsRefresh" > -->
-            <!-- </form> -->
+    {% for flash in app.session.flashbag.get('notice') %}
+        <div class="text-center alert alert-danger" id="fadeMsg">
+            {{flash}}
         </div>
-        <div class="col-xs-12 col-md-5 margin-top-50 pull-right">
-            <button class="btn btn-primary btn-block" id="nextComment" name="next">
-					Next <span class="fa fa-forward"></span>
-				</button>
-
-        </div>
-        <div class="col-xs-12 col-md-5 margin-top-50">
-            <button class="btn btn-warning btn-block" id="previousComment" name="previous">
-					 <span class="fa fa-backward"> Previous</span>
-				</button>
-
-        </div>
-
+    {% endfor %}
+    <div id="loadAjax">
+        {% include 'default/commentsRefresh.html.twig' %}
     </div>
-
+    <div class="col-xs-12 col-md-5 margin-top-50 pull-right">
+        <button class="btn btn-primary btn-block" id="nextComment" name="next">
+            Next <span class="fa fa-forward"></span>
+        </button>
+    </div>
+    <div class="col-xs-12 col-md-5 margin-top-50">
+        <button class="btn btn-warning btn-block" id="previousComment" name="previous">
+            <span class="fa fa-backward"> Previous</span>
+        </button>
+    </div>
 </div>
 {% endblock %}

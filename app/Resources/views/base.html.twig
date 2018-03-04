@@ -14,63 +14,12 @@
 </head>
 
 <body>
+    {{ knp_menu_render('AppBundle:Builder:mainMenu', {'allow_safe_labels': true}) | raw  }}
 
-        <div class="navbar-wrapper">
-          <div class="container">
-
-            <nav class="navbar navbar-default navbar-static-top animated slideInDown">
-              <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" id="logo">Stef Burger</a>
-                </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="{{url('homepage')}}">Home</a></li>
-                            <li><a href="{{url('list')}}">List</a></li>
-                            <li><a href="{{url('comments')}}">Comments</a></li>
-                            <li><a href="{{url('contact')}}">Contact</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="{{url('basket')}}">
-                                    <span id= "shop-basket" class="fa fa-shopping-cart" aria-hidden="true"> (0)</span>
-                                </a>
-                            </li>
-                            <li>
-                             {% if is_granted('ROLE_ADMIN') %}
-                                <a href="{{url('homeAdmin')}}" class="fa fa-barcode"> Admin page</a>
-                                <!-- <p>Username: {{ app.user.username }}</p> -->
-                            {% elseif is_granted('ROLE_USER') %}
-                                <a href="{{url('logout')}}">Logout</a>
-                            {% else %}
-                                <a href="{{url('login')}}">
-                                    <span class="fa fa-user" aria-hidden="true"></span>
-                                    Login
-                                </a>
-                            {% endif %}
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </nav>
-
-        </div>
-    </div>
-
-{% block body %} 
+    {% block body %} 
 
 
-{% endblock %}
-
-
-
+    {% endblock %}
 <footer>
     <div class="footer margin-top-50" id="footer">
         <div class="container">
@@ -95,7 +44,7 @@
                                     <input id = "userMail" type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon2">
                                    
                                 </div>
-                                <button  type='submit' id='validate' class="btn btn-block margin-top-10 burger-btn" > Subscribe 
+                                <button  type="submit" id="subscribe" class="btn btn-block margin-top-10 burger-btn" > Subscribe 
                                     <i class="fa fa-long-arrow-right"> </i> 
                                 </button>
                                  <h2 id='result' class="margin-top-10"></h2>
