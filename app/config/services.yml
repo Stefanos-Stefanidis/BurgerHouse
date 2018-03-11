@@ -16,3 +16,7 @@ services:
         arguments: ['%tokens%']
         tags:
             - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+    app.form.registration:
+        class: AppBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }

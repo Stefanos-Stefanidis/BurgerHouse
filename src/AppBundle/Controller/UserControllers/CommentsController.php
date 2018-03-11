@@ -86,7 +86,7 @@ class CommentsController extends Controller{
         $session = $request->getSession();
         $offset = $session->get('offset');
 
-        if ($offset < 6) {
+        if ($offset <= 0) {
             $this->addFlash(
                 'notice',
                 'No previous comments'
@@ -108,12 +108,14 @@ class CommentsController extends Controller{
      */
     public function commentsSubmitAction(Request $request)
     {
+        $rate = $_COOKIE['rate'];
         $username = $this->getUser()->getUsername();
         $comment =  $_POST['comment'];
         if (isset($username)) {
             $addComment = new Comments();
             $addComment -> setName($username)
-                    -> setComment($comment);
+                        -> setComment($comment)
+                        -> setRate($rate);
             $em = $this->getDoctrine()->getManager();
             $em->persist($addComment);
             $em->flush();

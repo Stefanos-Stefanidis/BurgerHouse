@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %} 
-{% block title %}{{site_title}}|Comments{% endblock %}
+{% block title %}Comments{% endblock %}
 {% block body %}
 <!-- TODO: comment "next five" does not stop when all comments finished -->
 <div id="wait"><i class="fa fa-spinner fa-pulse fa-4x fa-fw"></i></div>
@@ -16,8 +16,17 @@
                             <label for="commentBox">Comment</label>
                             <textarea type="text" name="comment" class="form-control" id="commentBox" rows="5"></textarea>
                         </div>
-
-                        <button id="addComment" type="submit" class="burger-btn btn btn-default "><i class="fa fa-share"> </i>Share</button>                        {% else %}
+                        <fieldset class="rating">
+                            {% for i in range(5, 0.5, 0.5)  %}
+                                {% if i matches '/^\\d+$/'%}
+                                    <input type="radio" id="star{{i}}" name="rating" value="{{i}}" /><label class = "full" for="star{{i}}"></label>
+                                {% else %}
+                                    <input type="radio" id="star{{i + 0.5 }}half" name="rating" value="{{i}}" /><label class = "half" for="star{{i + 0.5}}half"></label>                            
+                                {% endif %}
+                            {% endfor %}
+                         </fieldset>
+                        <button id="addComment" type="submit" class="burger-btn btn btn-default "><i class="fa fa-share"> </i>Share</button>                        
+                        {% else %}
                         <div class="form-group">
                             <label for="commentBox">Comment</label>
                             <textarea disabled type="text" name="comment" class="form-control" id="commentBox" rows="5"></textarea>
@@ -25,6 +34,7 @@
                         <h3><a href="{{ asset('login') }}" class="burger-a">Login</a> to comment</h3>
                         {% endif %}
                     </form>
+
                 </div>
             </div>
         </div>

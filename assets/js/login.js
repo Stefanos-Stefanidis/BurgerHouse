@@ -35,10 +35,7 @@
 			}
 		});
 	});
-	$("#backHistory").click(function(){
-		parent.history.back();
-		return false;
-	});
+
 	$("#register").click(function(){
 
 		if ($("#first_name" ).val() === "") {

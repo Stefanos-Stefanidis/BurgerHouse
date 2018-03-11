@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/full-slider.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+
+<body>
+    {{ knp_menu_render('AppBundle:Builder:mainMenu', {'allow_safe_labels': true}) | raw  }}
+    {% block body %} 
+        {% block content %}
+            {% if app.request.hasPreviousSession %}
+                {% for type, messages in app.session.flashbag.all() %}
+                    {% for message in messages %}
+                        <div class="flash-{{ type }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+
+            <div>
+                {% block fos_user_content %}
+                {% endblock fos_user_content %}
+            </div>
+        {% endblock %}
+    {% endblock %}
+<footer>
+    <div class="footer margin-top-50" id="footer">
+        <div class="container">
+            <div class="row">
+      
+                <div class="col-md-6 col-sm-12 col-xs-12 ">
+                    <h3>Location</h3>
+                    <ul>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.3228180044202!2d22.924183914813174!3d40.64481384966107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a839991eaa634f%3A0x373e815e4436f7c!2sMonastiriou+91%2C+Thessaloniki+546+27!5e0!3m2!1sen!2sgr!4v1469212197091" width="400" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-8 ">
+                    <h3> Subscribe  </h3>
+                    <ul>
+                        <li>
+                            <div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="sizing-addon2">
+                                        <span class="fa fa-envelope"></span>
+                                    </span>
+                                    <input id = "userMail" type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon2">
+                                   
+                                </div>
+                                <button  type="submit" id="subscribe" class="btn btn-block margin-top-10 burger-btn" > Subscribe 
+                                    <i class="fa fa-long-arrow-right"> </i> 
+                                </button>
+                                 <h2 id='result' class="margin-top-10"></h2>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3> Find us </h3>
+                    <ul class="social">
+                        <li id="facebook"> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                        <li id="twitter"> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li id="pinterest"> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                    </ul>
+                    
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-4 ">
+                    <p id="go-top">
+                        <span class="fa fa-chevron-circle-up" aria-hidden="true"></span>
+                    </p>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © Burger House. All right reserved. </p>
+ 
+        </div>
+    </div>
+    {% block javascripts %}
+
+        <script src="{{ asset('js/jquery.min.js') }}"></script> 
+        <script src="{{ asset('js/cookies.min.js') }}"></script> 
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
+        <script src="{{ asset('js/validation.js') }}"></script> 
+        <script src="{{ asset('js/modals.js') }}"></script> 
+        <script src="{{ asset('js/menu.js') }}"></script> 
+        <script src="{{ asset('js/comment.js') }}"></script> 
+        <script src="{{ asset('js/goTop.js') }}"></script> 
+        <script src="{{ asset('js/contact.js') }}"></script> 
+        <script src="{{ asset('js/cart.js') }}"></script> 
+        <script src="{{ asset('js/flash.js') }}"></script> 
+    
+    {% endblock %}
+
+</body>
+</html>

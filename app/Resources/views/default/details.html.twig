@@ -53,16 +53,11 @@
 				<div id="rating-block">
 
                     {% if is_granted('ROLE_USER') %}
-						<input class="star star-5 rate" id="star-5" type="radio" name="star" value ="5"/>
-						<label class="star star-5" for="star-5"></label>
-						<input class="star star-4 rate" id="star-4" type="radio" name="star" value ="4"/>
-						<label class="star star-4" for="star-4"></label>
-						<input class="star star-3 rate" id="star-3" type="radio" name="star" value ="3"/>
-						<label class="star star-3" for="star-3"></label>
-						<input class="star star-2 rate" id="star-2" type="radio" name="star" value ="2"/>
-						<label class="star star-2" for="star-2"></label>
-						<input class="star star-1 rate" id="star-1" type="radio" name="star" value ="1"/>
-						<label class="star star-1" for="star-1"></label>
+						{% for i in 5..1%}
+							<input class="star star-{{i}} rate" id="star-{{i}}" type="radio" name="star" value ="{{i}}"/>
+							<label class="star star-{{i}}" for="star-{{i}}"></label>
+						{% endfor %}
+
 					{% else %}
 						<h2><a href="{{ asset('login') }}" class="burger-a">Login</a> to vote</h2>
 					{% endif %}

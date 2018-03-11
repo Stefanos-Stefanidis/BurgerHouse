@@ -1,7 +1,9 @@
 (function  ($) {
+	
 	var data;
 	var username;
 	var comment;
+	var rate = 0;
 	$(document).ready(function(){
 
 
@@ -90,6 +92,11 @@
                 $("#loadAjax").html(data);
             }
         });
-    }
+	}
+	
+	$('.rating input').click(function () { 
+		rate = $(this).attr('value');
+		Cookies.set('rate',rate);
+	});
 
 })(jQuery)

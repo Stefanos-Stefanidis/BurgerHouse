@@ -1,18 +1,24 @@
-{% extends 'clean.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
 
 {% block body %}
     <div id="fade-bg"></div>
     <div class="container margin-top-100">
-        <button id="backHistory" class="fa fa-arrow-left fa-2x btn btn-success pull-left"></button>
         <h2>Welcome, login here</h2>
         <div class="panel panel-default col-md-7 col-md-push-3 col-ms-7 col-ms-push-3" id="login-panel">
             <div class="panel-body">
                 <div class="text-center">
                     <span id="login-icon" class="fa fa-user"></span>
                 </div>
-                <form method="post" action="{{ asset('login_check') }}" > <!-- id="loginForm" -->
+                <form method="post" action="{{ path("fos_user_security_check") }}" > <!-- id="loginForm" -->
+                    {% if csrf_token %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    {% endif %}
                     <label for="username">
-                        Enter your email
+                        Enter your username
                     </label>
                     <div class="input-group">
 					<span class="input-group-addon">
@@ -42,7 +48,7 @@
                 </div>
                 <div class="col-md-10 bg-info margin-top-10">
                     <p class="text-warning">Do not have an Account?</p>
-                    <p class="text-info btn" id="show-register">Register here</p>
+                    <a class="text-info btn"><a href="{{url('fos_user_registration_register')}}">Register here</a></p>
                 </div>
             </div>
             <div class="progress margin-top-10">

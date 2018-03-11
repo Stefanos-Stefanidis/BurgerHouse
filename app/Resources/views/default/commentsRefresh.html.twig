@@ -1,9 +1,12 @@
 {% for comment in comments%}
 	<p id="username-comment">{{comment.name}} 
-		<span id="comment-label"> has commented 
+		<span class="comment-label"> has commented 
 			<i class="fa fa-comment"></i>
 		</span>
 	</p>
     <p class="fa fa-calendar" ><em> {{ comment.date|date("d/m/y")}}</em></p>
-	<p id="comment">{{comment.comment}}</p>
-{% endfor%}
+	<p>{{comment.comment}}</p>
+	{% if (comment.rate != 0) %}
+		<p> {{comment.rate}} / 5 </p>
+	{% endif %}
+{% endfor %}
