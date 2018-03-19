@@ -21,13 +21,15 @@ class ContactController extends Controller{
             $mail = 'ruzuroshiv@gmail.com';
 
             $check = new Constraints();
-            if ($check->checkEmpty($message) || $check->checkEmpty($subject) || $check->checkEmpty($mailacc)) {
+            $checkMessage = $check->constraints($message,'checkEmpty');
+            $checkMail = $check->constraints($mailacc,'checkMail');
+            if ($checkMessage && $checkMail) {
 
                 $message = \Swift_Message::newInstance()
-                ->setSubject($subject)
-                ->setFrom($mailacc)
-                ->setTo($mail)
-                ->setBody('Mail From '.$mailacc.'<br>'.$message,'text/html');
+                    ->setSubject($subject)
+                    ->setFrom($mailacc)
+                    ->setTo($mail)
+                    ->setBody('Mail From '.$mailacc.'<br>'.$message,'text/html');
                 $this->get('mailer')->send($message);
             }
 

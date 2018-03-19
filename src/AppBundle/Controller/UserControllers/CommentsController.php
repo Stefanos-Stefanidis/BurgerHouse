@@ -17,7 +17,8 @@ class CommentsController extends Controller{
     public function commentsAction(Request $request,$limit = 5)
     {
         $session = $request->getSession();
-
+        $request->setLocale('el');
+        $test = $request->getLocale();
         $offset = $session->get('offset');
         
         if ($offset < 0) {
@@ -55,7 +56,6 @@ class CommentsController extends Controller{
     {     
         $session = $request->getSession();
         $offset = $session->get('offset');
-
         
         $numOfComments = $this->getDoctrine()
         ->getRepository('AppBundle:Comments')

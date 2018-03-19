@@ -13,7 +13,6 @@ imports:
 #             - { name: twig.extension }
 
 parameters:
-    locale: en
     save_image: "%kernel.root_dir%/../web/images/uploads"
     tokens:
         client1: pass1
@@ -21,7 +20,7 @@ parameters:
 
 framework:
     #esi:             ~
-    translator:      ~
+    translator:      { fallbacks: "%locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"

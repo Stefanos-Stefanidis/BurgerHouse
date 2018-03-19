@@ -15,7 +15,8 @@
 
 <body>
     {{ knp_menu_render('AppBundle:Builder:mainMenu', {'allow_safe_labels': true}) | raw  }}
-
+    {# {{ knp_menu_render('AppBundle:Builder:mainMenu', {'template': 'menu.html.twig', 'allow_safe_labels': true}) }} #}
+                                                    
     {% block body %} 
 
 

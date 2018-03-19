@@ -26,7 +26,8 @@ class Builder  extends Controller implements ContainerAwareInterface
         $NumOfPrInCart = sizeOf($cart);
         
         $menu = $factory->createItem('root');
-        $menu->addChild('Home', array('route' => 'homepage'));
+        $menu->addChild('Home', array('route' => 'homepage'))
+            ->setExtra('translation_domain', 'AppBundle');
         $menu->addChild('List', array('route' => 'list'));
         $menu->addChild('Comments', array('route' => 'comments'));
         $menu->addChild('Contact', array('route' => 'contact'))

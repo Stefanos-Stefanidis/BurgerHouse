@@ -59,11 +59,17 @@ gulp.task('compoments', function() {
 
 	var awesome = gulp.src('assets/bower_components/font-awesome/css/font-awesome.min.css')
 	    .pipe(gulp.dest('web/css'));
-
-   	var jquery = gulp.src('assets/bower_components/jquery/dist/jquery.min.js')
+	
+	var chosencss = gulp.src('assets/bower_components/chosen/chosen.min.css')
+	    .pipe(gulp.dest('web/css'));
+	   
+		var jquery = gulp.src('assets/bower_components/jquery/dist/jquery.min.js')
 		.pipe(gulp.dest('web/js'));
-
-	var bootstrapjs = gulp.src('assets/bower_components/bootstrap/dist/js/bootstrap.min.js')
+		
+	var chosenjs = gulp.src('assets/bower_components/chosen/chosen.jquery.min.js')
+		.pipe(gulp.dest('web/js'));		
+	
+		var bootstrapjs = gulp.src('assets/bower_components/bootstrap/dist/js/bootstrap.min.js')
 		.pipe(gulp.dest('web/js'));
 
 	var cookiejs = gulp.src('assets/bower_components/cookies-js/dist/cookies.min.js')
