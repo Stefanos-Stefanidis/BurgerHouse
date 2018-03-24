@@ -5,7 +5,7 @@ namespace AppBundle\Controller\AdminControllers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Products;
+use AppBundle\Entity\Product;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Offers;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -34,7 +34,7 @@ class UpdateProductController extends Controller /*implements TokenAuthenticated
             $image =  $_POST['image'];
 
             $em = $this->getDoctrine()->getManager();
-            $item = $em->getRepository('AppBundle:Products')->find($id);
+            $item = $em->getRepository('AppBundle:Product')->find($id);
 
             $item->setName($name);
             $item->setPrice($price);

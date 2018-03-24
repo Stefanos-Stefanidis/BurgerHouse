@@ -5,7 +5,7 @@ namespace AppBundle\Controller\AdminControllers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Products;
+use AppBundle\Entity\Product;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Offers;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -25,7 +25,7 @@ class EditListController extends Controller /*implements TokenAuthenticatedContr
       
 
         $listItems = $this->getDoctrine()
-        ->getRepository('AppBundle:Products')
+        ->getRepository('AppBundle:Product')
         ->findAll();
         return $this->render('default/editList.html.twig',array(
             'list'=>$listItems

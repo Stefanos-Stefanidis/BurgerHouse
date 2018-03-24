@@ -20,8 +20,8 @@ class ListController extends Controller{
         for ($i = 0; $i < sizeOf($categoriesOrderedByOrder); $i++) { 
             
             $list[$i] = $this->getDoctrine()
-                    ->getRepository('AppBundle:Products')
-                    ->findByCategory($categoriesOrderedByOrder[$i]->getName());
+                    ->getRepository('AppBundle:Product')
+                    ->findByCategory($categoriesOrderedByOrder[$i]->getId());
 
             }
             foreach($list as $array){

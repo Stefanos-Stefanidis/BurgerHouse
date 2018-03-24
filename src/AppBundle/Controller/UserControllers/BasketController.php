@@ -42,7 +42,7 @@ class BasketController extends Controller{
            $notice = $this->getDoctrine()
            ->getRepository('AppBundle:Notice')
            ->findByEmail($usermailsess);
-
+            dump($basket);
            return $this->render('default/basket.html.twig',array(
             'items'=>$basket,'offers1'=>$offer1,'offers2'=>$offer2,
             'offers3'=>$offer3,'notices'=>$notice

@@ -3,7 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
+    
 /**
  * Category
  *
@@ -28,12 +29,18 @@ class Category
      */
     private $name;
 
+
     /**
      * @var int
      *
-     * @ORM\Column(name="order", type="integer")
+     * @ORM\Column(name="hierarchy", type="integer")
      */
-    private $order;
+    private $hierarchy;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+     */
+    private $product;
 
     /**
      * Get id
@@ -69,28 +76,67 @@ class Category
         return $this->name;
     }
 
+
+    public function __construct()
+    {
+        $this->product = new ArrayCollection();
+    }
+
     /**
-     * Set order
+     * Add product
      *
-     * @param integer $order
+     * @param \AppBundle\Entity\Product $product
      *
      * @return Category
      */
-    public function setOrder($order)
+    public function addProduct(\AppBundle\Entity\Product $product)
     {
-        $this->order = $order;
+        $this->product[] = $product;
 
         return $this;
     }
 
     /**
-     * Get order
+     * Remove product
+     *
+     * @param \AppBundle\Entity\Product $product
+     */
+    public function removeProduct(\AppBundle\Entity\Product $product)
+    {
+        $this->product->removeElement($product);
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Set hierarchy
+     *
+     * @param integer $hierarchy
+     *
+     * @return Category
+     */
+    public function setHierarchy($hierarchy)
+    {
+        $this->hierarchy = $hierarchy;
+
+        return $this;
+    }
+
+    /**
+     * Get hierarchy
      *
      * @return integer
      */
-    public function getOrder()
+    public function getHierarchy()
     {
-        return $this->order;
+        return $this->hierarchy;
     }
 }
-

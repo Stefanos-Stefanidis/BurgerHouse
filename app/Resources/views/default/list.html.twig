@@ -8,7 +8,7 @@
                 <h3>{{totalCategories.name}}</h3>
             </div>
             {% for item in list %}
-                {% if totalCategories.name == item.category %}  
+                {% if totalCategories.id == item.category.id %}  
                     <div class="col-md-6 col-sm-6">
                         <div class="col-md-12  col-xs-12 margin-top-10">
                             <a href="details/{{item.id}}">

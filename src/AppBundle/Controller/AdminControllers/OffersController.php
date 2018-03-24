@@ -43,7 +43,7 @@ class OffersController extends Controller
     {
 
         $product = $this->getDoctrine()
-        ->getRepository('AppBundle:Products')
+        ->getRepository('AppBundle:Product')
         ->findAll();
 
         $offer = $this->getDoctrine()
@@ -51,7 +51,7 @@ class OffersController extends Controller
         ->findByOffer($id);
 
         return $this->render('default/manageOffers.html.twig',array(
-            'offers'=>$offer,'products'=>$product
+            'offers'=>$offer,'product'=>$product
             ));          
 
     }

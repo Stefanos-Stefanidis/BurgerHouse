@@ -5,7 +5,7 @@ namespace AppBundle\Controller\AdminControllers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Products;
+use AppBundle\Entity\Product;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Offers;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -26,7 +26,7 @@ class EditProductController extends Controller /*implements TokenAuthenticatedCo
         $array_files = scandir($dir);
         
         $em = $this->getDoctrine()->getManager();
-        $item = $em->getRepository('AppBundle:Products')->find($id);
+        $item = $em->getRepository('AppBundle:Product')->find($id);
         $categories = $em->getRepository('AppBundle:Category')->findAll();
         return $this->render('default/editItem.html.twig', array(
             'item'=>$item,'categories'=>$categories,'files'=>$array_files

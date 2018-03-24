@@ -13,11 +13,10 @@
 			<hr>
 			<h1 id="prname">{{item.name}}</h1>
 		</div>
-		{%set tag = item.tags|split(',')%}
 		<div class="col-md-6">
 
-			{% for split in tag%}
-				<p class="fa fa-tag remove-decoration"> <a href="/tag/{{split}}">{{split}}</a> </p>
+			{% for tag in tags %}
+				<p class="fa fa-tag remove-decoration"> <a href="/tag/{{tag.name}}">{{tag.name}}</a> </p>
 			{% endfor%}
 		</div>
 		<div class="col-md-6">

@@ -5,7 +5,7 @@ namespace AppBundle\Controller\AdminControllers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Products;
+use AppBundle\Entity\Product;
 use AppBundle\Entity\Category;
 use AppBundle\Entity\Offers;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -24,7 +24,7 @@ class DeleteProductController extends Controller /*implements TokenAuthenticated
     {  
 
         $em = $this->getDoctrine()->getManager();
-        $itemDlt = $em->getRepository('AppBundle:Products')->find($id);
+        $itemDlt = $em->getRepository('AppBundle:Product')->find($id);
         $em->remove($itemDlt);
         $em->flush();
         $this->addFlash(
