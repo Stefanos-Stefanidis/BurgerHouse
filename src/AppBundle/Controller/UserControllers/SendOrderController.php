@@ -4,14 +4,14 @@ namespace AppBundle\Controller\UserControllers;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Cart;
-use AppBundle\Entity\Notice;
+use AppBundle\Entity\Order;
+use AppBundle\Entity\User;
+use AppBundle\Entity\Product;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\VarDumper\VarDumper;
 
 class SendOrderController extends Controller{
    
@@ -24,12 +24,36 @@ class SendOrderController extends Controller{
 
         $securityContext = $this->container->get('security.authorization_checker');
         if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
-            $usermailsess = $this->getUser()->getEmail();
+            //$usermailsess = $this->getUser()->getEmail();
+            $id = $this->getUser()->getId();
         }else{
             $usermailsess = $_SERVER['REMOTE_ADDR'];
         }
+        
+        $findOrder = $this->getDoctrine()
+        ->getRepository('AppBundle:Cart')
+        ->findByUserId($id);
 
-        $order =  $_POST['order'];
+        $order = new Order();
+        $user = new User();
+        $product = new Product();
+        foreach ($findOrder as $value) {
+            dump($user->setUserId($id)->getId($id));
+            $order  -> setOrderId(1)
+                    -> setUserId($user->setUserId($id))
+                    -> setProductId($product->setProductId($id))
+                    -> setQuantity(1);
+                
+            $em = $this->getDoctrine()->getManager();
+            //$em->persist($order);
+            $em->merge($order);
+            $em->flush();
+
+        }
+   
+        //dump($order[0]->getId());
+        return new Response('done');
+/*         $order =  $_POST['order'];
         $orderPrice =  $_POST['price'];
         $description =  $_POST['descr'];
         $trimOrder = rtrim($order, ":");
@@ -63,6 +87,6 @@ class SendOrderController extends Controller{
         }
 
         $em->flush();
-        return $this->redirectToRoute('basket');
+        return $this->redirectToRoute('basket'); */
     }
 }

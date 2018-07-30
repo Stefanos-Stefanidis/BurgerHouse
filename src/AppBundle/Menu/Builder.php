@@ -15,14 +15,15 @@ class Builder  extends Controller implements ContainerAwareInterface
         
         $securityContext = $this->container->get('security.authorization_checker');
         if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
-            $usermailsess = $this->getUser()->getEmail();
+            $userId = $this->getUser()->getId();
         }else{
-            $usermailsess = $_SERVER['REMOTE_ADDR'];
+            $userId = $_SERVER['REMOTE_ADDR'];
         }
 
 
         $em = $this->container->get('doctrine')->getManager();
-		$cart = $em->getRepository('AppBundle:Cart')->findByUser($usermailsess);
+        $cart = $em->getRepository('AppBundle:Cart')->findByUserId($userId);
+        dump($cart);
         $NumOfPrInCart = sizeOf($cart);
         
         $menu = $factory->createItem('root');

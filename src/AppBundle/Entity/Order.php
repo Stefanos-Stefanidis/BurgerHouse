@@ -3,15 +3,19 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping\OneToMany as OneToMany;
 use Doctrine\ORM\Mapping\ManyToOne as ManyToOne;
 use Doctrine\ORM\Mapping\JoinColumn as JoinColumn;
+
+
 /**
- * Cart
+ * Order
  *
- * @ORM\Table(name="cart")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CartRepository")
+ * @ORM\Table(name="order")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\OrderRepository")
  */
-class Cart
+class Order
 {
     /**
      * @var int
@@ -23,13 +27,20 @@ class Cart
     private $id;
 
     /**
-     * @ManyToOne(targetEntity="User", inversedBy="cart")
+     * @var int
+     *
+     * @ORM\Column(name="order_id", type="integer")
+     */
+    private $orderId;
+
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="order")
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $userId;
 
     /**
-     * @ManyToOne(targetEntity="Product", inversedBy="cart")
+     * @ManyToOne(targetEntity="Product", inversedBy="orders")
      * @JoinColumn(name="product_id", referencedColumnName="id")
      */
     private $productId;
@@ -41,10 +52,11 @@ class Cart
      */
     private $quantity;
 
+
     /**
      * Get id
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -52,11 +64,38 @@ class Cart
     }
 
     /**
+     * Set orderId
+     *
+     * @param integer $orderId
+     *
+     * @return Order
+     */
+    public function setOrderId($orderId)
+    {
+        $this->orderId = $orderId;
+
+        return $this;
+    }
+
+    /**
+     * Get orderId
+     *
+     * @return int
+     */
+    public function getOrderId()
+    {
+        return $this->orderId;
+    }
+
+
+
+
+    /**
      * Set quantity
      *
      * @param integer $quantity
      *
-     * @return Cart
+     * @return Order
      */
     public function setQuantity($quantity)
     {
@@ -68,7 +107,7 @@ class Cart
     /**
      * Get quantity
      *
-     * @return integer
+     * @return int
      */
     public function getQuantity()
     {
@@ -80,7 +119,7 @@ class Cart
      *
      * @param \AppBundle\Entity\User $userId
      *
-     * @return Cart
+     * @return Order
      */
     public function setUserId(\AppBundle\Entity\User $userId = null)
     {
@@ -104,7 +143,7 @@ class Cart
      *
      * @param \AppBundle\Entity\Product $productId
      *
-     * @return Cart
+     * @return Order
      */
     public function setProductId(\AppBundle\Entity\Product $productId = null)
     {
@@ -122,5 +161,6 @@ class Cart
     {
         return $this->productId;
     }
+
 }
 

@@ -22,7 +22,6 @@ class RemoveProductController extends Controller{
 
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository('AppBundle:Cart')->find($id);
-       
         $em->remove($item);
         $em->flush();
         $this->addFlash(

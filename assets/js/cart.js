@@ -8,7 +8,7 @@ $(document).ready(function () {
         $('#send-order').removeClass('disabled');
     }
 
-    $('#send-order').click(function () {
+/*     $('#send-order').click(function () {
         if (validateOrder()) {
             orderName = $(".orderName").text();
             orderArray = orderName.split(",");
@@ -41,7 +41,7 @@ $(document).ready(function () {
             alert('nop');
         }
 
-    });
+    }); */
 
     $('.addCart').click(function () {
         $(".cart-font-size").addClass("animated wobble");

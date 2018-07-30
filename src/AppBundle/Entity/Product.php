@@ -46,15 +46,21 @@ class Product
     
     private $category;
 
-    // ...
     /**
      * One Product has Many Tags.
      * @OneToMany(targetEntity="Tag", mappedBy="product")
      */
     private $tags;
 
+    /**
+     * One Product has Many Orders.
+     * @OneToMany(targetEntity="Order", mappedBy="product")
+     */
+    private $orders;
+
     public function __construct() {
         $this->tags = new ArrayCollection();
+        $this->orders = new ArrayCollection();
     }
     /**
      * @var string
@@ -238,5 +244,46 @@ class Product
     public function getTags()
     {
         return $this->tags;
+    }
+
+    /**
+     * Add order
+     *
+     * @param \AppBundle\Entity\Order $order
+     *
+     * @return Product
+     */
+    public function addOrder(\AppBundle\Entity\Order $order)
+    {
+        $this->orders[] = $order;
+
+        return $this;
+    }
+    /**
+     * @param mixed $productId
+     */
+    public function setProductId($productId)
+    {
+        $this->productId = $productId;
+        return $this;
+    }
+    /**
+     * Remove order
+     *
+     * @param \AppBundle\Entity\Order $order
+     */
+    public function removeOrder(\AppBundle\Entity\Order $order)
+    {
+        $this->orders->removeElement($order);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrders()
+    {
+        return $this->orders;
     }
 }

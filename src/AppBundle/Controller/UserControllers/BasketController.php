@@ -21,9 +21,9 @@ class BasketController extends Controller{
     {
             $securityContext = $this->container->get('security.authorization_checker');
             if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
-                $usermailsess = $this->getUser()->getEmail();
+                $userId = $this->getUser()->getId();
             }else{
-                $usermailsess = $_SERVER['REMOTE_ADDR'];
+                $userId = $_SERVER['REMOTE_ADDR'];
             }
            $offer1 = $this->getDoctrine()
            ->getRepository('AppBundle:Offers')
@@ -37,15 +37,12 @@ class BasketController extends Controller{
 
            $basket = $this->getDoctrine()
            ->getRepository('AppBundle:Cart')
-           ->findByUser($usermailsess);
+           ->findByUserId($userId);
 
-           $notice = $this->getDoctrine()
-           ->getRepository('AppBundle:Notice')
-           ->findByEmail($usermailsess);
-            dump($basket);
+  
            return $this->render('default/basket.html.twig',array(
             'items'=>$basket,'offers1'=>$offer1,'offers2'=>$offer2,
-            'offers3'=>$offer3,'notices'=>$notice
+            'offers3'=>$offer3
             ));        
 
     
