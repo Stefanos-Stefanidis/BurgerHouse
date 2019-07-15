@@ -179,13 +179,13 @@ class User extends BaseUser
 
     
     /**
-     * Add cart
+     * Add addToCart
      *
-     * @param \AppBundle\Entity\Cart $cart
+     * @param \AppBundle\Entity\A $cart
      *
      * @return User
      */
-    public function addCart(\AppBundle\Entity\Cart $cart)
+    public function addCart(\AppBundle\Entity\AddToCart $cart)
     {
         $this->cart[] = $cart;
 
@@ -195,9 +195,9 @@ class User extends BaseUser
     /**
      * Remove cart
      *
-     * @param \AppBundle\Entity\Cart $cart
+     * @param \AppBundle\Entity\AddToCart $cart
      */
-    public function removeCart(\AppBundle\Entity\Cart $cart)
+    public function removeCart(\AppBundle\Entity\AddToCart $cart)
     {
         $this->cart->removeElement($cart);
     }

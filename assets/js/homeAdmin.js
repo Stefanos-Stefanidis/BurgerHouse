@@ -48,6 +48,9 @@
 			document.getElementById("subscribersli").click();
 		});
 
+		$('.newCategory').click(function(){
+			$('.newCategoryGroup').slideToggle();
+		});
 	});
 
 

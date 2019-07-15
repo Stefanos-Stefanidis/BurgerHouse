@@ -7,67 +7,58 @@ $(document).ready(function () {
     if (orderName !== '') {
         $('#send-order').removeClass('disabled');
     }
-
-/*     $('#send-order').click(function () {
-        if (validateOrder()) {
-            orderName = $(".orderName").text();
-            orderArray = orderName.split(",");
-            var orderPrice = $(".orderPrice").text().replace(/[^\d.]/g, '');
-            var description = $("textarea#description").val();
-            var name = $("#first_name").val();
-            var lastname = $("#last_name").val();
-            var email = $("#email_address").val();
-            var phone = $("#phone_number").val();
-            var address = $("#address").val();
-
-            data = "order=" + orderName;
-            data += "&price=" + orderPrice;
-            data += "&descr=" + description;
-            data += "&firstName=" + name;
-            data += "&lastName=" + lastname;
-            data += "&email=" + email;
-            data += "&phone=" + phone;
-            data += "&address=" + address;
-            $.ajax({
-                type: "POST",
-                url: '/send-order',
-                data: data
-
-            });
-            setTimeout(function () {
-                location.reload();
-            }, 500)
-        } else {
-            alert('nop');
-        }
-
-    }); */
+    var productId ;
+    var productPrice = parseFloat($('#productPrice').text());
 
     $('.addCart').click(function () {
-        $(".cart-font-size").addClass("animated wobble");
-        var NumOfPrInCart = $("#NumOfPrInCart").text();        
-        NumOfPrInCart++;
-        $("#NumOfPrInCart").text(NumOfPrInCart);
-        var productPrice = $('#prprice').text();
-        var productName = $('#prname').text();
 
-        data = "price=" + productPrice;
-        data += "&name=" + productName;
-        $.ajax({
-            type: "POST",
-            url: '/cart',
-            data: data
+        productId = $(this).data('prId');
+        $('#qtModal').modal('show');
 
-        });
-        $("#offerSendMsg").show(1000);
-        setTimeout(function () {
-            $("#offerSendMsg").hide(1000);
-        }, 2000)
-        setTimeout(function () {
-            $("cart-font-size").removeClass("animated wobble");
-        }, 1200)
     });
 
+    $('.add-to-basket').click(function (e) { 
+
+        var productQuantity = $('.add-to-basket').data('quantity');
+        
+        var request = $.ajax({
+            url: "/addToCart/"+productId,
+            method: "POST",
+            data: { 
+                productQuantity : productQuantity,
+              }
+          });
+          request.done(function( msg ) {
+            $('#qtModal').modal('hide');
+            $("#offerSendMsg").show(1000);
+            setTimeout(function () {
+                $("#offerSendMsg").hide(1000);
+            }, 2000)
+            setTimeout(function () {
+                $("cart-font-size").removeClass("animated wobble");
+            }, 1200)
+          });
+
+        
+    });
+    $('.add').click(function () {
+        if (parseInt($('#productQuantity').text()) < 99) {
+
+            $('#productQuantity').text(+parseInt($('#productQuantity').text()) + 1);
+            $('#productPrice').text(parseInt($('#productQuantity').text()) * productPrice);
+            $('.add-to-basket').attr('data-quantity', $('#productQuantity').text());
+            $('.add-to-basket').data('quantity', $('#productQuantity').text());
+        }
+    });
+    $('.sub').click(function () {
+        if (parseInt($('#productQuantity').text()) > 1) {
+            $('#productQuantity').text(+parseInt($('#productQuantity').text()) - 1);
+            $('#productPrice').text(parseInt($('#productQuantity').text()) * productPrice);
+            $('#add-to-basket').data('productQuantity', $('#productQuantity').text());
+            $('.add-to-basket').attr('data-quantity', $('#productQuantity').text());
+            $('.add-to-basket').data('quantity', $('#productQuantity').text());
+        }
+    });
 
 
     $('.rate').click(function () {

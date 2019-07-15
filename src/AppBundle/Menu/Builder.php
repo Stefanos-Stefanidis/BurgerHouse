@@ -22,7 +22,7 @@ class Builder  extends Controller implements ContainerAwareInterface
 
 
         $em = $this->container->get('doctrine')->getManager();
-        $cart = $em->getRepository('AppBundle:Cart')->findByUserId($userId);
+        $cart = $em->getRepository('AppBundle:AddToCart')->findByUserId($userId);
         dump($cart);
         $NumOfPrInCart = sizeOf($cart);
         

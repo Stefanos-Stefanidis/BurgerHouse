@@ -23,7 +23,7 @@
 			<h3 class="pull-right text-primary"><span  id="prprice">{{item.price}}</span>&euro;</h3>
 		</div>
 		<div class="col-xs-12">
-			<button class="btn btn-success btn-sm addCart btn3d">Grap me</button>
+			<button class="btn btn-success btn-sm addCart btn3d" data-pr-id={{item.id}}>Grap me</button>
 			 
 		</div>
 	
@@ -69,5 +69,31 @@
 
 	</div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="qtModal" tabindex="-1" role="dialog" aria-labelledby="qtModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="qtModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<div>
+			<button class="btn btn-xs btn-default sub fa fa-minus btn-danger" ></button>
+			<h6> <span id="productQuantity">1</span> x <span id="productPrice">{{item.price}}</span></h6>
+			<button class="btn btn-xs btn-default add fa fa-plus btn-success"></button>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary add-to-basket" data-quantity="1">Add To Basket</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 

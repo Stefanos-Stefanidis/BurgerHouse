@@ -5,7 +5,7 @@ namespace AppBundle\Controller\UserControllers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Cart;
+use AppBundle\Entity\AddToCart;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -36,10 +36,9 @@ class BasketController extends Controller{
            ->findByOffer(3);
 
            $basket = $this->getDoctrine()
-           ->getRepository('AppBundle:Cart')
+           ->getRepository('AppBundle:AddToCart')
            ->findByUserId($userId);
-
-  
+            dump($basket);
            return $this->render('default/basket.html.twig',array(
             'items'=>$basket,'offers1'=>$offer1,'offers2'=>$offer2,
             'offers3'=>$offer3

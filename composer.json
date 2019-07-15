@@ -32,7 +32,8 @@
         "symfony/var-dumper": "^3.2",
         "knplabs/knp-paginator-bundle": "^2.7",
         "knplabs/knp-menu-bundle": "^2.0",
-        "friendsofsymfony/user-bundle": "~2.0"
+        "friendsofsymfony/user-bundle": "~2.0",
+        "ramsey/uuid": "^3.8"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

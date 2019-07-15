@@ -25,30 +25,40 @@ class AddProductController extends Controller /*implements TokenAuthenticatedCon
      
 
         if (isset($_POST['add-btn'])) {
-
+            
             $name =  $_POST['productName'];
             $price =  $_POST['price'];
             $category = $_POST['category'];
             $description = $_POST['description'];
             $image = $_POST['image'];
-            $tags = $_POST['tags'];
+            $newCat = $_POST['newCategory'];
 
             $addProduct = new Product();
+            
+            $addProduct -> setName($name);
+            $addProduct -> setPrice($price);
+            $addProduct -> setImage($image);
+            $addProduct -> setDescription($description);
+            
+            // relates this product to the category
+            // $addProduct->setCategory($addCategory);
 
-            $addProduct -> setName($name)
-            -> setPrice($price)
-            -> setCategory($category)
-            -> setImage($image)
-            -> setDescription($description)
-            -> setTags($tags);
+            $entityManager = $this->getDoctrine()->getManager();
 
-            $em = $this->getDoctrine()->getManager();
 
-            // tells Doctrine you want to (eventually) save the Product (no queries yet)
-            $em->persist($addProduct);
+            if (!empty($newCat)) {
+                $addCategory = new Category();
+                $addCategory->setName($newCat);
+                $addCategory-> setHierarchy(999);
+                $addProduct->setCategory($addCategory);
+                $entityManager->persist($addCategory);
+            }else{
+                $categoryObj = $entityManager->getRepository('AppBundle:Category')->findOneByName($category); 
+                $addProduct->setCategory($categoryObj);
+            }
 
-            // actually executes the queries (i.e. the INSERT query)
-            $em->flush();
+            $entityManager->persist($addProduct);
+            $entityManager->flush();
             
             $this->addFlash(
                 'notice',
@@ -60,18 +70,16 @@ class AddProductController extends Controller /*implements TokenAuthenticatedCon
 
         if (isset($_POST['category-btn'])) {
             $categoryName = $_POST['addCategory'];
+            $categoryHierarchy = $_POST['categoryHierarchy'];
 
             $addCategory = new Category();
 
-            $addCategory -> setName($categoryName);
+            $addCategory   -> setName($categoryName) 
+                -> setHierarchy($categoryHierarchy);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($addCategory);
             $em->flush();
-            $this->addFlash(
-                'notice',
-                'Category added'
-                );
             return $this->redirectToRoute('add-product'); 
 
         }
@@ -88,7 +96,7 @@ class AddProductController extends Controller /*implements TokenAuthenticatedCon
             
             return $this->redirectToRoute('add-product'); 
 
-            }
+        }
 
         $dir    = 'images/uploads';
         $array_files = scandir($dir);

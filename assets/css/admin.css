@@ -228,3 +228,11 @@ a {
 .cursor-pointer {
     cursor: pointer;
 }
+
+.newCategoryGroup{
+    display: none;
+}
+
+.newCategory{
+    cursor: pointer;
+}

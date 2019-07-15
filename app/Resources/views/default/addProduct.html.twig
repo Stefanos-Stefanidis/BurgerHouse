@@ -19,11 +19,8 @@
                     <form method="post" action="add-product">
                         <div class="form-group">
                             <label for="category">Category name</label>
-                            <input type="text" class="form-control" name="addCategory" id="category"> {% for flash in app.session.flashbag.get('notice') %}
-                            <div class="text-center alert alert-success" id="fadeMsg">
-                                {{flash}}
-                            </div>
-                            {% endfor %}
+                            <input type="text" class="form-control" name="addCategory" id="category" /> 
+                            <input type="number" class="form-control" name="categoryHierarchy" id="hierarchy" /> 
                         </div>
                         <div class="modal-footer">
                             <button name="category-btn" class="btn btn-success">
@@ -100,6 +97,10 @@
                                     <option>{{category.name}} </option>
                                 {% endfor%}
                             </select>
+                            <h4 class="fa fa-plus btn-success newCategory"></h4>
+                        </div>
+                        <div class="form-group newCategoryGroup">
+                            <input type="text" class="form-control" name="newCategory" id="newCategory" />
                         </div>
                         <div class="form-group">
                             <label for="image">Select image</label>

@@ -1,5 +1,3 @@
-
-
 {% extends 'base.html.twig' %}
 {% block body %}
 {% if is_granted('ROLE_USER') %}
@@ -33,16 +31,18 @@
             <div class="form-group">
                <div class="col-md-12"><strong>Address:</strong></div>
                <div class="col-md-12">
-                  <input name="address"  id="address" class="form-control" value="{{ address }}" type="text">
+                  <input name="address" id="address" class="form-control" value="{{ address }}" type="text">
                </div>
             </div>
             <div class="form-group">
                <div class="col-md-12"><strong>Phone Number:</strong></div>
-               <div class="col-md-12"><input name="phone_number" id="phone_number" class="form-control" value="{{ phone }}" type="text"></div>
+               <div class="col-md-12"><input name="phone_number" id="phone_number" class="form-control"
+                     value="{{ phone }}" type="text"></div>
             </div>
             <div class="form-group">
                <div class="col-md-12"><strong>Email Address:</strong></div>
-               <div class="col-md-12"><input name="email_address" id="email_address" class="form-control" value="{{ email }}" type="text"></div>
+               <div class="col-md-12"><input name="email_address" id="email_address" class="form-control"
+                     value="{{ email }}" type="text"></div>
             </div>
          </div>
          {% for flash in app.session.flashbag.get('notice') %}
@@ -52,26 +52,30 @@
          {% endfor%}
       </div>
       <div class="col-md-5 panel panel-default margin-top-50">
-         {% set totalPrice = 0 %}
-         <div id="order" class="margin-top-10">
-            {% for item in items  %}
-            {% set totalPrice = totalPrice + item.productId.price %}
-            <div class="col-md-8 col-sm-8 col-xs-12">
-               <h4 class="orderName">{{item.productId.name}}:</h4>
+         <form action="/send-order" method="post">
+            {% set totalPrice = 0 %}
+            <div id="order" class="margin-top-10">
+               {% for item in items  %}
+               {% set totalPrice = totalPrice + (item.productId.price * item.quantity) %}
+               <div class="col-md-6 col-sm-6 col-xs-12">
+                  <h4 class="orderName">{{item.productId.name}}:</h4>
 
+               </div>
+               <div class="col-md-4 col-sm-4 col-xs-6">
+                  <h4>{{item.quantity}} x {{item.productId.price}}&euro;</h4>
+               </div>
+               <div class="col-md-2 col-sm-2 col-xs-6">
+                  <p id="dlt-product" class="pull-right"><a href="delete/{{item.id}}" class="fa fa-trash fa-2x"></a></p>
+               </div>
+               {% endfor %}
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-6">
-               <h4 >{{item.productId.price}}&euro;</h4>
+            <h3 id="order-price" class="pull-right text-info orderPrice margin-top-50">Total price
+               {{ totalPrice }}&euro;
+            </h3>
+            <div class="col-md-12 margin-top-10 margin-bottom-10">
+               <button id="send-order" class="btn btn-success btn-block disabled">Send order</button>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-6">
-               <p id="dlt-product" class="pull-right"><a href="delete/{{item.id}}" class="fa fa-trash fa-2x"></a></p>
-            </div>
-            {% endfor %}
-         </div>
-         <h3 id="order-price" class="pull-right text-info orderPrice margin-top-50">Total price {{ totalPrice }}&euro; </h3>
-         <div class="col-md-12 margin-top-10 margin-bottom-10">
-            <button  id="send-order"   class="btn btn-success btn-block disabled">Send order</button>
-         </div>
+         </form>
       </div>
    </div>
 </div>
@@ -86,4 +90,3 @@
    </div>
 </div>
 {% endblock %}
-

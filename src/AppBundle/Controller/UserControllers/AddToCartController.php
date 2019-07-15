@@ -5,20 +5,21 @@ namespace AppBundle\Controller\UserControllers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Cart;
+use AppBundle\Entity\AddToCart;
+use AppBundle\Entity\User;
 
 
-class CartController extends Controller{
+class AddToCartController extends Controller{
  
 
     /**
-     * @Route("/cart/{id}", name="cart")
+     * @Route("/addToCart/{id}", name="AddToCart")
      */
     public function cartAction($id=0,Request $request)
     {
         
 
-        if (!empty($_POST["name"])) {
+        if (!empty($_POST["productQuantity"])) {
 
 
             $securityContext = $this->container->get('security.authorization_checker');
@@ -28,18 +29,18 @@ class CartController extends Controller{
                 $usermailsess = $_SERVER['REMOTE_ADDR'];
             }
 
+            $productQuantity =  $_POST['productQuantity']; 
 
-            $prname =  $_POST['name'];
-            $prprice =  $_POST['price'];
-
-
-
-            $cart = new Cart();
-
-            $cart   -> setPrname($prname)
-                    -> setPrice($prprice)
-                    ->setUser($usermailsess);
+            $cart = new AddToCart();
+            $cart -> setQuantity($productQuantity);
+            
             $em = $this->getDoctrine()->getManager();
+            $productId = $em->getRepository('AppBundle:Product')->findOneById($id); 
+            //$userId = $em->getRepository('AppBundle:User')->findOneById(1); 
+            $user = $this->getUser();
+            $cart -> setUserId($user);
+            $cart -> setProductId($productId);
+            
             $em->persist($cart);
             $em->flush();
 

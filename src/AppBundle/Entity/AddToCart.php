@@ -5,13 +5,15 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToOne as ManyToOne;
 use Doctrine\ORM\Mapping\JoinColumn as JoinColumn;
+
 /**
- * Cart
- *
- * @ORM\Table(name="cart")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CartRepository")
+ * AddToCart
+ * @ORM\Entity
+ * @ORM\Table(name="addToCart")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AddToCartRepository")
  */
-class Cart
+
+class AddToCart
 {
     /**
      * @var int
@@ -23,13 +25,13 @@ class Cart
     private $id;
 
     /**
-     * @ManyToOne(targetEntity="User", inversedBy="cart")
+     * @ManyToOne(targetEntity="User", inversedBy="addToCart")
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $userId;
 
     /**
-     * @ManyToOne(targetEntity="Product", inversedBy="cart")
+     * @ManyToOne(targetEntity="Product", inversedBy="addToCart")
      * @JoinColumn(name="product_id", referencedColumnName="id")
      */
     private $productId;
@@ -56,7 +58,7 @@ class Cart
      *
      * @param integer $quantity
      *
-     * @return Cart
+     * @return AddToCart
      */
     public function setQuantity($quantity)
     {
@@ -80,7 +82,7 @@ class Cart
      *
      * @param \AppBundle\Entity\User $userId
      *
-     * @return Cart
+     * @return AddToCart
      */
     public function setUserId(\AppBundle\Entity\User $userId = null)
     {
@@ -104,7 +106,7 @@ class Cart
      *
      * @param \AppBundle\Entity\Product $productId
      *
-     * @return Cart
+     * @return AddToCart
      */
     public function setProductId(\AppBundle\Entity\Product $productId = null)
     {
