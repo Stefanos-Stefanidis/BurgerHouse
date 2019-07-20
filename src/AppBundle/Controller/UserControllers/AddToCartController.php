@@ -36,7 +36,6 @@ class AddToCartController extends Controller{
             
             $em = $this->getDoctrine()->getManager();
             $productId = $em->getRepository('AppBundle:Product')->findOneById($id); 
-            //$userId = $em->getRepository('AppBundle:User')->findOneById(1); 
             $user = $this->getUser();
             $cart -> setUserId($user);
             $cart -> setProductId($productId);

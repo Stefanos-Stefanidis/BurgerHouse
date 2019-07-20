@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Basket;
-use AppBundle\Entity\OrderNew;
+use AppBundle\Entity\Notice;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Product;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -39,20 +39,34 @@ class SendOrderController extends Controller{
         
         $uuid4 = Uuid::uuid4();
 
-        $newOrder = new OrderNew();
         $user = $this->getUser();
-        $em = $this->getDoctrine()->getManager();
         foreach ($findOrder as $value) {
+            $newOrder = new Notice();
+            $em = $this->getDoctrine()->getManager();
             $newOrder -> setQuantity($value->getQuantity());
             $newOrder -> setUserId($user);
-            $newOrder -> setOrderId($uuid4);
+            $newOrder -> setNoticeId($uuid4);
             $newOrder -> setProductId($value->getProductId());
 
             $em->persist($newOrder);
             $em->flush();
+        } 
 
-            
+
+        
+        foreach ($findOrder as $item) {
+            dump($item->getId());
+            $em = $this->getDoctrine()->getManager();
+            $itemDlt = $em->getRepository('AppBundle:AddToCart')->find($item->getId());
+            $em->remove($itemDlt);
+            $em->flush();
         }
-        return new Response('done');
+
+        $this->addFlash(
+            'notice',
+            'Order Send'
+            );
+        
+        return $this->redirectToRoute('basket'); 
     }
 }

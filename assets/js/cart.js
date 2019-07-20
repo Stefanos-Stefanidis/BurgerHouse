@@ -6,6 +6,7 @@ $(document).ready(function () {
     var orderName = $(".orderName").text();
     if (orderName !== '') {
         $('#send-order').removeClass('disabled');
+        $('#send-order').prop("disabled", false);
     }
     var productId ;
     var productPrice = parseFloat($('#productPrice').text());

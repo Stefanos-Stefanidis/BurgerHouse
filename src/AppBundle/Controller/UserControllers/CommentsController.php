@@ -27,6 +27,7 @@ class CommentsController extends Controller{
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
                     ->findAllLimit($limit,$offset);
+
         return $this->render('default/comments.html.twig',array(
                 'comments'=>$comments
             ));        

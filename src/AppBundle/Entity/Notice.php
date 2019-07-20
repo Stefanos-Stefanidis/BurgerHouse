@@ -10,12 +10,12 @@ use Doctrine\ORM\Mapping\JoinColumn as JoinColumn;
 
 
 /**
- * Order
+ * Notice
  *
- * @ORM\Table(name="order")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\OrderRepository")
+ * @ORM\Table(name="notice")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\NoticeRepository")
  */
-class Order
+class Notice
 {
     /**
      * @var int
@@ -27,20 +27,20 @@ class Order
     private $id;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="order_id", type="integer")
+     * @ORM\Column(name="notice_id", type="string", length=255)
      */
-    private $orderId;
+    private $noticeId;
 
     /**
-     * @ManyToOne(targetEntity="User", inversedBy="order")
+     * @ManyToOne(targetEntity="User", inversedBy="notice")
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $userId;
 
     /**
-     * @ManyToOne(targetEntity="Product", inversedBy="orders")
+     * @ManyToOne(targetEntity="Product", inversedBy="notices")
      * @JoinColumn(name="product_id", referencedColumnName="id")
      */
     private $productId;
@@ -64,27 +64,27 @@ class Order
     }
 
     /**
-     * Set orderId
+     * Set noticeId
      *
-     * @param integer $orderId
+     * @param string $noticeId
      *
-     * @return Order
+     * @return Notice
      */
-    public function setOrderId($orderId)
+    public function setNoticeId($noticeId)
     {
-        $this->orderId = $orderId;
+        $this->noticeId = $noticeId;
 
         return $this;
     }
 
     /**
-     * Get orderId
+     * Get noticeId
      *
-     * @return int
+     * @return string
      */
-    public function getOrderId()
+    public function getNoticeId()
     {
-        return $this->orderId;
+        return $this->noticeId;
     }
 
 
@@ -95,7 +95,7 @@ class Order
      *
      * @param integer $quantity
      *
-     * @return Order
+     * @return Notice
      */
     public function setQuantity($quantity)
     {
@@ -119,7 +119,7 @@ class Order
      *
      * @param \AppBundle\Entity\User $userId
      *
-     * @return Order
+     * @return Notice
      */
     public function setUserId(\AppBundle\Entity\User $userId = null)
     {
@@ -143,7 +143,7 @@ class Order
      *
      * @param \AppBundle\Entity\Product $productId
      *
-     * @return Order
+     * @return Notice
      */
     public function setProductId(\AppBundle\Entity\Product $productId = null)
     {

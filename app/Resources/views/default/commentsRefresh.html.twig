@@ -1,4 +1,7 @@
-{% for comment in comments%}
+{% if comments|length > 6  %}
+<h1>asdas</h1>
+{% endif %}
+{% for comment in comments %}
 	<p id="username-comment">{{comment.name}} 
 		<span class="comment-label"> {{'has commented' | trans}} 
 			<i class="fa fa-comment"></i>

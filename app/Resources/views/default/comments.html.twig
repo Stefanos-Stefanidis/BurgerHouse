@@ -49,15 +49,17 @@
     <div id="loadAjax">
         {% include 'default/commentsRefresh.html.twig' %}
     </div>
-    <div class="col-xs-12 col-md-5 margin-top-50 pull-right">
-        <button class="btn btn-primary btn-block" id="nextComment" name="next">
-            Next <span class="fa fa-forward"></span>
-        </button>
-    </div>
-    <div class="col-xs-12 col-md-5 margin-top-50">
-        <button class="btn btn-warning btn-block" id="previousComment" name="previous">
-            <span class="fa fa-backward"> Previous</span>
-        </button>
-    </div>
+    {% if comments|length > 4 %}
+        <div class="col-xs-12 col-md-5 margin-top-50 pull-right">
+            <button class="btn btn-primary btn-block" id="nextComment" name="next">
+                Next <span class="fa fa-forward"></span>
+            </button>
+        </div>
+        <div class="col-xs-12 col-md-5 margin-top-50">
+            <button class="btn btn-warning btn-block" id="previousComment" name="previous">
+                <span class="fa fa-backward"> Previous</span>
+            </button>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}

@@ -48,15 +48,15 @@ class User extends BaseUser
     private $address;
     
     /**
-     * @ORM\OneToMany(targetEntity="Order", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Notice", mappedBy="user")
      */
-    private $order;
+    private $notice;
 
     public function __construct()
     {
         parent::__construct();
         $this->date = new DateTime(); 
-        $this->order = new ArrayCollection();
+        $this->notice = new ArrayCollection();
     }
 
 
@@ -144,37 +144,37 @@ class User extends BaseUser
 
 
     /**
-     * Add order
+     * Add notice
      *
-     * @param \AppBundle\Entity\Order $order
+     * @param \AppBundle\Entity\Notice $notice
      *
      * @return User
      */
-    public function addOrder(\AppBundle\Entity\Order $order)
+    public function addNotice(\AppBundle\Entity\Notice $notice)
     {
-        $this->order[] = $order;
+        $this->notice[] = $notice;
 
         return $this;
     }
 
     /**
-     * Remove order
+     * Remove notice
      *
-     * @param \AppBundle\Entity\Order $order
+     * @param \AppBundle\Entity\Notice $notice
      */
-    public function removeOrder(\AppBundle\Entity\Order $order)
+    public function removeNotice(\AppBundle\Entity\Notice $notice)
     {
-        $this->order->removeElement($order);
+        $this->notice->removeElement($notice);
     }
 
     /**
-     * Get order
+     * Get notice
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getOrder()
+    public function getNotice()
     {
-        return $this->order;
+        return $this->notice;
     }
 
     

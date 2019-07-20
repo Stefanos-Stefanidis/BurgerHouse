@@ -53,14 +53,14 @@ class Product
     private $tags;
 
     /**
-     * One Product has Many Orders.
-     * @OneToMany(targetEntity="Order", mappedBy="product")
+     * One Product has Many Notices.
+     * @OneToMany(targetEntity="Notice", mappedBy="product")
      */
-    private $orders;
+    private $notices;
 
     public function __construct() {
         $this->tags = new ArrayCollection();
-        $this->orders = new ArrayCollection();
+        $this->notices = new ArrayCollection();
     }
     /**
      * @var string
@@ -247,15 +247,15 @@ class Product
     }
 
     /**
-     * Add order
+     * Add notice
      *
-     * @param \AppBundle\Entity\Order $order
+     * @param \AppBundle\Entity\Notice $notice
      *
      * @return Product
      */
-    public function addOrder(\AppBundle\Entity\Order $order)
+    public function addNotice(\AppBundle\Entity\Notice $notice)
     {
-        $this->orders[] = $order;
+        $this->notices[] = $notice;
 
         return $this;
     }
@@ -268,22 +268,22 @@ class Product
         return $this;
     }
     /**
-     * Remove order
+     * Remove notice
      *
-     * @param \AppBundle\Entity\Order $order
+     * @param \AppBundle\Entity\Notice $notice
      */
-    public function removeOrder(\AppBundle\Entity\Order $order)
+    public function removeNotice(\AppBundle\Entity\Notice $notice)
     {
-        $this->orders->removeElement($order);
+        $this->notices->removeElement($notice);
     }
 
     /**
-     * Get orders
+     * Get notices
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getOrders()
+    public function getNotices()
     {
-        return $this->orders;
+        return $this->notices;
     }
 }
