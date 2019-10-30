@@ -63,7 +63,7 @@ gulp.task('compoments', function() {
 	var chosencss = gulp.src('assets/bower_components/chosen/chosen.min.css')
 	    .pipe(gulp.dest('web/css'));
 	   
-		var jquery = gulp.src('assets/bower_components/jquery/dist/jquery.min.js')
+	var jquery = gulp.src('assets/bower_components/jquery/dist/jquery.min.js')
 		.pipe(gulp.dest('web/js'));
 		
 	var chosenjs = gulp.src('assets/bower_components/chosen/chosen.jquery.min.js')
@@ -73,6 +73,12 @@ gulp.task('compoments', function() {
 		.pipe(gulp.dest('web/js'));
 
 	var cookiejs = gulp.src('assets/bower_components/cookies-js/dist/cookies.min.js')
+		.pipe(gulp.dest('web/js'));
+
+	var datatablescss = gulp.src('assets/bower_components/datatables.net-dt/css/jquery.dataTables.min.css')
+		.pipe(gulp.dest('web/css'));
+
+	var datatablesjs = gulp.src('assets/bower_components/datatables.net/js/jquery.dataTables.min.js')
 		.pipe(gulp.dest('web/js'));
 
   

@@ -9,7 +9,7 @@
 	<div class="jumbotron">
 		<div class="container">
 			<div class="row">
-				<form method="post" action="{{asset('item-update')}}/{{item.id}}" >
+				<form method="post" action="{{asset('item-update')}}/{{products.id}}" >
 					<div class="col-md-6 col-xs-12">
 						<label for="productName">
 							Enter food name
@@ -18,7 +18,7 @@
 							<span class="input-group-addon">
 								<span class="fa fa-cutlery"></span>
 							</span>
-							<input type="text" class="form-control" name="productName" value="{{item.name}}" />
+							<input type="text" class="form-control" name="productName" value="{{products.name}}" />
 						</div>
 						<label for="price">
 							Enter price
@@ -27,16 +27,17 @@
 							<span class="input-group-addon">
 								<span class="fa fa-eur"></span>
 							</span>
-							<input type="text" class="form-control" name="price"  value="{{item.price}}" />
+							<input type="text" class="form-control" name="price"  value="{{products.price}}" />
 						</div>
 						<div class="form-group ">
 							<label for="select" class="margin-top-10">
 								Select category 
+								
 								<span class="bg-info text-success">
-									Current category: {{item.category}} 
+									Current category: <span id="currentCategory">{{currentCategory.name}}</span>
 								</span>
 							</label>
-							<select class="form-control" id="select" name="category">
+							<select class="form-control" id="categorySelect" name="category">
 								{% for category in categories %}
 									<option>{{category.name}}</option>
 								{% endfor%}
@@ -46,13 +47,13 @@
 							<label for="select" class="margin-top-10">
 								Select image 
 								<span class="bg-info text-success">
-									Current image: {{item.image}} 
+									Current image: <span id="currentImage">{{products.image}}<span>
 								</span>
 							</label>
 							<select class="form-control" id="image" name="image">
 								{% for file in files %}
 									<option>{{file}}</option>
-								{% endfor%}
+								{% endfor %}
 							</select>
 						</div>
 					</div>
@@ -66,17 +67,17 @@
 							<span class="input-group-addon">
 								<span class="fa fa-pencil"></span>
 							</span>
-							<input type="text" class="form-control" name="description" value="{{item.description}}" />
+							<input type="text" class="form-control" name="description" value="{{products.description}}" />
 						</div>
 						<label for="tags">
 							Enter tags
 						</label>
-						<div class="input-group">
+{# 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="fa fa-tags"></span>
 							</span>
-							<input type="text" class="form-control" name="tags" value="{{item.tags}}" />
-						</div>
+							<input type="text" class="form-control" name="tags" value="{{products.tags}}" />
+						</div> #}
 						<small class="bg-danger"> use coma for each tag </small>
 						<div class="form-group margin-top-10">
 							<button class="btn btn-primary btn-block" name="update-btn">Update</button>
@@ -93,7 +94,7 @@
 	<div class="row">
 		<div class="panel img-panel">
 			<div class="text-center margin-top-10 margin-bottom-10">
-				<img id="loadImg" src="/images/logo.png">
+				<img id="loadImg" src="/images/uploads/{{products.image}} ">
 			</div>
 		</div>
 	</div>

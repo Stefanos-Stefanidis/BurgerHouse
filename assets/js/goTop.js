@@ -8,3 +8,9 @@ $(document).ready(function(){
 	});
 	
 });
+
+$(window).load(function() {
+	$(".loader-container").delay(500).fadeOut( "slow", function() {
+		$(".loader-circle").css('animation','none');
+	});
+})

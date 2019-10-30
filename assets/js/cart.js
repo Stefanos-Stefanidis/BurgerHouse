@@ -1,35 +1,28 @@
 $(document).ready(function () {
     validateOrder();
-    var orderArray = [];
-    var url = document.URL;
-    var lastPart = url.split("/").pop();
-    var orderName = $(".orderName").text();
-    if (orderName !== '') {
-        $('#send-order').removeClass('disabled');
-        $('#send-order').prop("disabled", false);
-    }
-    var productId ;
+    var productId = $('.addCart').data('prId');
+
     var productPrice = parseFloat($('#productPrice').text());
 
     $('.addCart').click(function () {
-
-        productId = $(this).data('prId');
         $('#qtModal').modal('show');
-
     });
 
     $('.add-to-basket').click(function (e) { 
-
+        var numOfProductsInBasktet = parseInt($('#NumOfPrInCart').text()) + 1;
         var productQuantity = $('.add-to-basket').data('quantity');
+        var productComment = $('#prComment').val();
         
         var request = $.ajax({
             url: "/addToCart/"+productId,
             method: "POST",
             data: { 
                 productQuantity : productQuantity,
+                productComment : productComment,
               }
           });
           request.done(function( msg ) {
+            $('#NumOfPrInCart').text(numOfProductsInBasktet)  
             $('#qtModal').modal('hide');
             $("#offerSendMsg").show(1000);
             setTimeout(function () {
@@ -65,8 +58,7 @@ $(document).ready(function () {
     $('.rate').click(function () {
         var rate = $('input[name=star]:checked').val();
 
-
-        data = "prid=" + lastPart;
+        data = "prid=" + productId;
         data += "&rate=" + rate;
         $.ajax({
             type: "POST",
@@ -77,57 +69,6 @@ $(document).ready(function () {
 
     $('#dlt-product a').click(function () {
         Cookies.set('name', counter -= 1);
-    });
-
-    $('#offer1').click(function () {
-        var priceOffer1 = $('#priceOffer1').text();
-        $("#offerSendMsg").show(1000);
-        setTimeout(function () {
-            $("#offerSendMsg").hide(1000);
-        }, 2000)
-        Cookies.set('name', counter += 1);
-        $("#shop-basket").html("(" + parseInt(Cookies.get('name')) + ")");
-        data = "price=" + priceOffer1;
-        data += "&name=Offer 1";
-        $.ajax({
-            type: "POST",
-            url: '/cart',
-            data: data
-        });
-    });
-
-    $('#offer2').click(function () {
-        var priceOffer2 = $('#priceOffer2').text();
-        $("#offerSendMsg").show(1000);
-        setTimeout(function () {
-            $("#offerSendMsg").hide(1000);
-        }, 2000)
-        Cookies.set('name', counter += 1);
-        $("#shop-basket").html("(" + parseInt(Cookies.get('name')) + ")");
-        data = "price=" + priceOffer2;
-        data += "&name=Offer 2";
-        $.ajax({
-            type: "POST",
-            url: '/cart',
-            data: data
-        });
-    });
-
-    $('#offer3').click(function () {
-        var priceOffer3 = $('#priceOffer3').text();
-        $("#offerSendMsg").show(1000);
-        setTimeout(function () {
-            $("#offerSendMsg").hide(1000);
-        }, 2000)
-        Cookies.set('name', counter += 1);
-        $("#shop-basket").html("(" + parseInt(Cookies.get('name')) + ")");
-        data = "price=" + priceOffer3;
-        data += "&name=Offer 3";
-        $.ajax({
-            type: "POST",
-            url: '/cart',
-            data: data
-        });
     });
 
 
@@ -143,4 +84,20 @@ $(document).ready(function () {
             return false;
         }
     }
+
 });
+
+function addOfferToBasket(uuid) {
+    console.log(uuid);
+
+    var request = $.ajax({
+        url: "/singleOffer",
+        method: "POST",
+        data: { 
+            uuid: uuid
+          }
+      });
+      request.done(function( data ) {
+        console.log(data.response)
+      });
+}

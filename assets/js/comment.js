@@ -1,7 +1,7 @@
 (function  ($) {
 	
 	var data;
-	var username;
+	var limit = 5;
 	var comment;
 	var rate = 0;
 	$(document).ready(function(){
@@ -37,7 +37,18 @@
                 function() {
                     previous();
                 }, 500);
-        });
+		});
+		if (jQuery('#commentBox').length) {
+			
+			scrolledOnce = true;
+			$(window).scroll(function() {
+				if($(window).scrollTop() + $(window).height() + 93  > $(document).height() && scrolledOnce ) {
+					limit = limit +5;
+					next(limit);
+					scrolledOnce = false;
+				}
+			 });
+		}
 	});
 	
 
@@ -65,7 +76,27 @@
 			} 
 		});
 	}
-	function next(){
+	function next(limitVar){
+
+		data = "limit="+limitVar;
+        $.ajax({
+            type: "POST",
+			url: '/next',
+			cache: false,
+			data: data,
+			success: function(data){
+				if (data == 'false') {
+					scrolledOnce = false;
+					// location.reload();
+					return;
+				}
+				scrolledOnce = true;
+				$("#loadAjax").html(data);
+			} 
+		});
+		
+		return;
+		data = "prid=12";
 		$.ajax({
 			url: "next",
 			cache: false,

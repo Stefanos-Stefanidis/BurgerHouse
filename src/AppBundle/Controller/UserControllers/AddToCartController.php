@@ -30,9 +30,11 @@ class AddToCartController extends Controller{
             }
 
             $productQuantity =  $_POST['productQuantity']; 
+            $productComment =  $_POST['productComment']; 
 
             $cart = new AddToCart();
             $cart -> setQuantity($productQuantity);
+            $cart -> setComment($productComment);
             
             $em = $this->getDoctrine()->getManager();
             $productId = $em->getRepository('AppBundle:Product')->findOneById($id); 

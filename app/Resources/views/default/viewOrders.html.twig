@@ -4,10 +4,12 @@
     <div>
         <button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
     </div>
-    {% set orderNum = 0 %}
-    {% for menu in menus %}
-        {% set orderNum = orderNum +1 %}
 
+
+    {% if productUuids|length > 0 %}
+    {% set orderNum = 0 %}
+    {% for uuid in productUuids %}
+        {% set orderNum = orderNum +1 %}
 
         <div class="text-right width-100">
 
@@ -16,7 +18,7 @@
                 <span class="btn-label">
                     <i class="fa fa-chevron-circle-left"></i>
                 </span>
-                <a href="/view-orders/{{ menu.id }}">Order.{{ orderNum }}</a>
+                <a href="/view-order/{{ uuid.noticeId }}">Order.{{ orderNum }}</a>
 
             </div>
             <br>
@@ -26,82 +28,58 @@
     <div class="container">
         <div id="order-panel" class="jumbotron ">
             <div class="col-md-6">
+                {% set totalPrice = 0 %}
                 {% for notice in notices %}
-                    {% set product = notice.products|split(':') %}
-                    {% for split in product %}
-                        <h4 class="productLine">
-                            {{ split }}
-                            <ul>
-                                {% if split =="Offer 1" %}
-                                    <small class="bg-info" id="offer1Show">show more <span
-                                                class="fa fa-caret-down"></span></small>
-                                    <div id="offer1">
-                                        {% for offer in offers1 %}
-                                            <li>{{ offer.product }}</li>
-                                        {% endfor %}
-                                    </div>
-                                {% elseif split =="Offer 2" %}
-                                    <small class="bg-info" id="offer2Show">show more <span
-                                                class="fa fa-caret-down"></span></small>
-                                    <div id="offer2">
-                                        {% for offer in offers2 %}
-                                            <li>{{ offer.product }}</li>
-                                        {% endfor %}
-                                    </div>
-                                {% elseif split =="Offer 3" %}
-                                    <small class="bg-info" id="offer3Show">show more <span
-                                                class="fa fa-caret-down"></span></small>
-                                    <div id="offer3">
-                                        {% for offer in offers3 %}
-                                            <li>{{ offer.product }}</li>
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-
-                            </ul>
-                        </h4>
-                    {% endfor %}
-                    <div class="container col-xs-4">
-                        <div class="row bg-info">
-                            <h4 class="">Total Price: {{ notice.price }}&euro;</h4>
-                        </div>
-                    </div>
+                    <p>{{notice.productId.name}} x {{notice.quantity}} </p>
+                    {% if notice.comment is not null %}
+                        <p class="comment text-info">({{notice.comment}})</p>
+                    {% endif %}
+                    
+                    {% set totalPrice = totalPrice + notice.productId.price * notice.quantity %}
                 {% endfor %}
+     
+                
+                <div class="container col-xs-4">
+                    <div class="row bg-info">
+                        <h4 class="">Total Price: {{ totalPrice }}&euro;</h4>
+                    </div>
+                </div>
             </div>
-            {% for notice in notices %}
                 <div class="col-md-6 bg-success">
                     <br>
-                    <h4 class="col-md-6">{{ notice.name }}</h4>
-                    <h4 class="col-md-6">{{ notice.lastname }}</h4>
-                    <h4 class="col-md-6">{{ notice.phone }}</h4>
-                    <h4 class="col-md-6">{{ notice.address }}</h4>
-                    <h4 class="col-md-6">{{ notice.email }}</h4>
+                    {% if notices|length > 0 %}
+                        <h4 class="col-md-6">{{ notices[0].userId.username }}</h4>
+                        <h4 class="col-md-6">{{ notices[0].userId.lastname }}</h4>
+                        <h4 class="col-md-6">{{ notices[0].userId.phone }}</h4>
+                        <h4 class="col-md-6">{{ notices[0].userId.address }}</h4>
+                        <h4 class="col-md-6">{{ notices[0].userId.email }}</h4>
+                    {% endif %}
                 </div>
                 <div class="col-md-4  pull-right margin-top-50">
                     <p>Order send at:</p>
                     <div class="panel col-md-6">
-                        <span class="bg-info">{{ notice.date|date("d/m/y") }}</span> -
-                        <span class="bg-warning">{{ notice.date|date("h:s:i") }}</span>
-                    </div>
+                        {% if notices|length > 0 %}
+                            <span class="bg-info">{{ notices[0].dateOrder|date("d/m/y") }}</span> -
+                            <span class="bg-warning">{{ notices[0].dateOrder|date("h:i:s") }}</span>
+                        {% endif %}
+                    </div> 
                 </div>
-            {% endfor %}
-            <div class="col-xs-12">
-                {% for notice in notices %}
-                    <h3>Description:</h3>
-                    <h2 class="panel descr-panel">{{ notice.description }}</h2>
-                {% endfor %}
-            </div>
-            <div class="col-xs-6 ">
-                {% for notice in notices %}
-                    <a href="/cancel-order/{{ notice.id }}" class="btn btn-danger">Order Cancel</a>
-                {% endfor %}
-            </div>
-            <div class="col-xs-6">
-                {% for notice in notices %}
-                    <a href="{{ notice.id }}" class="btn btn-primary  pull-right">Order finished</a>
-                {% endfor %}
-            </div>
+            {% if notices|length > 0 %}
+                <div class="col-xs-12">
+                        <h3>Extra:</h3>
+                        <h2 class="panel descr-panel">{{ notices[0].extra }}</h2>
+                </div>
+                <div class="col-xs-6 ">
+                        <a href="/cancel-order/{{ notices[0].noticeId }}" class="btn btn-danger">Order Cancel</a>
+                </div>
+                <div class="col-xs-6">
+                        <a href="/finish-order/{{ notices[0].noticeId }}" class="btn btn-primary  pull-right">Order finished</a>
+                </div>
+            {% endif %}
         </div>
     </div>
+    {% else %}
+        <h1 class="text-center text-danger">No Orders</h1>
+    {% endif %}
 
 {% endblock %}

@@ -32,6 +32,7 @@ class SendOrderController extends Controller{
             $usermailsess = $_SERVER['REMOTE_ADDR'];
         }
         
+        $extra = $_POST['extra'];
 
         $findOrder = $this->getDoctrine()
         ->getRepository('AppBundle:AddToCart')
@@ -44,9 +45,12 @@ class SendOrderController extends Controller{
             $newOrder = new Notice();
             $em = $this->getDoctrine()->getManager();
             $newOrder -> setQuantity($value->getQuantity());
+            $newOrder -> setComment($value->getComment());
             $newOrder -> setUserId($user);
             $newOrder -> setNoticeId($uuid4);
             $newOrder -> setProductId($value->getProductId());
+            $newOrder -> setOrderStatus('PROCESSING');
+            $newOrder -> setExtra($extra);
 
             $em->persist($newOrder);
             $em->flush();

@@ -82,10 +82,16 @@
         </button>
       </div>
       <div class="modal-body">
-		<div>
+		<div class="flex-quantity">
 			<button class="btn btn-xs btn-default sub fa fa-minus btn-danger" ></button>
-			<h6> <span id="productQuantity">1</span> x <span id="productPrice">{{item.price}}</span></h6>
+			<h3> <span id="productQuantity">1</span> x {{item.price}} = <span id="productPrice">{{item.price}}</span></h3>
 			<button class="btn btn-xs btn-default add fa fa-plus btn-success"></button>
+		</div>
+		<br />
+		<br />
+		<div>
+			<label for="prComment">Comment:</label>
+			<textarea name="prComment" id="prComment" class="form-control" cols="30" rows="3"></textarea>
 		</div>
       </div>
       <div class="modal-footer">

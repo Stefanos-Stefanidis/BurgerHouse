@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping\OneToMany as OneToMany;
 use Doctrine\ORM\Mapping\ManyToOne as ManyToOne;
 use Doctrine\ORM\Mapping\JoinColumn as JoinColumn;
+use \DateTime;
 
 
 /**
@@ -52,6 +53,41 @@ class Notice
      */
     private $quantity;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="string", length=255,nullable=true)
+    */
+    private $comment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="extra", type="string", length=255,nullable=true)
+    */
+    private $extra;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="order_status", type="string", length=255)
+     */
+    private $orderStatus;
+
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_order", type="datetime", nullable=true)
+    */
+    private $dateOrder;
+
+    public function __construct()
+    {
+        $this->dateOrder = new DateTime(); 
+    }
 
     /**
      * Get id
@@ -115,6 +151,55 @@ class Notice
     }
 
     /**
+     * Set comment
+     *
+     * @param string $comment
+     *
+     * @return Notice
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set extra
+     *
+     * @param string $extra
+     *
+     * @return Notice
+     */
+    public function setExtra($extra)
+    {
+        $this->extra = $extra;
+
+        return $this;
+    }
+
+    /**
+     * Get extra
+     *
+     * @return string
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+
+    /**
      * Set userId
      *
      * @param \AppBundle\Entity\User $userId
@@ -161,6 +246,56 @@ class Notice
     {
         return $this->productId;
     }
+
+    /**
+     * Set orderStatus
+     *
+     * @param string $orderStatus
+     *
+     * @return Notice
+     */
+    public function setOrderStatus($orderStatus)
+    {
+        $this->orderStatus = $orderStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get orderStatus
+     *
+     * @return string
+     */
+    public function getOrderStatus()
+    {
+        return $this->orderStatus;
+    }
+
+
+    /**
+     * Set dateOrder
+     *
+     * @param \DateTime $dateOrder
+     *
+     * @return Notice
+    */
+    public function setDateOrder($dateOrder)
+    {
+        $this->dateOrder = $dateOrder;
+
+        return $this;
+    }
+
+    /**
+     * Get dateOrder
+     *
+     * @return \DateTime
+    */
+    public function getDateOrder()
+    {
+        return $this->dateOrder;
+    }
+
 
 }
 

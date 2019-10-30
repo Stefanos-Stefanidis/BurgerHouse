@@ -2,7 +2,7 @@
 
 	$(document).ready(function () {
 		$("#selectCategory").chosen();
-		$("#image").chosen();
+		
 		$("#menu-btn").mouseenter(function () {
 			$(".nav-left").css({
 				"left": "0%"

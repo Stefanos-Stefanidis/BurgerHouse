@@ -22,14 +22,16 @@ class EditProductController extends Controller /*implements TokenAuthenticatedCo
     public function editItemAction($id = 0, Request $request)
     {
 
-        $dir    = 'images/uploads';
+        $dir = 'images/uploads';
         $array_files = scandir($dir);
         
         $em = $this->getDoctrine()->getManager();
-        $item = $em->getRepository('AppBundle:Product')->find($id);
+        $product = $em->getRepository('AppBundle:Product')->find($id);
+        $category = $em->getRepository('AppBundle:Category')->findOneById($product->getCategory()->getId());
+        dump($category);
         $categories = $em->getRepository('AppBundle:Category')->findAll();
         return $this->render('default/editItem.html.twig', array(
-            'item'=>$item,'categories'=>$categories,'files'=>$array_files
-            ));
+            'products'=>$product,'categories'=>$categories,'files'=>$array_files, 'currentCategory'=>$category
+        ));
     }
 }

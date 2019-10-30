@@ -1,62 +1,43 @@
 $(document).ready(function(){
-    var url = document.URL;
-    var lastPart = url.split("/").pop();
-    var prPrice=[];
-    console.log(lastPart);
-    $('.return').click(function(){
-        var href = $(this).attr('href');
-        var id = href.split("/").pop();
-        data = "removeid="+ id;
-        $.ajax({
-            type: "POST",
-            url: '/remove',
-            data: data
-        });
-        setTimeout(function () {
-           location.reload();           
-        }, 500)
-        return false;
-    });
-    $('#send-offer').click(function(){
-        var offer = $("#offer-box").text();
-        var withNoDigits = offer.replace(/[0-9]/g, '');
-        console.log(prPrice);
-        var noDots = withNoDigits.split('.').join("");
-        var offerArray = noDots.split(",€"); 
-        var total =  $("#total-price").text();
-        data = "products="+ offerArray;
-        data += "&price="+prPrice;
-        data += "&offer="+lastPart;
-        $.ajax({
-            type: "POST",
-            url: '/post-offer',
-            data: data
 
-        });
-         setTimeout(function () {
-            location.reload();           
-        }, 1000)
-        
-    });
+    $('#product_table').DataTable();
 
-    $('.pr-panel').click(function(){
-        var prname = $(this).text() ;
-        var price = prname.replace(/[^\d.]/g,'');
-        
-        prPrice = prPrice + prname.replace(/[^\d.]/g,'')+ ",";
-        var total =  $("#total-price").text();
-        $("#offer-box").append('<h4> '+prname+'</h4>');
-        $(this).addClass("bg-success");
-        $("#total-price").html(parseFloat(price)+parseFloat(total)+'&euro;');
-        console.log(prname);
-        console.log(price);
-        $("#create-offer-box").addClass("animated shake");
-        setTimeout(function () {
-            $("#create-offer-box").removeClass("animated shake");           
-        }, 1200)
-
-        setTimeout(function () {
-            $(".pr-panel").removeClass("bg-success");
-        }, 1500)
-    });
 });
+
+var productIdArray = [];
+function addToOffer(rowNum) {
+    var productTable = $('#product_table').DataTable();
+    var rows = productTable.rows( rowNum ).data();
+    var productId = rows[0][0];
+    var productName = rows[0][1];
+    var productPrice = rows[0][2];
+
+    var productPriceFloat =  parseFloat(productPrice);
+    var currentTotalPrice = parseFloat($('#totalPrice').text());
+    var newTotalPrice = currentTotalPrice + productPriceFloat;
+    productIdArray.push(productId)
+    $('#productIds').val(productIdArray.toString())
+    $('#totalPrice').text(newTotalPrice);
+    $('#newOffer').append('<h4>'+ productName + ' ' + productPrice +'<span class="fa fa-minus text-danger cursor-pointer" onClick="removeFromOffer(this, '+productPriceFloat+','+productId+')"></span></h4>')
+}
+
+function removeFromOffer(thisObj, productPrice, productId){
+    currentTotalPrice 
+    $(thisObj).parent().remove();
+    var currentTotalPrice = parseFloat($('#totalPrice').text());
+    var newTotalPrice = currentTotalPrice - productPrice;
+
+    $('#totalPrice').text(newTotalPrice);
+
+    for( var i = 0; i < productIdArray.length; i++){ 
+        if ( productIdArray[i] == productId) {
+            productIdArray.splice(i, 1); 
+            break;
+        }
+    }
+    $('#productIds').val(productIdArray.toString())
+}
+
+
+
+

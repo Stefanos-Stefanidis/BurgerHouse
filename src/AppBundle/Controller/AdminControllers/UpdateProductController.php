@@ -30,17 +30,15 @@ class UpdateProductController extends Controller /*implements TokenAuthenticated
             $price =  $_POST['price'];
             $category =  $_POST['category'];
             $description =  $_POST['description'];
-            $tags =  $_POST['tags'];
             $image =  $_POST['image'];
 
             $em = $this->getDoctrine()->getManager();
             $item = $em->getRepository('AppBundle:Product')->find($id);
-
+            $categoryUpd = $em->getRepository('AppBundle:Category')->findOneByName($category);
             $item->setName($name);
             $item->setPrice($price);
-            $item->setCategory($category);
+            $item->setCategory($categoryUpd);
             $item->setDescription($description);
-            $item->setTags($tags);
             $item->setImage($image);
             $em->flush();
             return $this->redirectToRoute('edit');

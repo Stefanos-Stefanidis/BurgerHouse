@@ -5,6 +5,7 @@ namespace AppBundle\Controller\AdminControllers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Ramsey\Uuid\Uuid;
 use AppBundle\Entity\Offers;
 
 
@@ -14,36 +15,47 @@ class OffersController extends Controller
    /**
      * @Route("/offer", name="offer")
      */
-   public function offerAction(Request $request)
-   {
+    public function offerAction(Request $request)
+    {
 
 
+    $allProducts = $this->getDoctrine()
+        ->getRepository('AppBundle:Product')
+        ->findAll();
 
-    $offer1 = $this->getDoctrine()
-    ->getRepository('AppBundle:Offers')
-    ->findByOffer(1);
-    $offer2 = $this->getDoctrine()
-    ->getRepository('AppBundle:Offers')
-    ->findByOffer(2);
-    $offer3 = $this->getDoctrine()
-    ->getRepository('AppBundle:Offers')
-    ->findByOffer(3);
+    $allOffers = $this->getDoctrine()
+        ->getRepository('AppBundle:Offers')
+        ->findAll();
+        
+
+        $repository = $this->getDoctrine()
+        ->getRepository(Offers::class);
+        
+        $entityManager = $this->getDoctrine()->getManager();
+        
+        $query = $entityManager->createQuery(
+            'SELECT DISTINCT p.offer
+            FROM AppBundle:Offers p'
+        );
+        
+        $offersUuids = $query->getResult();
+        dump($offersUuids);
 
     return $this->render('default/addOffer.html.twig',array(
-        'offers1'=>$offer1,'offers2'=>$offer2,'offers3'=>$offer3
-        ));        
+        'allProducts'=>$allProducts, 'allOffers'=>$allOffers, 'offersUuids'=>$offersUuids
+    ));        
 
-}
+    }
 
 
     /**
-    * @Route("/createOffer/{id}", name="createOffer")
+    * @Route("/edit-offers", name="editOffers")
     */
     public function createOfferAction($id=0,Request $request)
     {
 
-        $product = $this->getDoctrine()
-        ->getRepository('AppBundle:Product')
+        $Offers = $this->getDoctrine()
+        ->getRepository('AppBundle:Offers')
         ->findAll();
 
         $offer = $this->getDoctrine()
@@ -57,18 +69,23 @@ class OffersController extends Controller
     }
     
     /**
-    * @Route("/remove", name="removeOffer")
+    * @Route("/remove-offer/{id}", name="removeOffer")
     */
-    public function removeOfferAction(Request $request)
+    public function removeOfferAction($id=0, Request $request)
     {
-        $id =  $_POST['removeid'];
-        $em = $this->getDoctrine()->getManager();
-        $offer = $em->getRepository('AppBundle:Offers')->find($id);
 
-        $em->remove($offer);
-        $em->flush();
+        $entityManager = $this->getDoctrine()->getManager();
+        
+        $query = $entityManager->createQuery(
+            'DELETE 
+            FROM AppBundle:Offers o
+            WHERE o.offer = :id 
+            '
+        )->setParameter('id', $id);
 
-        return $this->redirectToRoute('createOffer');
+        $query->execute();
+
+        return $this->redirectToRoute('offer');
 
     }
     /**
@@ -76,27 +93,26 @@ class OffersController extends Controller
     */
     public function postOfferAction(Request $request)
     {
-        $offer =  $_POST['products'];
-        $prprice =  $_POST['price'];
-        $offerNum =  $_POST['offer'];
-        
-        $offerArray = explode(",",$offer);
-        $priceArray = explode(",",$prprice);
-        
-        for ($i=0; $i < (sizeof($offerArray)-1) ; $i++) { 
-            $createOffer = new Offers();
-            $createOffer  -> setProduct($offerArray[$i])
-            -> setTimes($priceArray[$i])
-            ->setOffer($offerNum);
 
+
+        $price =  $_POST['newPrice'];
+        $productIds =  $_POST['productIds'];
+        $productArray = explode(',', $productIds);
+        
+        $uuid4 = Uuid::uuid4();
+        
+        foreach ($productArray as $productId) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($createOffer);
+            $product = $em->getRepository('AppBundle:Product')->findOneById($productId);
+            $offer = new Offers();
+            $offer -> setPrice($price);
+            $offer -> setOffer($uuid4);
+            $offer -> setProduct($product);
+    
+            $em->persist($offer);
             $em->flush();
-
         }
-        
-
-        return $this->redirectToRoute('createOffer');          
+        return $this->redirectToRoute('offer');          
 
     }
 

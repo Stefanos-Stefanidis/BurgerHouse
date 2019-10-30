@@ -55,25 +55,20 @@ class CommentsController extends Controller{
     */
     public function nextAction($limit = 5 ,Request $request)
     {     
-        $session = $request->getSession();
-        $offset = $session->get('offset');
-        
+
+        $limit =  $_POST['limit'];
+
         $numOfComments = $this->getDoctrine()
         ->getRepository('AppBundle:Comments')
         ->findAll();
 
-        if ($offset > sizeOf($numOfComments) - 5) {
-            $this->addFlash(
-                'notice',
-                'No more comments'
-                );        
+        if ($limit > sizeOf($numOfComments)) {
             return new Response('false');
         }
-        $offset = $offset + 5;
-        $session->set('offset', $offset);
+
         $comments = $this->getDoctrine()
                     ->getRepository('AppBundle:Comments')
-                    ->findAllLimit($limit,$offset);
+                    ->findAllLimit($limit);
             return $this->render('default/commentsRefresh.html.twig',array(
                 'comments'=>$comments
             ));

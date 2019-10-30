@@ -7,13 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Notice;
 
-class CancelOrderController extends Controller /*implements TokenAuthenticatedController*/
+class FinishOrderController extends Controller 
 {
 
     /**
-    * @Route("/cancel-order/{id}", name="cancelOrder")
+    * @Route("/finish-order/{id}", name="FinishlOrder")
     */
-    public function cancelOrderAction($id=0,Request $request)
+    public function FinishlOrderAction($id=0,Request $request)
     {
 
 
@@ -25,14 +25,14 @@ class CancelOrderController extends Controller /*implements TokenAuthenticatedCo
             SET o.orderStatus = :orderStatus
             WHERE o.noticeId = :id 
             '
-        )->setParameter('id', $id)->setParameter('orderStatus', 'CANCEL');
+        )->setParameter('id', $id)->setParameter('orderStatus', 'FINISH');
 
         $query->execute();
 
         $this->addFlash(
             'notice',
-            'Item deleted'
-            );
+            'Order Finished'
+        );
         return $this->redirectToRoute('viewOrders'); 
 
         

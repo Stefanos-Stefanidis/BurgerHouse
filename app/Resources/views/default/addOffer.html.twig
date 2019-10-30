@@ -5,60 +5,80 @@
 </div>
 <div class="container">
     <div class="row">
+        <div class="margin-top-50">
+            <h1>Your Offers</h1>
+            <div class="margin-top-10 grid-offers">
+                {% for uuid in offersUuids %}
+                {% set firstPrice = 0 %}
+                {% set totalPrevPrice = 0 %}
+                <div class="panel padding-10 flex-offers-panel">
+                    <div class="products">
+                        {% for offer in allOffers %}
+                        {% if offer.offer == uuid.offer %}
+                        <p>{{offer.product.name}}</p>
+                        {% set firstPrice = offer.price %}
+                        {% set totalPrevPrice = totalPrevPrice + offer.product.price %}
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="prices">
+                        <a class="btn-xs btn btn-danger fa fa-times" href="remove-offer/{{uuid.offer}}"></a>
+                        <div class="old-price circle-text">{{totalPrevPrice}}</div>
+                        <div class="new-price circle-text">{{firstPrice}}</div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
         <h1>Add your offers here</h1>
+        <a class="btn-xs btn btn-primary" href="edit-offers/">Edit your offers</a>
         <div class="margin-top-100">
-            <div class="col-md-4 ">
+            <table id="product_table" class="display">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>(+)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set inc = 0 %}
+                    {% for product in allProducts %}
+                    <tr>
+                        <td>{{product.id}}</td>
+                        <td class="product-name">{{product.name}}</td>
+                        <td>{{product.price}}&euro;</td>
+                        <td><button class="btn btn-xs btn-success fa fa-plus" onClick="addToOffer({{inc}})"></button>
+                        </td>
+                    </tr>
+                    {% set inc = inc + 1 %}
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="col-md-6 col-md-offset-3 text-center">
                 <h1 class="fa fa-gift fa-10x text-danger"></h1>
-                <a class="btn-xs btn btn-primary" href="createOffer/1">Edit</a>
-                <div class="panel height-310-overflow">
-                    {% for offer in offers1%}
-                    <h3>
-                        {{offer.product}}
-                    </h3>
-                    {% endfor%}
-                </div>
+                <div id="newOffer" class="panel height-310-overflow"></div>
+                <form method="post" action="post-offer">
+                    <div class="panel col-xs-3 pull-right">
+                        <label for="price">
+                            New price
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="fa fa-eur"></span>
+                            </span>
+                            <input type="text" class="form-control" name="newPrice" />
+                        </div>
+                        <input type="hidden" id="productIds" name="productIds" />
+                        <br />
+                        <button type="submit" class="btn btn-success btn-block"><i class="fa fa-gift"> </i></button>
+                    </div>
+                </form>
                 <div class="panel col-xs-3 pull-right">
-                    {% set totalPrice1 = 0 %}
-                    {% for offer in offers1 %}
-                    {% set totalPrice1 = totalPrice1 + offer.times %}
-                    {% endfor %}
-                    <h4>{{totalPrice1}}&euro;</h4>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <h1 class="fa fa-gift fa-10x text-success"></h1>
-                <a class="btn-xs btn btn-primary" href="createOffer/2">Edit</a>
-                <div class="panel height-310-overflow">
-                    {% for offer in offers2%}
-                    <h3>
-                        {{offer.product}}
-                    </h3>
-                    {% endfor%}
-                </div>
-                <div class="panel col-xs-3 pull-right">
-                    {% set totalPrice2 = 0 %}
-                    {% for offer in offers2 %}
-                    {% set totalPrice2 = totalPrice2 + offer.times %}
-                    {% endfor %}
-                    <h4>{{totalPrice2}}&euro;</h4>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <h1 class="fa fa-gift fa-10x text-info"></h1>
-                <a class="btn-xs btn btn-primary" href="createOffer/3">Edit</a>
-                <div class="panel height-310-overflow">
-                    {% for offer in offers3%}
-                    <h3>
-                        {{offer.product}}
-                    </h3>
-                    {% endfor%}
-                </div>
-                <div class="panel col-xs-3 pull-right">
-                    {% set totalPrice3 = 0 %}
-                    {% for offer in offers3 %}
-                    {% set totalPrice3 = totalPrice3 + offer.times %}
-                    {% endfor %}
-                    <h4>{{totalPrice3}}&euro;</h4>
+                    <label>Total price</label>
+                    <h4><span id="totalPrice">0</span> &euro;</h4>
                 </div>
             </div>
         </div>

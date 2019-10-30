@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne as ManyToOne;
+use Doctrine\ORM\Mapping\JoinColumn as JoinColumn;
 
 /**
  * Offers
@@ -21,24 +23,24 @@ class Offers
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="product", type="string", length=255)
+   /**
+     * @ManyToOne(targetEntity="Product", inversedBy="offers")
+     * @JoinColumn(name="product_id", referencedColumnName="id")
      */
+
     private $product;
 
-    /**
-     * @var float
+   /**
+     * @var string
      *
-     * @ORM\Column(name="times", type="float")
+     * @ORM\Column(name="price", type="float")
      */
-    private $times;
+    private $price;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="offer", type="string", length=255)
+     * @ORM\Column(name="offer_uuid", type="string", length=255)
      */
     private $offer;
 
@@ -56,11 +58,11 @@ class Offers
     /**
      * Set product
      *
-     * @param string $product
+     * @param \AppBundle\Entity\Product $product
      *
-     * @return Offers
+     * @return Product
      */
-    public function setProduct($product)
+    public function setProduct(\AppBundle\Entity\Product $product = null)
     {
         $this->product = $product;
 
@@ -70,35 +72,36 @@ class Offers
     /**
      * Get product
      *
-     * @return string
+     * @return \AppBundle\Entity\Product
      */
     public function getProduct()
     {
         return $this->product;
     }
 
+
     /**
-     * Set times
+     * Set price
      *
-     * @param float $times
+     * @param int $price
      *
      * @return Offers
      */
-    public function setTimes($times)
+    public function setPrice($price)
     {
-        $this->times = $times;
+        $this->price = $price;
 
         return $this;
     }
 
     /**
-     * Get times
+     * Get price
      *
      * @return float
      */
-    public function getTimes()
+    public function getPrice()
     {
-        return $this->times;
+        return $this->price;
     }
 
     /**

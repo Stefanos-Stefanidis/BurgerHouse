@@ -26,11 +26,6 @@
     margin-bottom: 10px;
 }
 
-.nav-panel {
-    /* width: 75%;
-	right: 2%; */
-}
-
 .fa-10x {
     font-size: 150px;
 }
@@ -150,20 +145,10 @@
 }
 
 .descr-panel {
-    background-color: #85E7FC;
+    background-color: #fff;
+    padding: 30px 10px;
 }
 
-#offer1 {
-    display: none;
-}
-
-#offer2 {
-    display: none;
-}
-
-#offer3 {
-    display: none;
-}
 
 small.bg-info {
     cursor: pointer;
@@ -235,4 +220,49 @@ a {
 
 .newCategory{
     cursor: pointer;
+}
+#allProductsList li{
+    list-style: none;
+}
+
+#newOffer h4{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.btn{
+    outline: none !important;
+}
+.grid-offers{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+}
+.flex-offers-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.old-price{
+    color: red;
+    text-decoration: line-through;
+}
+
+.new-price{
+    color: #333;
+    margin-top: 10px;
+}
+
+.circle-text{
+    border-radius: 30px;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    font-size: 25px;
+    box-sizing: content-box;
+    border: 2px solid;
+}
+.prices{
+    text-align: right;
 }
