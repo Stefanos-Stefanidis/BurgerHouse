@@ -1,0 +1,27 @@
+{% extends 'admin.html.twig' %} {% block body %}
+<div>
+    <button class="fa fa-chevron-right fa-2x btn btn-default" aria-hidden="true" id="menu-btn"></button>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 text-center bg-success">
+            <h2>Total sales</h2>
+            <h3>{{ total_sales }} <i class="fa fa-euro"></i></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="margin-top-100 ">
+            <div class="col-xs-12">
+                <div id="topRatedProducts"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="margin-top-100 ">
+            <div class="col-xs-12">
+                <div id="barProductsPurchased"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

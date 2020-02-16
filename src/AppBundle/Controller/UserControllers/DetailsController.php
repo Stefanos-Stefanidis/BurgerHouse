@@ -16,7 +16,6 @@ class DetailsController extends Controller{
     public function detailsAction($id=0, Request $request)
     {
 
-
         $listItem   =   $this->getDoctrine()
                             ->getRepository('AppBundle:Product')
                             ->find($id);

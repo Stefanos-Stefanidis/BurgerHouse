@@ -214,13 +214,7 @@ a {
     cursor: pointer;
 }
 
-.newCategoryGroup{
-    display: none;
-}
 
-.newCategory{
-    cursor: pointer;
-}
 #allProductsList li{
     list-style: none;
 }

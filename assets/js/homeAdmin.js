@@ -22,11 +22,12 @@
 			});
 
 		});
-
+	
 		$(".add-item").click(function () {
 			document.getElementById("addProductli").click();
 
 		});
+
 		$(".edit-list").click(function () {
 			document.getElementById("editli").click();
 
@@ -47,10 +48,10 @@
 		$(".view-subscribers").click(function () {
 			document.getElementById("subscribersli").click();
 		});
-
-		$('.newCategory').click(function(){
-			$('.newCategoryGroup').slideToggle();
+		$(".view-charts").click(function () {
+			document.getElementById("chartsli").click();
 		});
+
 	});
 
 

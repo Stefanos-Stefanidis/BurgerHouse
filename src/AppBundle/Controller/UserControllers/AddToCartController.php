@@ -19,8 +19,7 @@ class AddToCartController extends Controller{
     {
         
 
-        if (!empty($_POST["productQuantity"])) {
-
+        if (!empty($_GET["productQuantity"])) {
 
             $securityContext = $this->container->get('security.authorization_checker');
             if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
@@ -29,8 +28,9 @@ class AddToCartController extends Controller{
                 $usermailsess = $_SERVER['REMOTE_ADDR'];
             }
 
-            $productQuantity =  $_POST['productQuantity']; 
-            $productComment =  $_POST['productComment']; 
+            $productQuantity =  $_GET['productQuantity']; 
+            $productComment =  $_GET['productComment']; 
+            $id =  $_GET['productId']; 
 
             $cart = new AddToCart();
             $cart -> setQuantity($productQuantity);
@@ -46,7 +46,12 @@ class AddToCartController extends Controller{
             $em->flush();
 
     
-            return $this->redirectToRoute('homepage');
+            $translated = $this->get('translator')->trans('Added to basket');
+            
+            $respone;
+            $respone['message'] = $translated;
+  
+            return $this->json($respone);
         }
         else{
             return $this->redirectToRoute('homepage');

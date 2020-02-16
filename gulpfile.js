@@ -61,6 +61,9 @@ gulp.task('compoments', function() {
 	    .pipe(gulp.dest('web/css'));
 	
 	var chosencss = gulp.src('assets/bower_components/chosen/chosen.min.css')
+		.pipe(gulp.dest('web/css'));
+		
+	var toastrcss = gulp.src('assets/bower_components/toastr/toastr.min.css')
 	    .pipe(gulp.dest('web/css'));
 	   
 	var jquery = gulp.src('assets/bower_components/jquery/dist/jquery.min.js')
@@ -78,8 +81,20 @@ gulp.task('compoments', function() {
 	var datatablescss = gulp.src('assets/bower_components/datatables.net-dt/css/jquery.dataTables.min.css')
 		.pipe(gulp.dest('web/css'));
 
+	var c3chartscss = gulp.src('assets/bower_components/c3/c3.min.css')
+		.pipe(gulp.dest('web/css'));
+
 	var datatablesjs = gulp.src('assets/bower_components/datatables.net/js/jquery.dataTables.min.js')
 		.pipe(gulp.dest('web/js'));
+
+	var toastrjs = gulp.src('assets/bower_components/toastr/toastr.min.js')
+		.pipe(gulp.dest('web/js'));
+		
+	var c3chartsjs = gulp.src('assets/bower_components/c3/c3.min.js')
+		.pipe(gulp.dest('web/js'));
+		
+	var c3chartsd3js = gulp.src('assets/bower_components/c3/docs/js/d3-5.8.2.min.js')
+	    .pipe(gulp.dest('web/js'));
 
   
 });

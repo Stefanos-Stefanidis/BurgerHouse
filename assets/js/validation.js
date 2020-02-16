@@ -1,44 +1,33 @@
-(function  ($) {
-	var data;
-	var userMail;
-		$(document).ready(function(){
 
-			$("#subscribe").click(function(){
-				subscribe();
-			});
-		
-		});
+function subscribe() {
 
-	function subscribe() {
+	$("#result").text("");
+	var email = $("#userMail").val().replace(/\s+/g, '');
 
-		$("#result").text("");
-		var email = $("#userMail").val().replace(/\s+/g, '');
-		if (validateEmail(email)) {
-			$("#result").text(email + " Has subscribed").css("color", "green");
-			$( "#result" ).fadeIn().fadeOut(1900);
 
-			userMail = $('#userMail').val();		
-			data = "usermail="+ userMail;
+	
+	if (validateEmail(email)) {
+		var subscribe = makeAjaxRequest("/newslettter?usermail=" + email);
+		subscribe.done(function (data, textStatus, jqXHR) {
+			var message = data.message;
 
-			$.ajax({
-				type: "POST",
-				url: 'newslettter',
-				data: data
-
-			});
-			
-			$('#userMail').val("");
-
-		} else {
-			$("#result").text(email + " is not valid");
-				$("#result").css("color", "red");
-				$( "#result" ).fadeIn().fadeOut(1900);
+			if (data.error == 1) {
+				warnings('danger', message);
 			}
+			
+			warnings('success', message);
+		});
+	
+		subscribe.fail(function (data, textStatus, jqXHR) {
+	
+		});
+		
+		return;
 	}
+	warnings('danger', 'Email is not valid');
+}
 
-	function validateEmail(email) {
-		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return re.test(email);
-	}
-
-})(jQuery);
+function validateEmail(email) {
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}

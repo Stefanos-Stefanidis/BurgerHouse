@@ -19,8 +19,8 @@ class RateController extends Controller{
         $usermailsess = $this->getUser()->getEmail();
 
         if (isset($usermailsess)){
-            $prid =  $_POST['prid'];
-            $rating =  $_POST['rate'];
+            $prid =  $_GET['prid'];
+            $rating =  $_GET['rate'];
             
             $isVoted = $this->getDoctrine()
                     ->getRepository('AppBundle:Rate')
@@ -48,7 +48,12 @@ class RateController extends Controller{
                 $em->flush();
             }
 
-            return $this->redirectToRoute('list');
+            $translated = $this->get('translator')->trans('Thank you for voting');
+            
+            $respone;
+            $respone['message'] = $translated;
+  
+            return $this->json($respone);
 
         }
     }

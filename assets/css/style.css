@@ -55,13 +55,12 @@
    background-color: #777;
  }
 
- .carousel-inner>.item>img {
+ /*  .carousel-inner>.item>img {
    position: absolute;
    top: 0;
    left: 0;
    min-width: 100%;
-   /* height: 500px;*/
- }
+ } */
 
 
  /* MARKETING CONTENT
@@ -256,6 +255,10 @@
  .padding-top-15 {
    padding-top: 15px;
  }
+ .margin-left-right-15 {
+   margin-left: 15px;
+   margin-right: 15px;
+ }
 
  .padding-bottom-20 {
    padding-bottom: 20px;
@@ -275,6 +278,17 @@
    .half-input {
      width: 100% !important;
    }
+
+
+ }
+
+ @media (min-width: 600px) {
+   .grid-offers {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-gap: 2em;
+   }
+
  }
 
  #go-top {
@@ -385,16 +399,6 @@
    display: inline;
  }
 
- #register-panel {
-   position: absolute;
-   z-index: 100000 !important;
-   top: 30%;
-   display: none;
- }
-
- #close-register {
-   cursor: pointer;
- }
 
  #fade-bg {
    display: none;
@@ -448,15 +452,6 @@
 
  .slash {
    text-decoration: line-through;
- }
-
- #offerSendMsg {
-   display: none;
-   position: fixed;
-   width: 50%;
-   z-index: 999999 !important;
-   margin-left: 25%;
-   bottom: 85%;
  }
 
  div.stars {
@@ -558,9 +553,6 @@
    min-height: 600px;
  }
 
- #failLogin {
-   display: none;
- }
 
  .max-height-200 {
    max-height: 200px;
@@ -635,17 +627,8 @@
    margin: 10px;
  }
 
- .grid-offers {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-gap: 2em;
- }
 
- .flex-offers-panel {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
- }
+
 
  .old-price {
    color: red;
@@ -671,46 +654,63 @@
  .prices {
    text-align: right;
  }
- .padding-10{
+
+ .padding-10 {
    padding: 10px;
  }
- 
- .loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #00212b;
-}
-.loader-logo {
-  z-index: 5;
-  width: 150px;
-  height: 150px;
-  padding-bottom: 10px;
-  /*  Found this logo on google images  */
-  background-image: url("../../images/loader.png");
-  background-repeat: no-repeat;
-  background-size: 100px;
-  background-position: center;
-}
-.loader-circle {
-  border-top: 1px solid #d0d9df; /* Blue */
-  border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  animation: spin 1.5s linear infinite;
-}
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+ .loader-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   z-index: 4;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background-color: #00212b;
+ }
+
+ .loader-logo {
+   z-index: 5;
+   width: 150px;
+   height: 150px;
+   padding-bottom: 10px;
+   /*  Found this logo on google images  */
+   background-image: url("../../images/loader.png");
+   background-repeat: no-repeat;
+   background-size: 100px;
+   background-position: center;
+ }
+
+ .loader-circle {
+   border-top: 1px solid #d0d9df;
+   /* Blue */
+   border-radius: 50%;
+   width: 160px;
+   height: 160px;
+   animation: spin 1.5s linear infinite;
+ }
+
+ img {
+   transform: translateX(50%);
+   opacity: 0;
+   transition: all 500ms;
+ }
+
+ .fade {
+   transform: translateX(0);
+   opacity: 1;
+   transition: all 500ms;
+ }
+
+ @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+
+   100% {
+     transform: rotate(360deg);
+   }
+ }

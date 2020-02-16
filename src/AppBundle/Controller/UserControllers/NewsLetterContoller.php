@@ -20,14 +20,27 @@ class NewsLetterContoller extends Controller{
     {
 
 
-        $usermail =  $_POST['usermail'];
+        $usermail =  $_GET['usermail'];
+        $respone;
       
+        $em = $this->getDoctrine()->getManager();
+
+        $mailExists = $em->getRepository('AppBundle:Newsletter')->findOneByMail($usermail); 
+        if ($mailExists) {
+            $translated = $this->get('translator')->trans('User exists');
+            
+            $respone['message'] = $translated;
+            $respone['error'] = 1;
+    
+            return $this->json($respone);
+        }
+
+
         // replace this example code with whatever you need
         $mail = new Newsletter();
 
         $mail   -> setMail($usermail)
                 -> setDate(date('Y-m-d'));
-        $em = $this->getDoctrine()->getManager();
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
         $em->persist($mail);
@@ -35,7 +48,11 @@ class NewsLetterContoller extends Controller{
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-        return $this->render('default/index.html.twig');        
+        $translated = $this->get('translator')->trans('Thank you for subscribing to our newsletter');
+            
+        $respone['message'] = $translated;
+
+        return $this->json($respone);
 
 
     }

@@ -1,8 +1,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
+
 
 {% block body %}
     <div id="fade-bg"></div>
@@ -37,15 +35,15 @@
                         <input type="password" class="half-input form-control" id="password" name="_password" required="required" autocomplete="current-password"/>
                     </div>
 
-
-                    <div class="margin-top-10 ">
+                    <div class="margin-top-10">
                         <button id="_submit" name="_submit" value="Log in" type="submit" class="btn btn-success">Login</button>
                     </div>
                 </form>
-                <div class="alert alert-danger alert-dismissable text-center" id="failLogin">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                    <strong>Failed to login!</strong>
-                </div>
+                {% if error %}
+                    <div class="alert alert-danger text-center margin-top-10">
+                        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    </div>
+                {% endif %}
                 <div class="col-md-10 bg-info margin-top-10">
                     <p class="text-warning">Do not have an Account?</p>
                     <a class="text-info btn"><a href="{{url('fos_user_registration_register')}}">Register here</a></p>
@@ -63,75 +61,6 @@
             </div>
 
         </div>
-        <!--  register panel -->
-        <div id="register-panel" class="container margin-top-100">
-            <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Please register here
-                                <span id="close-register" class="pull-right fa fa-times"></span>
-                            </h3>
-                        </div>
-                        <div class="panel-body">
-                            <form method="post" action="add-user" id="registerForm">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="_firstName" id="first_name"
-                                                   class="form-control input-sm" placeholder="First Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="_lastname" id="last_name"
-                                                   class="form-control input-sm" placeholder="Last Name">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="_address" id="address" class="form-control input-sm"
-                                           placeholder="Address">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="_phone" id="phone" class="form-control input-sm"
-                                           placeholder="Phone Number">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" name="_email" id="email" class="form-control input-sm"
-                                           placeholder="Email Address">
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-6 col-sm-6 col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" name="_password" id="password"
-                                                   class="form-control input-sm" placeholder="Password">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" name="_password_confirmation"
-                                                   id="password_confirmation" class="form-control input-sm"
-                                                   placeholder="Confirm Password">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center alert alert-danger" id="regMsg">
-                                    <div id="test"></div>
-                                </div>
-                                <input type="submit" id="register" name="_register" value="Register"
-                                       class="btn btn-info btn-block">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 {% endblock %}

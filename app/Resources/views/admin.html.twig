@@ -7,10 +7,12 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/adminMain.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/chosen.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/c3.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet" />    
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/adminMain.css') }}" rel="stylesheet"/>
 </head>
 
 <body>
@@ -53,6 +55,11 @@
             </a>
         </li>
         <li>
+            <a id="chartsli" class="col-xs-12" href="{{ asset('/view-charts') }}">
+                Charts
+            </a>
+        </li>
+        <li>
             <a id="logoutli" class="col-xs-12" href="{{ asset('/logout') }}">
                 <span class="fa fa-sign-out fa-2x"></span>Log out
             </a>
@@ -70,13 +77,21 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/cookies.min.js') }}"></script>
+    <script src="{{ asset('js/chosen.jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/d3-5.8.2.min.js') }}"></script>
+    <script src="{{ asset('js/c3.min.js') }}"></script>
+     <script src="{{ asset('js/toastr.min.js') }}"></script> 
+    <script src="{{ asset('js/helpers.js') }}"></script>
     <script src="{{ asset('js/homeAdmin.js') }}"></script>
     <script src="{{ asset('js/flash.js') }}"></script>
     <script src="{{ asset('js/offers.js') }}"></script>
     <script src="{{ asset('js/orders.js') }}"></script>
     <script src="{{ asset('js/image.js') }}"></script>
-    <script src="{{ asset('js/chosen.jquery.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/charts.js') }}"></script>
+
+
+
 {% endblock %}
 
 </body>

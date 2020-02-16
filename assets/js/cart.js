@@ -13,26 +13,17 @@ $(document).ready(function () {
         var productQuantity = $('.add-to-basket').data('quantity');
         var productComment = $('#prComment').val();
         
-        var request = $.ajax({
-            url: "/addToCart/"+productId,
-            method: "POST",
-            data: { 
-                productQuantity : productQuantity,
-                productComment : productComment,
-              }
-          });
-          request.done(function( msg ) {
+        var request = makeAjaxRequest("/addToCart?productId=" + productId+"&productQuantity=" + productQuantity + "&productComment=" + productComment );
+
+        request.done(function (data, textStatus, jqXHR) {
             $('#NumOfPrInCart').text(numOfProductsInBasktet)  
             $('#qtModal').modal('hide');
-            $("#offerSendMsg").show(1000);
-            setTimeout(function () {
-                $("#offerSendMsg").hide(1000);
-            }, 2000)
-            setTimeout(function () {
-                $("cart-font-size").removeClass("animated wobble");
-            }, 1200)
-          });
+            var message = data.message;
+            warnings('success', message);
+        });
+        request.fail(function (data, textStatus, jqXHR) {
 
+        });
         
     });
     $('.add').click(function () {
@@ -56,14 +47,17 @@ $(document).ready(function () {
 
 
     $('.rate').click(function () {
+
         var rate = $('input[name=star]:checked').val();
 
-        data = "prid=" + productId;
-        data += "&rate=" + rate;
-        $.ajax({
-            type: "POST",
-            url: '/rate',
-            data: data
+        var rateRequest = makeAjaxRequest("/rate?prid=" + productId+"&rate=" + rate );
+
+        rateRequest.done(function (data, textStatus, jqXHR) {
+            var message = data.message;
+            warnings('success', message);
+        });
+        rateRequest.fail(function (data, textStatus, jqXHR) {
+
         });
     });
 
@@ -88,16 +82,15 @@ $(document).ready(function () {
 });
 
 function addOfferToBasket(uuid) {
-    console.log(uuid);
 
-    var request = $.ajax({
-        url: "/singleOffer",
-        method: "POST",
-        data: { 
-            uuid: uuid
-          }
-      });
-      request.done(function( data ) {
-        console.log(data.response)
-      });
+    var addOffer = makeAjaxRequest("/singleOffer?uuid=" + uuid);
+    addOffer.done(function (data, textStatus, jqXHR) {
+        var message = data.message;
+        warnings('success', message);
+    });
+
+    addOffer.fail(function (data, textStatus, jqXHR) {
+        warnings('danger', 'Failed')
+    });
+
 }

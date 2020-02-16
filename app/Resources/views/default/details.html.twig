@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container margin-top-100">
 	<div class="col-md-4 text-center ">
-		<img src="{{ asset('images/uploads/')}}{{item.image}}" class="img-thumbnail" alt="img" width="304" height="236">
+		<img src="" data-lazy="{{ asset('images/uploads/')}}{{item.image}}" class="img-thumbnail" alt="img" width="304" height="236">
 	</div>
 	<div class="col-md-8 margin-top-100">
 		<p class="text-center">{{item.description}}</p>
@@ -31,9 +31,6 @@
 			<div class="margin-top-100">
 				<a href="{{ asset('list') }}" class="fa fa-arrow-left fa-2x btn btn-info "></a>
 			</div>
-		</div>
-		<div class="text-center alert alert-success" id="offerSendMsg">
-    		<p>Added to basket</p>
 		</div>
 		<div class="col-xs-12 col-md-6">
 			<div class="pull-right">

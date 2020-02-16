@@ -35,7 +35,23 @@
             <trans-unit id="login">
                 <source>Login</source>
                 <target>Συνδέσου</target>
-            </trans-unit>            
+            </trans-unit>      
+            <trans-unit id="thx_for_voting">
+                <source>Thank you for voting</source>
+                <target>Ευχαριστούμε που ψηφίσατε</target>
+            </trans-unit>      
+            <trans-unit id="added_to_basket">
+                <source>Added to basket</source>
+                <target>Προστέθηκε στο καλάθι</target>
+            </trans-unit>      
+            <trans-unit id="subscribed">
+                <source>Thank you for subscribing to our newsletter</source>
+                <target>Σας ευχαριστούμε που εγγραφήκατε στο ενημερωτικό μας δελτίο</target>
+            </trans-unit>      
+            <trans-unit id="user_exists">
+                <source>User exists</source>
+                <target>Ο χρήστης υπάρχει</target>
+            </trans-unit>      
         </body>
     </file>
 </xliff>

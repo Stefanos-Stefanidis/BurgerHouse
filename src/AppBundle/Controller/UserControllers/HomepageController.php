@@ -41,55 +41,48 @@ class HomepageController extends Controller{
 
     }
      
-        /**
-        * @Route("/singleOffer", name="singleOffer")
-        */
-        public function singleOffer()
-        {
+    /**
+    * @Route("/singleOffer", name="singleOffer")
+    */
+    public function singleOffer() 
+    {
 
-            $uuid =  $_POST['uuid'];
+        $uuid =  $_GET['uuid'];
 
-/*             $entityManager = $this->getDoctrine()->getManager();
-            $query = $entityManager->createQuery(
-                'SELECT DISTINCT n.price
-                FROM AppBundle:Offers n
-                WHERE n.offer = :offerUuid'
-            )->setParameter('offerUuid', $uuid);
-            $offersUuids = $query->getResult(); */
+        $productNamesArr= array();
+        $productIdsArr= array();
+
+        $allOffers = $this->getDoctrine()
+        ->getRepository('AppBundle:Offers')
+        ->findByOffer($uuid);
+        
+        
+        foreach ($allOffers as $offer ) {
+            array_push($productNamesArr,$offer->getProduct()->getName());
+            array_push($productIdsArr,$offer->getProduct()->getId());
+            $cart = new AddToCart();
+            $cart -> setQuantity(1);
+            $em = $this->getDoctrine()->getManager();
+            $productId = $em->getRepository('AppBundle:Product')->findOneById($offer->getProduct()->getId()); 
+            $user = $this->getUser();
+            $cart -> setUserId($user);
+            $cart -> setProductId($productId);
             
-            $productNamesArr= array();
-            $productIdsArr= array();
-
-            $allOffers = $this->getDoctrine()
-            ->getRepository('AppBundle:Offers')
-            ->findByOffer($uuid);
-            
-            
-            foreach ($allOffers as $offer ) {
-                array_push($productNamesArr,$offer->getProduct()->getName());
-                array_push($productIdsArr,$offer->getProduct()->getId());
-                $cart = new AddToCart();
-                $cart -> setQuantity(1);
-                $em = $this->getDoctrine()->getManager();
-                $productId = $em->getRepository('AppBundle:Product')->findOneById($offer->getProduct()->getId()); 
-                $user = $this->getUser();
-                $cart -> setUserId($user);
-                $cart -> setProductId($productId);
-                
-                $em->persist($cart);
-                $em->flush();
-
-
-            }
-
-            
-            return $this->json(['response' => $uuid ]);
-            // return $this->json(['offers' => $offersUuids ,'productNames' => $productNamesArr,'productIds' => $productIdsArr ]);
-/*            return $this->render('default/test.html.twig',array(
-                'allOffers'=>$allOffers
-            )); */
+            $em->persist($cart);
+            $em->flush();
 
 
         }
+        
+        $translated = $this->get('translator')->trans('Added to basket');
+        
+        $respone;
+        $respone['message'] = $translated;
+        
+        return $this->json($respone);
+
+
+
+    }
 
 }

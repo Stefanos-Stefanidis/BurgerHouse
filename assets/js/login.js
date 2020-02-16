@@ -14,6 +14,8 @@
 	});
 
 	$("#loginForm").submit(function( event ) {
+		console.log('hey')
+		return;
 		event.preventDefault();
 		$.ajax({
 			type     : "POST",
