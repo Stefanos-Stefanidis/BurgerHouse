@@ -23,7 +23,7 @@ class ViewOrdersController extends Controller /*implements TokenAuthenticatedCon
         
         $query = $entityManager->createQuery(
             'SELECT DISTINCT n.noticeId
-            FROM AppBundle:Notice n
+            FROM AppBundle:NoticeInfo n
             WHERE n.orderStatus = :orderStatus'
         )->setParameter('orderStatus', 'PROCESSING');
 
@@ -51,10 +51,16 @@ class ViewOrdersController extends Controller /*implements TokenAuthenticatedCon
         $notice = $this->getDoctrine()
         ->getRepository('AppBundle:Notice')
         ->findByNoticeId($id);
+
+        $noticeInfo = $this->getDoctrine()
+        ->getRepository('AppBundle:NoticeInfo')
+        ->findOneByNoticeId($id);
         
+        dump($noticeInfo);
+
         $query = $entityManager->createQuery(
             'SELECT DISTINCT n.noticeId, n.dateOrder
-            FROM AppBundle:Notice n
+            FROM AppBundle:NoticeInfo n
             WHERE n.orderStatus = :orderStatus
             ORDER BY n.dateOrder DESC'
         )->setParameter('orderStatus', 'PROCESSING');
@@ -62,7 +68,7 @@ class ViewOrdersController extends Controller /*implements TokenAuthenticatedCon
         $productUuids = $query->getResult();
 
         return $this->render('default/viewOrders.html.twig',array(
-            'notices'=>$notice, 'productUuids'=>$productUuids
+            'notices'=>$notice, 'noticesInfo'=>$noticeInfo, 'productUuids'=>$productUuids
         ));        
 
     } 

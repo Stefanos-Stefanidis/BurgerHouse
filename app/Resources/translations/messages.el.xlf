@@ -52,6 +52,14 @@
                 <source>User exists</source>
                 <target>Ο χρήστης υπάρχει</target>
             </trans-unit>      
+            <trans-unit id="total_sales">
+                <source>Total sales</source>
+                <target>Συνολικές πωλήσεις</target>
+            </trans-unit>      
+            <trans-unit id="cancelled _orders">
+                <source>Cancelled orders</source>
+                <target>Ακυρωμένες παραγγελίες</target>
+            </trans-unit>      
         </body>
     </file>
 </xliff>

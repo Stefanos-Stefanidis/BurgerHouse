@@ -29,6 +29,15 @@ class FinishOrderController extends Controller
 
         $query->execute();
 
+        $query = $em->createQuery(
+            'UPDATE AppBundle:NoticeInfo o
+            SET o.orderStatus = :orderStatus
+            WHERE o.noticeId = :id 
+            '
+        )->setParameter('id', $id)->setParameter('orderStatus', 'FINISH');
+
+        $query->execute();
+
         $this->addFlash(
             'notice',
             'Order Finished'

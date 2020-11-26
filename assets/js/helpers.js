@@ -17,7 +17,7 @@ request.fail(function (data, textStatus, jqXHR) {
 
 $(document).ready(function () {
     
-    var targets = document.querySelectorAll('img');
+    var targets = document.querySelectorAll('img.has-lazy');
 
     /*     
     var lazyLoad = target => {
@@ -34,7 +34,6 @@ $(document).ready(function () {
                 if (entry.isIntersecting) {
                     var img = entry.target;
                     var src = img.getAttribute('data-lazy');
-                    console.log('src:', src)
 
                     img.setAttribute('src', src);
                     img.classList.add('fade');
@@ -63,7 +62,6 @@ function makeAjaxRequest(requestURL, Data, PostType) {
     });
 
     return jqxhr;
-
 }
 
 

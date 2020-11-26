@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Rate;
 
 
-class Charts extends Controller
+class ChartsController extends Controller
 {
     /**
      * @Route("/view-charts", name="charts")
@@ -21,19 +21,32 @@ class Charts extends Controller
 
         $query = $entityManager->createQuery(
             'SELECT p
-            FROM AppBundle:Notice p'            
-        );
+            FROM AppBundle:Notice p WHERE p.orderStatus = :orderStatus'
+        )->setParameter('orderStatus', 'FINISH');
 
         $notices = $query->getResult();
+
+   /*      $getCancelled = $entityManager->createQuery(
+            'SELECT IDENTITY(p.noticeId), count(p.productId)
+            FROM AppBundle:Notice p WHERE p.orderStatus = :orderStatus GROUP BY p.id'
+        )->setParameter('orderStatus', 'FINISH'); */
+
+        $getCancelled = $entityManager->createQuery(
+            'SELECT DISTINCT(p.noticeId)
+            FROM AppBundle:Notice p WHERE p.orderStatus = :orderStatus'
+        )->setParameter('orderStatus', 'CANCEL');
+        
+        $cancelledNum = $getCancelled->getResult();
+
+        $count_cancelled = count($cancelledNum);
 
         $total_sales = 0;
         foreach ($notices as $notice) {
             $total_sales += $notice->getProductId()->getPrice();
-            dump($notice->getProductId()->getPrice());
         } 
      
 
-        return $this->render('default/charts.html.twig',array('total_sales'=>$total_sales));
+        return $this->render('default/charts.html.twig',array('total_sales'=>$total_sales,'count_cancelled'=>$count_cancelled));
 
     }
 
@@ -101,6 +114,7 @@ class Charts extends Controller
     {
 
         $entityManager = $this->getDoctrine()->getManager();
+
 
         $query = $entityManager->createQuery(
             'SELECT IDENTITY(p.productId), count(p.productId)

@@ -26,6 +26,8 @@ $(document).ready(function () {
         });
         
     });
+
+    
     $('.add').click(function () {
         if (parseInt($('#productQuantity').text()) < 99) {
 

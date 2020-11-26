@@ -1,6 +1,7 @@
 (function ($) {
 
 	$(document).ready(function () {
+		
 		$("#selectCategory").chosen();
 		
 		$("#menu-btn").mouseenter(function () {
@@ -12,6 +13,7 @@
 			});
 			$("body").addClass("margin-left");
 		});
+
 		$(".nav-left").mouseleave(function () {
 			$(".nav-left").css({
 				"left": "-210px"
@@ -23,33 +25,12 @@
 
 		});
 	
-		$(".add-item").click(function () {
-			document.getElementById("addProductli").click();
+		$(".go-to-data-attr").click(function () {
 
-		});
+			var menuItem = $(this).data("menuItem");
 
-		$(".edit-list").click(function () {
-			document.getElementById("editli").click();
+			document.getElementById(menuItem).click();
 
-		});
-		$(".manage-comment").click(function () {
-			document.getElementById("mngCommentli").click();
-
-		});
-
-		$(".view-offers").click(function () {
-			document.getElementById("offersli").click();
-		});
-
-		$(".view-orders").click(function () {
-			document.getElementById("viewOrdersli").click();
-		});
-
-		$(".view-subscribers").click(function () {
-			document.getElementById("subscribersli").click();
-		});
-		$(".view-charts").click(function () {
-			document.getElementById("chartsli").click();
 		});
 
 	});

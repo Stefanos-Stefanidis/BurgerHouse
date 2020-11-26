@@ -27,6 +27,13 @@ class CancelOrderController extends Controller /*implements TokenAuthenticatedCo
             '
         )->setParameter('id', $id)->setParameter('orderStatus', 'CANCEL');
 
+        $query = $em->createQuery(
+            'UPDATE AppBundle:NoticeInfo o
+            SET o.orderStatus = :orderStatus
+            WHERE o.noticeId = :id 
+            '
+        )->setParameter('id', $id)->setParameter('orderStatus', 'CANCEL');
+
         $query->execute();
 
         $this->addFlash(

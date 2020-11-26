@@ -35,16 +35,19 @@ class Notice
     private $noticeId;
 
     /**
-     * @ManyToOne(targetEntity="User", inversedBy="notice")
-     * @JoinColumn(name="user_id", referencedColumnName="id")
-     */
-    private $userId;
-
-    /**
      * @ManyToOne(targetEntity="Product", inversedBy="notices")
      * @JoinColumn(name="product_id", referencedColumnName="id")
      */
+
     private $productId;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="order_status", type="string", length=255)
+     */
+    private $orderStatus;
 
     /**
      * @var int
@@ -60,34 +63,6 @@ class Notice
     */
     private $comment;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="extra", type="string", length=255,nullable=true)
-    */
-    private $extra;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="order_status", type="string", length=255)
-     */
-    private $orderStatus;
-
-
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_order", type="datetime", nullable=true)
-    */
-    private $dateOrder;
-
-    public function __construct()
-    {
-        $this->dateOrder = new DateTime(); 
-    }
 
     /**
      * Get id
@@ -174,54 +149,6 @@ class Notice
         return $this->comment;
     }
 
-    /**
-     * Set extra
-     *
-     * @param string $extra
-     *
-     * @return Notice
-     */
-    public function setExtra($extra)
-    {
-        $this->extra = $extra;
-
-        return $this;
-    }
-
-    /**
-     * Get extra
-     *
-     * @return string
-     */
-    public function getExtra()
-    {
-        return $this->extra;
-    }
-
-
-    /**
-     * Set userId
-     *
-     * @param \AppBundle\Entity\User $userId
-     *
-     * @return Notice
-     */
-    public function setUserId(\AppBundle\Entity\User $userId = null)
-    {
-        $this->userId = $userId;
-
-        return $this;
-    }
-
-    /**
-     * Get userId
-     *
-     * @return \AppBundle\Entity\User
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
 
     /**
      * Set productId
@@ -246,7 +173,7 @@ class Notice
     {
         return $this->productId;
     }
-
+    
     /**
      * Set orderStatus
      *
@@ -261,6 +188,8 @@ class Notice
         return $this;
     }
 
+
+
     /**
      * Get orderStatus
      *
@@ -270,32 +199,5 @@ class Notice
     {
         return $this->orderStatus;
     }
-
-
-    /**
-     * Set dateOrder
-     *
-     * @param \DateTime $dateOrder
-     *
-     * @return Notice
-    */
-    public function setDateOrder($dateOrder)
-    {
-        $this->dateOrder = $dateOrder;
-
-        return $this;
-    }
-
-    /**
-     * Get dateOrder
-     *
-     * @return \DateTime
-    */
-    public function getDateOrder()
-    {
-        return $this->dateOrder;
-    }
-
-
 }
 
