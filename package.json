@@ -7,7 +7,7 @@
   "author": "Stefanos Stefanidis",
   "license": "GNU GPLv3",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-install": "^0.6.0"
   },
   "dependencies": {
